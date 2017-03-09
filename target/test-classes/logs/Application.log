@@ -1,0 +1,18 @@
+23/02/2017 16:36:17 devpinoyLogger Test Case: loginQA Starts Running
+23/02/2017 16:36:24 devpinoyLogger Test Method: doLogin Starts Running
+23/02/2017 16:36:27 devpinoyLogger Test Case: loginQA Passed
+23/02/2017 16:36:28 devpinoyLogger Test Case: UntRec Starts Running
+23/02/2017 16:36:28 devpinoyLogger Test Method: openUnitReconcilation Starts Running
+23/02/2017 16:36:30 devpinoyLogger Test Method: getPOforUnit Starts Running
+23/02/2017 16:36:32 devpinoyLogger Test Method: processPO Starts Running
+23/02/2017 16:39:11 devpinoyLogger Test Case: UntRec Failed and error message is : no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='messages']//span[2]"}
+  (Session info: chrome=56.0.2924.87)
+  (Driver info: chromedriver=2.24.417431 (9aea000394714d2fbb20850021f6204f2256b9cf),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 10.05 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'C40-SF-22', ip: '10.131.80.30', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_102'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.24.417431 (9aea000394714d2fbb20850021f6204f2256b9cf), userDataDir=C:\Users\SACHIN~1.KUM\AppData\Local\Temp\scoped_dir11460_4441}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=56.0.2924.87, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 2b193e91963db5689bef4dccee94c3fd
+*** Element info: {Using=xpath, value=//*[@id='messages']//span[2]}

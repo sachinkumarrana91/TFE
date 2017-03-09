@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="3" total="7" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="143332" started-at="2017-03-08T15:02:29Z" finished-at="2017-03-08T15:04:53Z">
+    <groups>
+    </groups>
+    <test name="Test1" duration-ms="3" started-at="2017-03-08T15:02:29Z" finished-at="2017-03-08T15:02:29Z">
+    </test> <!-- Test1 -->
+    <test name="Test2" duration-ms="7231" started-at="2017-03-08T15:02:29Z" finished-at="2017-03-08T15:02:36Z">
+      <class name="testScripts.VisionLogin">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.VisionLogin@436e852b]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2017-03-08T20:32:29Z" finished-at="2017-03-08T20:32:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="loginQA(java.lang.String)[pri:0, instance:testScripts.VisionLogin@436e852b]" name="loginQA" duration-ms="6941" started-at="2017-03-08T20:32:29Z" finished-at="2017-03-08T20:32:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[QA2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginQA -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.VisionLogin@436e852b]" name="AfterMethod" is-config="true" duration-ms="267" started-at="2017-03-08T20:32:36Z" finished-at="2017-03-08T20:32:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+      </class> <!-- testScripts.VisionLogin -->
+    </test> <!-- Test2 -->
+    <test name="Test3" duration-ms="136079" started-at="2017-03-08T15:02:36Z" finished-at="2017-03-08T15:04:53Z">
+      <class name="testScripts.ReleasePO">
+        <test-method status="PASS" signature="startTesting(java.lang.String)[pri:0, instance:testScripts.ReleasePO@23d2a7e8]" name="startTesting" is-config="true" duration-ms="4102" started-at="2017-03-08T20:32:25Z" finished-at="2017-03-08T20:32:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTesting -->
+        <test-method status="PASS" signature="refresh(java.lang.String)[pri:0, instance:testScripts.ReleasePO@23d2a7e8]" name="refresh" is-config="true" duration-ms="0" started-at="2017-03-08T20:32:36Z" finished-at="2017-03-08T20:32:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[QA2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- refresh -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.ReleasePO@23d2a7e8]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2017-03-08T20:32:36Z" finished-at="2017-03-08T20:32:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="openPurchaseOrderRelease()[pri:1, instance:testScripts.ReleasePO@23d2a7e8]" name="openPurchaseOrderRelease" duration-ms="4657" started-at="2017-03-08T20:32:36Z" finished-at="2017-03-08T20:32:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openPurchaseOrderRelease -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.ReleasePO@23d2a7e8]" name="AfterMethod" is-config="true" duration-ms="215" started-at="2017-03-08T20:32:41Z" finished-at="2017-03-08T20:32:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.ReleasePO@23d2a7e8]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-03-08T20:32:41Z" finished-at="2017-03-08T20:32:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="savePO()[pri:2, instance:testScripts.ReleasePO@23d2a7e8]" name="savePO" duration-ms="29074" started-at="2017-03-08T20:32:41Z" finished-at="2017-03-08T20:33:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- savePO -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.ReleasePO@23d2a7e8]" name="AfterMethod" is-config="true" duration-ms="176" started-at="2017-03-08T20:33:10Z" finished-at="2017-03-08T20:33:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.ReleasePO@23d2a7e8]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-03-08T20:33:11Z" finished-at="2017-03-08T20:33:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="releasePO()[pri:3, instance:testScripts.ReleasePO@23d2a7e8]" name="releasePO" duration-ms="29089" started-at="2017-03-08T20:33:11Z" finished-at="2017-03-08T20:33:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- releasePO -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.ReleasePO@23d2a7e8]" name="AfterMethod" is-config="true" duration-ms="174" started-at="2017-03-08T20:33:40Z" finished-at="2017-03-08T20:33:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.ReleasePO@23d2a7e8]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-03-08T20:33:40Z" finished-at="2017-03-08T20:33:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="confirmPO()[pri:4, instance:testScripts.ReleasePO@23d2a7e8]" name="confirmPO" duration-ms="19714" started-at="2017-03-08T20:33:40Z" finished-at="2017-03-08T20:34:00Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at testScripts.ReleasePO.confirmPO(ReleasePO.java:148)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confirmPO -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.ReleasePO@23d2a7e8]" name="AfterMethod" is-config="true" duration-ms="177" started-at="2017-03-08T20:34:00Z" finished-at="2017-03-08T20:34:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="endScript()[pri:0, instance:testScripts.ReleasePO@23d2a7e8]" name="endScript" is-config="true" duration-ms="40" started-at="2017-03-08T20:34:53Z" finished-at="2017-03-08T20:34:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endScript -->
+      </class> <!-- testScripts.ReleasePO -->
+      <class name="testScripts.UpfitProgress">
+        <test-method status="PASS" signature="refresh(java.lang.String)[pri:0, instance:testScripts.UpfitProgress@26a7b76d]" name="refresh" is-config="true" duration-ms="17586" started-at="2017-03-08T20:34:34Z" finished-at="2017-03-08T20:34:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[QA2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- refresh -->
+        <test-method status="FAIL" signature="open()[pri:0, instance:testScripts.UpfitProgress@26a7b76d]" name="open" duration-ms="224" started-at="2017-03-08T20:34:52Z" finished-at="2017-03-08T20:34:52Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at testScripts.UpfitProgress.open(UpfitProgress.java:78)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- open -->
+      </class> <!-- testScripts.UpfitProgress -->
+      <class name="testScripts.ThirdPartyProgress">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.ThirdPartyProgress@7a9273a8]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2017-03-08T20:32:36Z" finished-at="2017-03-08T20:32:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.UpfitProgress@26a7b76d]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-03-08T20:32:36Z" finished-at="2017-03-08T20:32:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="refresh(java.lang.String)[pri:0, instance:testScripts.ThirdPartyProgress@7a9273a8]" name="refresh" is-config="true" duration-ms="25436" started-at="2017-03-08T20:34:00Z" finished-at="2017-03-08T20:34:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[QA2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- refresh -->
+        <test-method status="FAIL" signature="open()[pri:0, instance:testScripts.ThirdPartyProgress@7a9273a8]" name="open" duration-ms="9192" started-at="2017-03-08T20:34:25Z" finished-at="2017-03-08T20:34:34Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at testScripts.ThirdPartyProgress.open(ThirdPartyProgress.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- open -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.ThirdPartyProgress@7a9273a8]" name="AfterMethod" is-config="true" duration-ms="181" started-at="2017-03-08T20:34:52Z" finished-at="2017-03-08T20:34:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.UpfitProgress@26a7b76d]" name="AfterMethod" is-config="true" duration-ms="178" started-at="2017-03-08T20:34:52Z" finished-at="2017-03-08T20:34:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+      </class> <!-- testScripts.ThirdPartyProgress -->
+    </test> <!-- Test3 -->
+  </suite> <!-- Suite -->
+</testng-results>

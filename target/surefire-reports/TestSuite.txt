@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 17.878 sec <<< FAILURE! - in TestSuite
+UntRec(testScripts.UnitReconcile)  Time elapsed: 0.772 sec  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at testScripts.UnitReconcile.UntRec(UnitReconcile.java:67)
+

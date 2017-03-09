@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" total="2" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="11874" started-at="2017-02-21T11:10:11Z" finished-at="2017-02-21T11:10:23Z">
+    <groups>
+    </groups>
+    <test name="Test1" duration-ms="2" started-at="2017-02-21T11:10:11Z" finished-at="2017-02-21T11:10:11Z">
+    </test> <!-- Test1 -->
+    <test name="Test2" duration-ms="10480" started-at="2017-02-21T11:10:11Z" finished-at="2017-02-21T11:10:22Z">
+      <class name="testScripts.VisionLogin">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.VisionLogin@6c3708b3]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-02-21T16:40:11Z" finished-at="2017-02-21T16:40:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="loginQA(java.lang.String)[pri:0, instance:testScripts.VisionLogin@6c3708b3]" name="loginQA" duration-ms="10356" started-at="2017-02-21T16:40:11Z" finished-at="2017-02-21T16:40:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[QA2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginQA -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.VisionLogin@6c3708b3]" name="AfterMethod" is-config="true" duration-ms="120" started-at="2017-02-21T16:40:21Z" finished-at="2017-02-21T16:40:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+      </class> <!-- testScripts.VisionLogin -->
+    </test> <!-- Test2 -->
+    <test name="Test3" duration-ms="1349" started-at="2017-02-21T11:10:22Z" finished-at="2017-02-21T11:10:23Z">
+      <class name="testScripts.UnitReconcile">
+        <test-method status="PASS" signature="startTesting(java.lang.String)[pri:0, instance:testScripts.UnitReconcile@6ddf90b0]" name="startTesting" is-config="true" duration-ms="5567" started-at="2017-02-21T16:40:05Z" finished-at="2017-02-21T16:40:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTesting -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.UnitReconcile@6ddf90b0]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-02-21T16:40:22Z" finished-at="2017-02-21T16:40:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="addNewSheet()[pri:0, instance:testScripts.UnitReconcile@6ddf90b0]" name="addNewSheet" is-config="true" duration-ms="336" started-at="2017-02-21T16:40:22Z" finished-at="2017-02-21T16:40:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewSheet -->
+        <test-method status="FAIL" signature="UntRec()[pri:0, instance:testScripts.UnitReconcile@6ddf90b0]" name="UntRec" duration-ms="763" started-at="2017-02-21T16:40:22Z" finished-at="2017-02-21T16:40:23Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at testScripts.UnitReconcile.UntRec(UnitReconcile.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UntRec -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.UnitReconcile@6ddf90b0]" name="AfterMethod" is-config="true" duration-ms="242" started-at="2017-02-21T16:40:23Z" finished-at="2017-02-21T16:40:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="endScript()[pri:0, instance:testScripts.UnitReconcile@6ddf90b0]" name="endScript" is-config="true" duration-ms="27" started-at="2017-02-21T16:40:23Z" finished-at="2017-02-21T16:40:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endScript -->
+      </class> <!-- testScripts.UnitReconcile -->
+    </test> <!-- Test3 -->
+  </suite> <!-- Suite -->
+</testng-results>
