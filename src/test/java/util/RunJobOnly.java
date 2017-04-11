@@ -1,31 +1,26 @@
 package util;
 
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+
 public class RunJobOnly {
 
 	public static ExcelReader datatable;
 	public static void main(String[] args) {
 
-		String ENVi;
-		String ENVj;
-
-		ENVi = "DEV1";
-		ENVj = "QA2";
-
-/*		ENV = "QA1";
+		String ENV;
 
 		ENV = "QA3";
 
-		ENV = "DEV1";
-
-		ENV = "STG1";
-*/
 		datatable = new ExcelReader(System.getProperty("user.dir")+"//src//test//java//config//DataTable.xlsx");
-		int i = datatable.getCellRowNum("loginQA", "dbName", ENVi);
+		int i = datatable.getCellRowNum("loginQA", "dbName", ENV);
 		
 		
 		
 		try {
-			util.DBUtills.refreshQueue(
+			//refreshQueue(													// For Continue
+			util.DBUtills.refreshQueue(									// For once only
 					datatable.getCellData("loginQA", "IP", i),
 					datatable.getCellData("loginQA", "Port", i),
 					datatable.getCellData("loginQA", "dbName", i),
@@ -35,24 +30,42 @@ public class RunJobOnly {
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
-		System.out.println(ENVi+" has been refreshed");
+		System.out.println(ENV+" has been refreshed");
 
-/*		int j = datatable.getCellRowNum("loginQA", "dbName", ENVj);
-		try {
-			util.DBUtills.refreshQueue(
-					datatable.getCellData("loginQA", "IP", j),
-					datatable.getCellData("loginQA", "Port", j),
-					datatable.getCellData("loginQA", "dbName", j),
-					datatable.getCellData("loginQA", "UN", j),
-					datatable.getCellData("loginQA", "PW", j)
-					);
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-		System.out.println(ENVj+" has been refreshed");
-*/
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	private final static String dcn = "oracle.jdbc.driver.OracleDriver";
+	private static Connection con;
+	
+	public static void refreshQueue(String ip,String port,String dbName,String un,String pw) throws Exception{
+		String dbUrl = "jdbc:oracle:thin:@//"+ip+":"+port+"/"+dbName;		
+		try{
+			con = DriverManager.getConnection(dbUrl,un,pw);			
+			System.out.println("Connection Created");
+			int j = 0;
+			while(1==1){
+				System.out.println("============  "+j+++"  ============");
+				CallableStatement stmt = con.prepareCall("BEGIN willow2k.process_stage_maint.refresh_stages(); END;");
+				System.out.println("Start Execution");
+				stmt.execute();
+				System.out.println("Execution Finished");
+			}
+		}
+		catch(Exception e){
+			System.out.println("Class dbUtil | Method refreshQueue | Exception desc : " + e.getMessage());
+			throw(e);
+		}
+		finally{			
+			con.close();
+		}
+	}
 
 
 

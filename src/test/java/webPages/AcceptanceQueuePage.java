@@ -79,29 +79,49 @@ public class AcceptanceQueuePage {
 		Core.isElementVisible(SearchButton).click();
 */
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
-		while(!StyleOfBody.getAttribute("style").contains("none")){}
+
+		//	Enter Quote No.
 		driver.findElement(By.xpath("//*[@id='filterQuoteIdTxt']")).clear();
 		driver.findElement(By.xpath("//*[@id='filterQuoteIdTxt']")).sendKeys(QuoteNo);
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
+
+		//	Click Search Button
 		driver.findElement(By.xpath("//*[@id='filter']")).click();
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
+
+		//	Check the existence of the entered Quote
+		//	Yes, We found a single record for entered quote
 		if(driver.findElements(By.xpath(this.QuoteNo+QuoteNo+"')]")).size()==1){
+			
+			//	Select the Quote 
 			Core.isElementClickable(driver.findElement(By.xpath(this.QuoteNo+QuoteNo+"')]"))).click();
+
+			//	Click the "Accept Quote" button
 			Core.isElementClickable(AcceptQuote).click();
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
+
+			//	Check the message at the top
 			String message = driver.findElement(By.xpath("//*[@id='messages']/div")).getText();
+
+			//	Was it successfully accepted
 			if(message.contains("accepted")){
 				Core.DataTable.setCellData("PO_Detail", "UnitNoToMaintain", Core.DataTable.getRowCount("PO_Detail")+1, message.substring(message.length()-8,message.length()));
 			}
 			
 			al.add("<br> "+message);
 			}
+
+		//	not the expected condition
 		else
+			
+			//	Not found any record for entered Quote
 			if(driver.findElements(By.xpath(this.QuoteNo+QuoteNo+"')]")).size()==0){
 				al.add("<br> Quote# <FONT COLOR=red>"+QuoteNo+"</font> Not Found on Accaptance Quote Page");
 				//System.out.println("Quote# "+QuoteNo+" Not Found on Accaptance Quote Page");
 				//throw new NoSuchElementException("Not Able to find the Quote No. on Accaptance Quote Form, May be it has already been Accepted/Rejected");
 			}
+
+			//	Fount multiple record for entered Quote
 			else{
 				al.add("<br> Quote# "+QuoteNo+" Found with multiple entries on Accaptance Quote Page");
 				//System.out.println("Quote# <FONT COLOR=red>"+QuoteNo+"</font> Found with multiple entries on Accaptance Quote Page");

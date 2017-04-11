@@ -144,15 +144,9 @@ public class UnitReconcilePage {
 			}
 			InvoiceAmount.sendKeys(actualAmount);
 			Next.click();
-			while(!StyleOfBody.getAttribute("style").contains("none")){}
-			if(OK.size()>0 && OKAccept.isDisplayed()){
-				OKAccept.click();
-			}
-			while(!StyleOfBody.getAttribute("style").contains("none")){}
-			if(OK.size()>0 && OKAccept.isDisplayed()){
-				OKAccept.click();
-			}
-			while(!StyleOfBody.getAttribute("style").contains("none")){}
+			
+			//	Handle VIN Pop-ups
+			Core.handleVINpopup();
 
 			if(PO_Amount_Shown.equalsIgnoreCase("$0.00")){																	// Amount was 0 ? than 
 				driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//span/input")).clear();
@@ -174,15 +168,10 @@ public class UnitReconcilePage {
 				InvoiceAmount.clear();
 				InvoiceAmount.sendKeys(actualAmount);
 				Next.click();
-				while(!StyleOfBody.getAttribute("style").contains("none")){}
-				if(OK.size()>0 && OKAccept.isDisplayed()){
-					OKAccept.click();
-				}
-				while(!StyleOfBody.getAttribute("style").contains("none")){}
-				if(OK.size()>0 && OKAccept.isDisplayed()){
-					OKAccept.click();
-				}
-				while(!StyleOfBody.getAttribute("style").contains("none")){}
+				
+				//	Handle VIN Pop-ups
+				Core.handleVINpopup();
+
 				PostInvoice.click();
 				while(!driver.findElement(By.id("confirmDialogId")).getAttribute("style").contains("block")){}
 			}

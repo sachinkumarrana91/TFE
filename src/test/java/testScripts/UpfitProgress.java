@@ -2,9 +2,7 @@ package testScripts;
 
 import java.io.IOException;
 
-import webPages.ThirdPartyProgressPage;
 import webPages.UpfitProgressPage;
-import webPages.VisionLoginPage;
 import testReports.TestReports;
 import util.TestUtil;
 import core.Core;
@@ -19,7 +17,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 
-import config.Configuration;
 
 public class UpfitProgress extends Core{
 
@@ -51,7 +48,7 @@ public class UpfitProgress extends Core{
 	}
 
 	@Test
-	public void open() {
+	public void UpfitProgressTest() {
 		try{
 			Log.info("log4j from xml file");
 			String TestCaseName = new Object(){}.getClass().getEnclosingMethod().getName();

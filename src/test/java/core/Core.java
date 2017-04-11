@@ -1,6 +1,5 @@
 package core;
 
-import java.awt.Robot;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -13,9 +12,11 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.internal.ProfilesIni;
@@ -31,10 +32,7 @@ import org.testng.asserts.SoftAssert;
 import config.Configuration;
 import testReports.TestReports;
 import util.ExcelReader;
-import util.Log;
-import util.TestConfig;
 import util.TestUtil;
-import util.monitoringMail;
 
 
 public class Core {
@@ -108,10 +106,26 @@ public class Core {
 	}
 	
 	
+	public static void handleVINpopup(){
+		while(!driver.findElement(By.xpath("//*[@id='dvQuickModal']")).getAttribute("style").contains("none")){}
+		if(driver.findElements(By.id("okBtnId")).size()>0 && driver.findElement(By.id("okBtnId")).isDisplayed()){
+			driver.findElement(By.id("okBtnId")).click();
+				while(!driver.findElement(By.xpath("//*[@id='dvQuickModal']")).getAttribute("style").contains("none")){}
+		 }
+		if(driver.findElements(By.id("okBtnId")).size()>0 && driver.findElement(By.id("okBtnId")).isDisplayed()){
+			driver.findElement(By.id("okBtnId")).click();
+				while(!driver.findElement(By.xpath("//*[@id='dvQuickModal']")).getAttribute("style").contains("none")){}
+		 }
+		while(!driver.findElement(By.xpath("//*[@id='dvQuickModal']")).getAttribute("style").contains("none")){}
+	}
+	
+	
+	
+	
+	
 	public static long daysDifferance(String dateB, String dateA) throws ParseException{
 
 		SimpleDateFormat sdf = new SimpleDateFormat("MMddyyyy");
-		Calendar c = Calendar.getInstance();
 		Date a = sdf.parse(dateA);
 		Date b = sdf.parse(dateB);
 		long diff = TimeUnit.DAYS.convert((b.getTime() - a.getTime()), TimeUnit.MILLISECONDS);
@@ -145,8 +159,8 @@ public class Core {
 	
 	
 	@BeforeSuite
-	@Parameters({"BrowserName"})
-	public void startTesting(String BrowserName) throws Exception{
+	@Parameters({"BrowserName","env"})
+	public void startTesting(String BrowserName, String env) throws Exception{
 		System.setProperty("Logs.Dir", System.getProperty("user.dir")+"\\src\\test\\java\\logs");
 		DataTable = new ExcelReader(System.getProperty("user.dir")+"\\src\\test\\java\\config\\DataTable.xlsx");
 		//System.out.println("BeforeSuite");
@@ -161,12 +175,22 @@ public class Core {
 
 			TestReports.startTesting(Configuration.Report_Folder+"//"+strDate+".html",
 					TestUtil.now("dd.MMMMM.yyyy hh.mm.ss aaa"),
-					"Environment_Demo",
+					env,
 					"Release_Version_#");										
 				
 			if(BrowserName.equalsIgnoreCase("Chrome") ){
 				System.setProperty("webdriver.chrome.driver","chromedriver.exe");
-				dr = new ChromeDriver();
+
+/*				ChromeOptions chromeOptions = new ChromeOptions();
+				chromeOptions.addArguments("no-sandbox");
+				//Fix for cannot get automation extension
+				chromeOptions.addArguments("disable-extensions");
+				chromeOptions.addArguments("--start-maximized");
+				dr = new ChromeDriver(chromeOptions);
+
+*/				dr = new ChromeDriver();
+			
+			
 			}
 			
 			if(BrowserName.equalsIgnoreCase("IE") ){

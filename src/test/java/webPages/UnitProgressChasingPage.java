@@ -90,71 +90,87 @@ public class UnitProgressChasingPage {
 	public void clickPurchaseOrderReleaseButton(){
 		Core.APPLICATION_LOGS.debug("Test Method: "+new Object(){}.getClass().getEnclosingMethod().getName()+" Starts Running");
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
+		
 		if(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span")).isDisplayed()){
 			Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
 		}
 
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
 		while(!driver.findElement(By.xpath("//*[@id='left']")).getAttribute("style").contains("display: block")){
+
 			Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
+			while(!StyleOfBody.getAttribute("style").contains("none")){}
 		}
 
-		while(!StyleOfBody.getAttribute("style").contains("none")){}
+		//	check! Whether the OrderToDelivery is expanded or not
 		if(!OrderToDelivery.getAttribute("aria-expanded").equalsIgnoreCase("true")){
-		Core.isElementVisible(OrderToDelivery).click();
+
+			//	if not! click OrderToDelivery button
+			Core.isElementVisible(OrderToDelivery).click();
+			while(!StyleOfBody.getAttribute("style").contains("none")){}
 		}
 
-		while(!StyleOfBody.getAttribute("style").contains("none")){}
-
+		//	Click on Unit Progress Chasing link at side window
 		Core.isElementClickable(driver.findElement(By.xpath("//*[@id='menuForm:j_idt19']//*[text()='Unit Progress Chasing']"))).click();
-
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
+
+		//	Click on PurchaseOrderReleaseButton link at side window
 		Core.isElementClickable(PurchaseOrderReleaseButton).click();
+		while(!StyleOfBody.getAttribute("style").contains("none")){}
 	}
 	
 
 	public void savePO(String UnitNo,String VIN, String DealerCode, String SelectAcquisitionType) throws InterruptedException{
 		Core.APPLICATION_LOGS.debug("Test Method: "+new Object(){}.getClass().getEnclosingMethod().getName()+" Starts Running");
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
+
+		//	Enter Unit No
 		driver.findElement(By.xpath("//*[@id='unitNoTxtId']")).clear();
 		driver.findElement(By.xpath("//*[@id='unitNoTxtId']")).sendKeys(UnitNo);
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
+
+		//	Click Search for the entered Unit No.
 		driver.findElement(By.xpath("//*[@id='filter']")).click();
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
 
 		if(driver.findElements(By.xpath(this.UnitNo+UnitNo+"')]")).size()==1){
+			
+			//	Select Unit
 			Core.isElementClickable(driver.findElement(By.xpath(this.UnitNo+UnitNo+"')]"))).click();
+			while(!StyleOfBody.getAttribute("style").contains("none")){}
+
+			//	Click MaintainPO
 			Core.isElementClickable(maintainPOButton).click();
 			al.add("<br> Unit# "+UnitNo+" Found to proceed");
 
+			//	Enter VIN
+			Core.isElementVisible(VINTextField).clear();
 			Core.isElementVisible(VINTextField).sendKeys(VIN);
+
+			//	Enter Dealer Code
 			Core.isElementVisible(DeliveringDealerTextField).clear();
 			Core.isElementVisible(DeliveringDealerTextField).sendKeys(DealerCode);
+
+			//	Click Acquisition Type Drop-down
 			while(!driver.findElement(By.xpath(this.SelectAcquisitionType)).isDisplayed()){
 			Core.isElementClickable(AcquisitionType).click();
 			}
+			//	Select Acquisition Type
 			Core.isElementClickable(driver.findElement(By.xpath(this.SelectAcquisitionType+"//*[text()='"+SelectAcquisitionType+"']"))).click();
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
 			
+			//	Enter Lead Time
 			if(!Core.isElementVisible(OrderingLeadTime).getAttribute("style").contains("color: darkgray")){
 				OrderingLeadTime.clear();
 				OrderingLeadTime.sendKeys("10");
 			}
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
 			
+			//	Click Save button
 			Core.isElementClickable(SaveButton).click();
-			while(!StyleOfBody.getAttribute("style").contains("none")){}
-			if(OK.size()>0 && OKAccept.isDisplayed()){
-				 OKAccept.click();
-			 }
-			while(!StyleOfBody.getAttribute("style").contains("none")){}
-			if(OK.size()>0 && OKAccept.isDisplayed()){
-				 OKAccept.click();
-			 }
-			while(!StyleOfBody.getAttribute("style").contains("none")){}
-	/*		if(driver.findElement(By.xpath(message+"//*[contains(text(),'Purchase order for Unit No') AND contains(text(),'saved successfully')]")).isDisplayed()){
-			}
-	*/		
+
+			//	Handle VIN Pop-ups
+			Core.handleVINpopup();
 		
 		}
 		else
@@ -196,26 +212,24 @@ public class UnitProgressChasingPage {
 			else{
 				throw new NoSuchElementException(UnitNo+" has already been release please proceed to confirm the unit");
 			}
-			while(!StyleOfBody.getAttribute("style").contains("none")){}
-			if(OK.size()>0 && OKAccept.isDisplayed()){
-				 OKAccept.click();
-			 }
-			while(!StyleOfBody.getAttribute("style").contains("none")){}
-			if(OK.size()>0 && OKAccept.isDisplayed()){
-				 OKAccept.click();
-			 }
-			while(!StyleOfBody.getAttribute("style").contains("none")){}
-			if(driver.findElements(By.xpath(DocumentList)).size()>0){
-				for(int i= 1 ; i <= driver.findElements(By.xpath(DocumentList+"/tr")).size() ; i++){
-					if(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a")).getText().equalsIgnoreCase("View")){
-						driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a")).click();
-					}
-				}
-				while(!StyleOfBody.getAttribute("style").contains("none")){}
-				driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressSaveBtn']")).click();
-				while(!StyleOfBody.getAttribute("style").contains("none")){}
-			}
 
+			//	Handle VIN Pop-ups
+			Core.handleVINpopup();
+
+			if(!(driver.findElements(By.xpath("//*[@id='documentListDialog:documentListDT_data']")).size()== 0)){
+				if(driver.findElements(By.xpath(DocumentList)).size()>0){
+					for(int i= 1 ; i <= driver.findElements(By.xpath(DocumentList+"/tr")).size() ; i++){
+						if(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a")).getText().equalsIgnoreCase("View")){
+							driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a")).click();
+							while(!(StyleOfBody.getAttribute("style").contains("none")) && 
+									!(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[3]//img")).getAttribute("id").contains("ccCheckMarkImg"))){}
+						}
+					}
+					while(!StyleOfBody.getAttribute("style").contains("none")){}
+					driver.findElement(By.xpath("//*[@id='documentListDialog:ccDoneBtn']/span")).click();
+					while(!StyleOfBody.getAttribute("style").contains("none")){}
+				}
+			}
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
 		}
 		else
@@ -252,21 +266,17 @@ public class UnitProgressChasingPage {
 			if(ConfirmPOBtn.getAttribute("aria-disabled").contentEquals("false")){
 				ConfirmPOBtn.click();
 				
-				while(!StyleOfBody.getAttribute("style").contains("none")){}
-				if(OK.size()>0 && OKAccept.isDisplayed()){
-					 OKAccept.click();
-				 }
-				while(!StyleOfBody.getAttribute("style").contains("none")){}
-				if(OK.size()>0 && OKAccept.isDisplayed()){
-					 OKAccept.click();
-				 }
-				while(!StyleOfBody.getAttribute("style").contains("none")){}
+				//	Handle VIN Pop-ups
+				Core.handleVINpopup();
 			
 				if(driver.findElement(By.xpath(DocumentList)).isDisplayed()){
 					String originalHandle = driver.getWindowHandle();
 					for(int i= 1 ; i <= driver.findElements(By.xpath(DocumentList+"/tr")).size() ; i++){
 						if(Core.isElementVisible(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a"))).getText().equalsIgnoreCase("View")){
 							Core.isElementClickable(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a"))).click();
+							while(!(StyleOfBody.getAttribute("style").contains("none")) && 
+									!(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[3]//img")).getAttribute("id").contains("ccCheckMarkImg"))){}
+						
 						}
 					}
 					while(!StyleOfBody.getAttribute("style").contains("none")){}

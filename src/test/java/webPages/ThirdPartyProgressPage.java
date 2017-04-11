@@ -110,10 +110,13 @@ public class ThirdPartyProgressPage {
 			
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
 			Core.isElementClickable(driver.findElement(By.xpath("//*[@id='releasePOBtn']"))).click();
-			if(driver.findElement(By.xpath("//*[@id='documentListDialog:documentListDT_data']")).isDisplayed()){
+			while(!StyleOfBody.getAttribute("style").contains("none")){}
+			if(driver.findElements(By.xpath("//*[@id='documentListDialog:documentListDT_data']")).size()!=0 && driver.findElement(By.xpath("//*[@id='documentListDialog:documentListDT_data']")).isDisplayed()){
 				for(int i= 1 ; i <= driver.findElements(By.xpath("//*[@id='documentListDialog:documentListDT_data']/tr")).size() ; i++){
 					if(driver.findElement(By.xpath("//*[@id='documentListDialog:documentListDT_data']/tr["+i+"]/td[2]//a")).getText().equalsIgnoreCase("View")){
 						driver.findElement(By.xpath("//*[@id='documentListDialog:documentListDT_data']/tr["+i+"]/td[2]//a")).click();
+						while(!(StyleOfBody.getAttribute("style").contains("none")) && 
+								!(driver.findElement(By.xpath("//*[@id='documentListDialog:documentListDT_data']"+"/tr["+i+"]/td[3]//img")).getAttribute("id").contains("ccCheckMarkImg"))){}
 						while(!StyleOfBody.getAttribute("style").contains("none")){}
 					}
 				}

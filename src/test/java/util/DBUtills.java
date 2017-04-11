@@ -3,13 +3,8 @@ package util;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
-
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
 
 public class DBUtills{
-	private final static String dcn = "oracle.jdbc.driver.OracleDriver";
 	private static Connection con;
 	
 	public static void refreshQueue(String ip,String port,String dbName,String un,String pw) throws Exception{

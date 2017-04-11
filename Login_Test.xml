@@ -24,8 +24,9 @@
 
 <test name="Test3">
     <classes>
-<!--       <class name="testScripts.AcceptQueue"/>
- -->       
+
+      <class name="testScripts.AcceptQueue"/>
+       
  
  
 		<class name="testScripts.ReleasePO">
@@ -43,8 +44,8 @@
       <class name="testScripts.UpfitProgress"/>
 
 
-<!--       <class name="testScripts.UnitReconcile"/>
- -->
+      <class name="testScripts.UnitReconcile"/>
+
 
     </classes>
 </test> <!-- Test -->

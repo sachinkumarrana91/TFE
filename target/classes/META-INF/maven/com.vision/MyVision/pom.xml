@@ -22,10 +22,12 @@
 		<version>2.19.1</version>
 			<configuration>
 				<suiteXmlFiles>
-				<!-- TestNG suite XML files 
-					<suiteXmlFile>testng.xml</suiteXmlFile>
-					-->
+<!-- 				TestNG suite XML files 
+ -->					<suiteXmlFile>testng.xml</suiteXmlFile>
+					
+<!-- 
 					<suiteXmlFile>Login_Test.xml</suiteXmlFile>
+ -->
 				</suiteXmlFiles>
 			</configuration>
 	</plugin>
@@ -69,7 +71,7 @@
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>3.0.1</version>
+    <version>3.3.1</version>
 </dependency>
 
 

@@ -30,7 +30,7 @@ import util.Log;
 public class TestDemo {
 
 	
-	@BeforeClass
+/*	@BeforeClass
 	public void beforeClass(){
 		System.out.println(new Object(){}.getClass().getEnclosingMethod().getName());
 	}	
@@ -70,14 +70,84 @@ public class TestDemo {
 		System.out.println(new Object(){}.getClass().getEnclosingMethod().getName());
 	}	
 	
-	
+*/	
 	public static void main(String... ertsakjcbskcbs) throws ParseException{
-		//String todaysDate = new SimpleDateFormat("MMddyyyy").format(Calendar.getInstance().getTime());
-		String s = "Quote number 336665/1/1 has been accepted with Unit No 00995898";
-		//System.out.println(s.indexOf("accepted with Unit No "));
-		System.out.println (s.substring(s.length()-8,s.length()));
+
+		int crystal = 25;
+		
+		for(int i=1; i<=crystal; i++){
+			for(int j=1; j<=crystal-i; j++){
+				System.out.print(" ");
+			}
+			for(int k=crystal-i+1; k<=crystal; k++){
+				if(i==k)			System.out.print(" ");
+				if(i+k==crystal*2)	System.out.print(" ");
+				else				System.out.print("*");
+			}
+			for(int l=crystal+1; l<crystal+i; l++){
+				if(i==l)			System.out.print(" ");
+				if(i+l==crystal*2)	System.out.print(" ");
+				else				System.out.print("*");
+			}
+			for(int l=crystal+i; l<=(crystal*2)-1; l++){
+				System.out.print(" ");
+			}
+			System.out.println();
+		}
+		for(int i=(crystal-1); i>=1; i--){
+			for(int j=1; j<=crystal-i; j++){
+				System.out.print(" ");
+			}
+			for(int k=crystal-i+1; k<=crystal; k++){
+				if(i==k)			System.out.print(" ");
+				if(i+k==crystal*2)	System.out.print(" ");
+				else				System.out.print("*");
+			}
+			for(int l=crystal+1; l<crystal+i; l++){
+				if(i==l)			System.out.print(" ");
+				if(i+l==crystal*2)	System.out.print(" ");
+				else				System.out.print("*");
+			}
+			for(int l=crystal+i; l<=(crystal*2)-1; l++){
+				System.out.print(" ");
+			}
+			System.out.println();
+		}
+
 	
 	
+/*		for(int i=1; i<=crystal; i++){
+			for(int j=1; j<=crystal-i; j++){
+				System.out.print(" ");
+			}
+			for(int k=crystal-i+1; k<=crystal; k++){
+				System.out.print("*");
+			}
+			for(int l=crystal+1; l<crystal+i; l++){
+				System.out.print("*");
+			}
+			for(int l=crystal+i; l<=(crystal*2)-1; l++){
+				System.out.print(" ");
+			}
+			System.out.println();
+		}
+		for(int i=(crystal-1); i>=1; i--){
+			for(int j=1; j<=crystal-i; j++){
+				System.out.print(" ");
+			}
+			for(int k=crystal-i+1; k<=crystal; k++){
+				System.out.print("*");
+			}
+			for(int l=crystal+1; l<crystal+i; l++){
+				System.out.print("*");
+			}
+			for(int l=crystal+i; l<=(crystal*2)-1; l++){
+				System.out.print(" ");
+			}
+			System.out.println();
+		}
+
+*/		
 	
 	
 	}

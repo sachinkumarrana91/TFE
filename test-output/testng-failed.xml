@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <parameter name="BrowserName" value="Chrome"/>
-  <parameter name="env" value="QA2"/>
+  <parameter name="env" value="QA3"/>
   <test name="Test1">
     <classes>
       <class name="core.Core"/>
@@ -13,54 +13,19 @@
       <class name="testScripts.VisionLogin"/>
     </classes>
   </test> <!-- Test2 -->
-  <test name="Test3">
+  <test name="Test5">
     <classes>
-      <class name="testScripts.ReleasePO">
-        <methods>
-          <include name="openPurchaseOrderRelease"/>
-          <include name="savePO"/>
-          <include name="releasePO"/>
-          <include name="confirmPO"/>
-        </methods>
-      </class> <!-- testScripts.ReleasePO -->
       <class name="testScripts.ThirdPartyProgress"/>
+    </classes>
+  </test> <!-- Test5 -->
+  <test name="Test6">
+    <classes>
       <class name="testScripts.UpfitProgress"/>
     </classes>
-  </test> <!-- Test3 -->
-  <test name="Test3(failed)">
+  </test> <!-- Test6 -->
+  <test name="Test7">
     <classes>
-      <class name="testScripts.ReleasePO">
-        <methods>
-          <include name="beforeMethod"/>
-          <include name="endScript"/>
-          <include name="startTesting"/>
-          <include name="AfterMethod"/>
-          <include name="refresh"/>
-          <include name="confirmPO"/>
-        </methods>
-      </class> <!-- testScripts.ReleasePO -->
-      <class name="testScripts.VisionLogin">
-        <methods>
-          <include name="AfterMethod"/>
-          <include name="beforeMethod"/>
-        </methods>
-      </class> <!-- testScripts.VisionLogin -->
-      <class name="testScripts.ThirdPartyProgress">
-        <methods>
-          <include name="open"/>
-          <include name="refresh"/>
-          <include name="beforeMethod"/>
-          <include name="AfterMethod"/>
-        </methods>
-      </class> <!-- testScripts.ThirdPartyProgress -->
-      <class name="testScripts.UpfitProgress">
-        <methods>
-          <include name="refresh"/>
-          <include name="open"/>
-          <include name="AfterMethod"/>
-          <include name="beforeMethod"/>
-        </methods>
-      </class> <!-- testScripts.UpfitProgress -->
+      <class name="testScripts.UnitReconcile"/>
     </classes>
-  </test> <!-- Test3(failed) -->
+  </test> <!-- Test7 -->
 </suite> <!-- Failed suite [Suite] -->

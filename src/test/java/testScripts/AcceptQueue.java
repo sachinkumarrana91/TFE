@@ -3,9 +3,7 @@ package testScripts;
 import java.io.IOException;
 
 import webPages.AcceptanceQueuePage;
-import webPages.UnitProgressChasingPage;
 import testReports.TestReports;
-import util.DBUtills;
 import util.TestUtil;
 import core.Core;
 import org.openqa.selenium.support.PageFactory;

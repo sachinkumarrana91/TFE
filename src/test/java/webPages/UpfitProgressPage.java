@@ -90,6 +90,7 @@ public class UpfitProgressPage {
 						if(Core.daysDifferance(todaysDate, date)<9)		dateToEnter = Core.addDaystoDate(todaysDate, -1);
 						else											dateToEnter = Core.addDaystoDate(date, +7);
 
+						driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT_data']/tr["+i+"]/td[5]//input")).clear();
 						driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT_data']/tr["+i+"]/td[5]//input")).sendKeys(dateToEnter);
 					}
 					else
