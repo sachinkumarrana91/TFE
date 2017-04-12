@@ -5,14 +5,14 @@
 <parameter name="env" value="QA3"/>
 
 
-<parameter name="BrowserName" value="Chrome"/>
-
+<!-- <parameter name="BrowserName" value="Chrome"/>
+ -->
 
 <!-- <parameter name="BrowserName" value="Firefox"/>
  -->
  
-<!--  <parameter name="BrowserName" value="IE"/>
- -->
+ <parameter name="BrowserName" value="IE"/>
+
 
 <test name="Test1">
 	<classes>
