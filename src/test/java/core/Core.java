@@ -159,7 +159,7 @@ public class Core {
 	
 	
 	@BeforeSuite
-	@Parameters({"BrowserName","env"})
+	@Parameters({"BrowserName","envv"})
 	public void startTesting(String BrowserName, String env) throws Exception{
 		System.setProperty("Logs.Dir", System.getProperty("user.dir")+"\\src\\test\\java\\logs");
 		DataTable = new ExcelReader(System.getProperty("user.dir")+"\\src\\test\\java\\config\\DataTable.xlsx");
