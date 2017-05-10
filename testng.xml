@@ -26,7 +26,7 @@
 	</classes>
 </test> <!-- Test -->
 
-<test name="Test3">
+<!-- <test name="Test3">
 	<classes>
 		<class name="testScripts.AcceptQueue"/>
 	</classes>
@@ -71,7 +71,12 @@
     <classes>
       <class name="testScripts.UnitReconcile"/>
     </classes>
-</test> <!-- Test -->
-
+</test> 
+ -->
+<test name="Test8">
+    <classes>
+      <class name="testScripts.VehicleOrderStatus"/>
+    </classes>
+</test> 
 
 </suite> <!-- Suite -->

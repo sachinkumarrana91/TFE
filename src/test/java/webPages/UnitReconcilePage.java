@@ -173,7 +173,7 @@ public class UnitReconcilePage {
 
 			if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[6]/span/input")).size()>1){		//	Works for Main PO only, because Base Vehicle would be enable for main PO only.
 				String prev_BaseVehicleAmount = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[6]/span/input")).getAttribute("value");
-				String prev_BaseVehicleAmountClient = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input")).getAttribute("value");
+				String prev_BaseVehicleAmountClient = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]")).getAttribute("value");
 				if(prev_BaseVehicleAmount.indexOf(".")>=0){ 	// If value is not an integer
 					prev_BaseVehicleAmount = prev_BaseVehicleAmount.substring(0, prev_BaseVehicleAmount.lastIndexOf("."));		// Make it integer
 				}
@@ -192,7 +192,7 @@ public class UnitReconcilePage {
 				//e.sendKeys(Keys.TAB);
 				
 				//	Update Base Vehile for client
-				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input")).size()>1){
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input")).size()>0){
 					if(prev_BaseVehicleAmountClient.indexOf(".")>=0){ 	// If value is not an integer
 						prev_BaseVehicleAmountClient = prev_BaseVehicleAmountClient.substring(0, prev_BaseVehicleAmountClient.lastIndexOf("."));		// Make it integer
 					}

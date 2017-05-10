@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="2" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="251455" started-at="2017-05-10T09:37:55Z" finished-at="2017-05-10T09:42:07Z">
+  <suite name="Suite" duration-ms="655871" started-at="2017-05-10T14:32:30Z" finished-at="2017-05-10T14:43:26Z">
     <groups>
     </groups>
-    <test name="Test1" duration-ms="10" started-at="2017-05-10T09:37:55Z" finished-at="2017-05-10T09:37:55Z">
+    <test name="Test1" duration-ms="10" started-at="2017-05-10T14:32:30Z" finished-at="2017-05-10T14:32:30Z">
     </test> <!-- Test1 -->
-    <test name="Test2" duration-ms="12144" started-at="2017-05-10T09:37:55Z" finished-at="2017-05-10T09:38:07Z">
+    <test name="Test2" duration-ms="11351" started-at="2017-05-10T14:32:30Z" finished-at="2017-05-10T14:32:41Z">
       <class name="testScripts.VisionLogin">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.VisionLogin@26b3fd41]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-05-10T15:07:55Z" finished-at="2017-05-10T15:07:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="loginQA(java.lang.String)[pri:0, instance:testScripts.VisionLogin@26b3fd41]" name="loginQA" duration-ms="11954" started-at="2017-05-10T15:07:55Z" finished-at="2017-05-10T15:08:07Z">
+        <test-method status="PASS" signature="loginQA(java.lang.String)[pri:0, instance:testScripts.VisionLogin@26b3fd41]" name="loginQA" duration-ms="11231" started-at="2017-05-10T20:02:30Z" finished-at="2017-05-10T20:02:41Z">
           <params>
             <param index="0">
               <value>
@@ -24,15 +20,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginQA -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.VisionLogin@26b3fd41]" name="AfterMethod" is-config="true" duration-ms="190" started-at="2017-05-10T15:08:07Z" finished-at="2017-05-10T15:08:07Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.VisionLogin@26b3fd41]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-05-10T20:02:30Z" finished-at="2017-05-10T20:02:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.VisionLogin@26b3fd41]" name="AfterMethod" is-config="true" duration-ms="120" started-at="2017-05-10T20:02:41Z" finished-at="2017-05-10T20:02:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMethod -->
       </class> <!-- testScripts.VisionLogin -->
     </test> <!-- Test2 -->
-    <test name="Test7" duration-ms="239261" started-at="2017-05-10T09:38:07Z" finished-at="2017-05-10T09:42:07Z">
-      <class name="testScripts.UnitReconcile">
-        <test-method status="PASS" signature="startTesting(java.lang.String, java.lang.String)[pri:0, instance:testScripts.UnitReconcile@687e99d8]" name="startTesting" is-config="true" duration-ms="3281" started-at="2017-05-10T15:07:52Z" finished-at="2017-05-10T15:07:55Z">
+    <test name="Test8" duration-ms="644480" started-at="2017-05-10T14:32:41Z" finished-at="2017-05-10T14:43:26Z">
+      <class name="testScripts.VehicleOrderStatus">
+        <test-method status="PASS" signature="startTesting(java.lang.String, java.lang.String)[pri:0, instance:testScripts.VehicleOrderStatus@687e99d8]" name="startTesting" is-config="true" duration-ms="3075" started-at="2017-05-10T20:02:27Z" finished-at="2017-05-10T20:02:30Z">
           <params>
             <param index="0">
               <value>
@@ -48,65 +48,34 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startTesting -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.UnitReconcile@687e99d8]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-05-10T15:08:07Z" finished-at="2017-05-10T15:08:07Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.VehicleOrderStatus@687e99d8]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-05-10T20:02:41Z" finished-at="2017-05-10T20:02:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="addNewSheet()[pri:0, instance:testScripts.UnitReconcile@687e99d8]" name="addNewSheet" is-config="true" duration-ms="530" started-at="2017-05-10T15:08:07Z" finished-at="2017-05-10T15:08:08Z">
+        <test-method status="PASS" signature="refresh(java.lang.String)[pri:0, instance:testScripts.VehicleOrderStatus@687e99d8]" name="refresh" is-config="true" duration-ms="0" started-at="2017-05-10T20:02:41Z" finished-at="2017-05-10T20:02:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[QA2]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addNewSheet -->
-        <test-method status="FAIL" signature="UntRec()[pri:0, instance:testScripts.UnitReconcile@687e99d8]" name="UntRec" duration-ms="236637" started-at="2017-05-10T15:08:08Z" finished-at="2017-05-10T15:12:05Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertTrue(Assert.java:42)
-	at org.testng.Assert.assertTrue(Assert.java:52)
-	at testScripts.UnitReconcile.UntRec(UnitReconcile.java:67)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        </test-method> <!-- refresh -->
+        <test-method status="PASS" signature="VehicleOrderStatusTest()[pri:0, instance:testScripts.VehicleOrderStatus@687e99d8]" name="VehicleOrderStatusTest" duration-ms="642389" started-at="2017-05-10T20:02:41Z" finished-at="2017-05-10T20:13:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- UntRec -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.UnitReconcile@687e99d8]" name="AfterMethod" is-config="true" duration-ms="30" started-at="2017-05-10T15:12:07Z" finished-at="2017-05-10T15:12:07Z">
+        </test-method> <!-- VehicleOrderStatusTest -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.VehicleOrderStatus@687e99d8]" name="AfterMethod" is-config="true" duration-ms="355" started-at="2017-05-10T20:13:25Z" finished-at="2017-05-10T20:13:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMethod -->
-        <test-method status="PASS" signature="endScript()[pri:0, instance:testScripts.UnitReconcile@687e99d8]" name="endScript" is-config="true" duration-ms="20" started-at="2017-05-10T15:12:07Z" finished-at="2017-05-10T15:12:07Z">
+        <test-method status="PASS" signature="endScript()[pri:0, instance:testScripts.VehicleOrderStatus@687e99d8]" name="endScript" is-config="true" duration-ms="451" started-at="2017-05-10T20:13:26Z" finished-at="2017-05-10T20:13:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endScript -->
-      </class> <!-- testScripts.UnitReconcile -->
-    </test> <!-- Test7 -->
+      </class> <!-- testScripts.VehicleOrderStatus -->
+    </test> <!-- Test8 -->
   </suite> <!-- Suite -->
 </testng-results>

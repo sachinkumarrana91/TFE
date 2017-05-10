@@ -3,6 +3,7 @@ package webPages;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -217,20 +218,26 @@ public class UnitProgressChasingPage {
 			Core.handleVINpopup();
 
 			if(!(driver.findElements(By.xpath("//*[@id='documentListDialog:documentListDT_data']")).size()== 0)){
+				String originalHandle = driver.getWindowHandle();
 				if(driver.findElements(By.xpath(DocumentList)).size()>0){
 					for(int i= 1 ; i <= driver.findElements(By.xpath(DocumentList+"/tr")).size() ; i++){
 						if(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a")).getText().equalsIgnoreCase("View")){
 							driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a")).click();
-							
-							
-							
-							
-							
+
+							driver.switchTo().window(originalHandle);
 							
 							while(!(StyleOfBody.getAttribute("style").contains("none")) && 
 									!(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[3]//img")).getAttribute("id").contains("ccCheckMarkImg"))){}
 						}
 					}
+					while(!StyleOfBody.getAttribute("style").contains("none")){}
+					for(String handle : driver.getWindowHandles()) {
+				        if (!handle.equals(originalHandle)) {
+				            driver.switchTo().window(handle);
+				            driver.close();
+				        }
+				    }
+				    driver.switchTo().window(originalHandle);
 					while(!StyleOfBody.getAttribute("style").contains("none")){}
 					driver.findElement(By.xpath("//*[@id='documentListDialog:ccDoneBtn']/span")).click();
 					while(!StyleOfBody.getAttribute("style").contains("none")){}
@@ -279,7 +286,12 @@ public class UnitProgressChasingPage {
 					String originalHandle = driver.getWindowHandle();
 					for(int i= 1 ; i <= driver.findElements(By.xpath(DocumentList+"/tr")).size() ; i++){
 						if(Core.isElementVisible(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a"))).getText().equalsIgnoreCase("View")){
+
 							Core.isElementClickable(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a"))).click();
+							
+					          driver.switchTo().window(originalHandle);
+							
+							
 							while(!(StyleOfBody.getAttribute("style").contains("none")) && 
 									!(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[3]//img")).getAttribute("id").contains("ccCheckMarkImg"))){}
 						

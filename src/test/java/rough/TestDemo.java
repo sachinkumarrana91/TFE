@@ -76,14 +76,7 @@ public class TestDemo {
 		
 String prev_BaeVehicleAmount = "12245";
 
-if(prev_BaeVehicleAmount.indexOf(".")>=0){ 	// If value is not an integer
-	prev_BaeVehicleAmount = prev_BaeVehicleAmount.substring(0, prev_BaeVehicleAmount.lastIndexOf("."));		// Make it integer
-}
-
-// Enter new amount to the Base Vehicle (i.e. Prevous + 100.00 $)
-long new_BaeVehicleAmount = util.TestUtil.strToInt(prev_BaeVehicleAmount) + 100;
-
-System.out.println(""+new_BaeVehicleAmount+"");
+System.out.println(new SimpleDateFormat("MMddyyyy").format(Calendar.getInstance().getTime()));
 	
 
 		

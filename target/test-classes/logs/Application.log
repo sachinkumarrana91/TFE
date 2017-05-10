@@ -1,7 +1,55 @@
-10/05/2017 15:43:47 devpinoyLogger Test Case: loginQA Starts Running
-10/05/2017 15:43:53 devpinoyLogger Test Method: doLogin Starts Running
-10/05/2017 15:43:59 devpinoyLogger Test Case: loginQA Passed
-10/05/2017 15:44:00 devpinoyLogger Test Case: UntRec Starts Running
-10/05/2017 15:44:00 devpinoyLogger Test Method: openUnitReconcilation Starts Running
-10/05/2017 15:44:04 devpinoyLogger Test Method: getPOforUnit Starts Running
-10/05/2017 15:44:11 devpinoyLogger Test Method: processPO Starts Running
+10/05/2017 16:50:53 devpinoyLogger Test Case: loginQA Starts Running
+10/05/2017 16:50:56 devpinoyLogger Test Method: doLogin Starts Running
+10/05/2017 16:51:00 devpinoyLogger Test Case: loginQA Passed
+10/05/2017 16:51:28 devpinoyLogger Test Case: openAcceptanceQueue Starts Running
+10/05/2017 16:51:28 devpinoyLogger Test Method: OpenAcceptanceQueue Starts Running
+10/05/2017 16:51:32 devpinoyLogger Test Case: openAcceptanceQueue Passed
+10/05/2017 16:51:32 devpinoyLogger Test Case: acceptQueue Starts Running
+10/05/2017 16:51:32 devpinoyLogger Test Method: AcceptQuote Starts Running
+10/05/2017 16:51:45 devpinoyLogger Test Case: acceptQueue Passed
+10/05/2017 16:52:07 devpinoyLogger Test Case: openPurchaseOrderRelease Starts Running
+10/05/2017 16:52:07 devpinoyLogger Test Method: clickPurchaseOrderReleaseButton Starts Running
+10/05/2017 16:52:12 devpinoyLogger Test Case: openPurchaseOrderRelease Passed
+10/05/2017 16:52:12 devpinoyLogger Test Case: savePO Starts Running
+10/05/2017 16:52:12 devpinoyLogger Test Method: savePO Starts Running
+10/05/2017 16:52:15 devpinoyLogger Test Method: savePO Starts Running
+10/05/2017 16:52:54 devpinoyLogger Test Case: savePO Passed
+10/05/2017 16:52:54 devpinoyLogger Test Case: releasePO Starts Running
+10/05/2017 16:52:54 devpinoyLogger Test Method: releasePO Starts Running
+10/05/2017 16:52:57 devpinoyLogger Test Method: releasePO Starts Running
+10/05/2017 16:53:38 devpinoyLogger Test Case: releasePO Passed
+10/05/2017 16:53:38 devpinoyLogger Test Case: confirmPO Starts Running
+10/05/2017 16:53:38 devpinoyLogger Test Method: confirmPO Starts Running
+10/05/2017 16:53:41 devpinoyLogger Test Case: confirmPO Failed and error message is : Unable to find element with xpath == //*[@id='unitNoTxtId'] (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 3.09 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.3.1', revision: '5234b325d5', time: '2017-03-10 09:10:29 +0000'
+System info: host: 'C40-SF-22', ip: '10.131.80.22', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_102'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{browserAttachTimeout=0, ie.enableFullPageScreenshot=true, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.forceShellWindowsApi=false, pageLoadStrategy=normal, ignoreZoomSetting=false, ie.fileUploadDialogTimeout=3000, version=11, platform=WINDOWS, nativeEvents=true, ie.ensureCleanSession=false, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=http://localhost:28134/, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss}]
+Session ID: 35960d69-66bf-4fa2-bef3-4375a097fa41
+*** Element info: {Using=xpath, value=//*[@id='unitNoTxtId']}
+10/05/2017 16:54:03 devpinoyLogger Test Case: ThirdPartyProgressTest Starts Running
+10/05/2017 16:54:03 devpinoyLogger Test Method: openThirdPartyProgress Starts Running
+10/05/2017 16:54:07 devpinoyLogger Test Case: ThirdPartyProgressTest Failed and error message is : Unable to find element with xpath == //*[@id='inputPanel_content']/table//*[text()='Third Party Progress'] (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 3.07 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.3.1', revision: '5234b325d5', time: '2017-03-10 09:10:29 +0000'
+System info: host: 'C40-SF-22', ip: '10.131.80.22', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_102'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{browserAttachTimeout=0, ie.enableFullPageScreenshot=true, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.forceShellWindowsApi=false, pageLoadStrategy=normal, ignoreZoomSetting=false, ie.fileUploadDialogTimeout=3000, version=11, platform=WINDOWS, nativeEvents=true, ie.ensureCleanSession=false, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=http://localhost:28134/, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss}]
+Session ID: 35960d69-66bf-4fa2-bef3-4375a097fa41
+*** Element info: {Using=xpath, value=//*[@id='inputPanel_content']/table//*[text()='Third Party Progress']}
+10/05/2017 16:54:24 devpinoyLogger Test Case: UpfitProgressTest Starts Running
+10/05/2017 16:54:24 devpinoyLogger Test Method: openUpfitProgress Starts Running
+10/05/2017 16:54:28 devpinoyLogger Test Case: UpfitProgressTest Failed and error message is : Unable to find element with xpath == //*[@id='inputPanel_content']/table//*[text()='Upfit Progress'] (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 3.07 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.3.1', revision: '5234b325d5', time: '2017-03-10 09:10:29 +0000'
+System info: host: 'C40-SF-22', ip: '10.131.80.22', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_102'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{browserAttachTimeout=0, ie.enableFullPageScreenshot=true, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.forceShellWindowsApi=false, pageLoadStrategy=normal, ignoreZoomSetting=false, ie.fileUploadDialogTimeout=3000, version=11, platform=WINDOWS, nativeEvents=true, ie.ensureCleanSession=false, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=http://localhost:28134/, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss}]
+Session ID: 35960d69-66bf-4fa2-bef3-4375a097fa41
+*** Element info: {Using=xpath, value=//*[@id='inputPanel_content']/table//*[text()='Upfit Progress']}
+10/05/2017 16:54:29 devpinoyLogger Test Case: UntRec Starts Running
+10/05/2017 16:54:29 devpinoyLogger Test Method: openUnitReconcilation Starts Running

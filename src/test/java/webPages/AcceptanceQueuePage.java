@@ -105,11 +105,12 @@ public class AcceptanceQueuePage {
 
 			//	Was it successfully accepted
 			if(message.contains("accepted")){
-				Core.DataTable.setCellData("PO_Detail", "UnitNoToMaintain", Core.DataTable.getRowCount("PO_Detail")+1, message.substring(message.length()-8,message.length()));
+				Core.DataTable.setCellData("PO_Detail", "UnitNoToMaintain", Core.DataTable.getCellRowNum("PO_Detail", "Quote", QuoteNo), message.substring(message.length()-8,message.length()));
 			}
 			
 			al.add("<br> "+message);
-			}
+
+		}
 
 		//	not the expected condition
 		else

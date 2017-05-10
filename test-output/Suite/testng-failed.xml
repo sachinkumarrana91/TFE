@@ -13,29 +13,9 @@
       <class name="testScripts.VisionLogin"/>
     </classes>
   </test> <!-- Test2 -->
-  <test name="Test7">
+  <test name="Test8">
     <classes>
-      <class name="testScripts.UnitReconcile"/>
+      <class name="testScripts.VehicleOrderStatus"/>
     </classes>
-  </test> <!-- Test7 -->
-  <test name="Test7(failed)">
-    <classes>
-      <class name="testScripts.VisionLogin">
-        <methods>
-          <include name="beforeMethod"/>
-          <include name="AfterMethod"/>
-        </methods>
-      </class> <!-- testScripts.VisionLogin -->
-      <class name="testScripts.UnitReconcile">
-        <methods>
-          <include name="addNewSheet"/>
-          <include name="endScript"/>
-          <include name="startTesting"/>
-          <include name="beforeMethod"/>
-          <include name="AfterMethod"/>
-          <include name="UntRec"/>
-        </methods>
-      </class> <!-- testScripts.UnitReconcile -->
-    </classes>
-  </test> <!-- Test7(failed) -->
+  </test> <!-- Test8 -->
 </suite> <!-- Failed suite [Suite] -->
