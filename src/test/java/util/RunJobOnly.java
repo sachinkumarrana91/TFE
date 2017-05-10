@@ -52,6 +52,10 @@ public class RunJobOnly {
 			int j = 0;
 			while(1==1){
 				System.out.println("============  "+j+++"  ============");
+/*				String s = "Select TAH_ID, SRLH_SRLH_ID, TRX_CODE, FMS_FMS_ID, STATUS, EA_ACCOUNT_CODE,CREATE_DATE, TAL_REASON, ORIGIN_PGM from TAL_TRX_HEADER WHERE FMS_FMS_ID IN "
+						+ "(SELECT FMS_ID FROM FLEET_MASTERS WHERE UNIT_NO = 00996515)";
+*/
+
 				CallableStatement stmt = con.prepareCall("BEGIN willow2k.process_stage_maint.refresh_stages(); END;");
 				System.out.println("Start Execution");
 				stmt.execute();

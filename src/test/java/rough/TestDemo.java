@@ -72,8 +72,23 @@ public class TestDemo {
 	
 */	
 	public static void main(String... ertsakjcbskcbs) throws ParseException{
+		
+		
+String prev_BaeVehicleAmount = "12245";
 
-		int crystal = 25;
+if(prev_BaeVehicleAmount.indexOf(".")>=0){ 	// If value is not an integer
+	prev_BaeVehicleAmount = prev_BaeVehicleAmount.substring(0, prev_BaeVehicleAmount.lastIndexOf("."));		// Make it integer
+}
+
+// Enter new amount to the Base Vehicle (i.e. Prevous + 100.00 $)
+long new_BaeVehicleAmount = util.TestUtil.strToInt(prev_BaeVehicleAmount) + 100;
+
+System.out.println(""+new_BaeVehicleAmount+"");
+	
+
+		
+
+/*		int crystal = 25;
 		
 		for(int i=1; i<=crystal; i++){
 			for(int j=1; j<=crystal-i; j++){
@@ -114,7 +129,7 @@ public class TestDemo {
 			System.out.println();
 		}
 
-	
+*/	
 	
 /*		for(int i=1; i<=crystal; i++){
 			for(int j=1; j<=crystal-i; j++){

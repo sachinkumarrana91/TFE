@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 
-<parameter name="env" value="QA3"/>
+<parameter name="env" value="QA2"/>
 
 
 <!-- <parameter name="BrowserName" value="Chrome"/>
@@ -55,22 +55,24 @@
 </test> 
  -->
  
- 
+<!--  
 <test name="Test5">
     <classes>
       <class name="testScripts.ThirdPartyProgress"/>
     </classes>
 </test> 
 
- 
- 
+ --> 
+<!--  
  <test name="Test6">
     <classes>
       <class name="testScripts.UpfitProgress"/>
     </classes>
 </test> 
 
-
+ -->
+ 
+ 
 <test name="Test7">
     <classes>
       <class name="testScripts.UnitReconcile"/>

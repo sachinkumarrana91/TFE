@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.poi.hssf.record.aggregates.DataValidityTable;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -88,7 +89,7 @@ public class UnitReconcilePage {
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
 	}
 
-	public void getPOforUnit(String Unit){
+	public void getPOforUnit(String Unit) throws InterruptedException{
 		Core.APPLICATION_LOGS.debug("Test Method: "+new Object(){}.getClass().getEnclosingMethod().getName()+" Starts Running");
 
 		Core.isElementVisible(UnitNo).clear();
@@ -103,8 +104,10 @@ public class UnitReconcilePage {
 		
 	}
 	
-	public void processPO(String Unit){
+	public void processPO(String Unit) throws InterruptedException{
 		Core.APPLICATION_LOGS.debug("Test Method: "+new Object(){}.getClass().getEnclosingMethod().getName()+" Starts Running");
+		
+		//	Count the un-posted POs on UNTREC for the given unit
 		int i = Core.DataTable.getRowCount("Unit_to_Reconcile_Output");
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
 		while(!driver.findElement(By.xpath("//*[@id='resultsTable_data']/tr[1]/td[1]")).getText().equalsIgnoreCase("No Records Found")){
@@ -112,29 +115,42 @@ public class UnitReconcilePage {
 			String actualAmount;// = (""+Math.abs((Math.random()*100))+"").substring(0,(""+Math.abs((Math.random()*100))+"").lastIndexOf('.')+3);
 			String PONum;
 			i++;
+			
+			//	Get the description of selected PO
 			String PO = driver.findElement(By.xpath("//*[@id='resultsTable_data']/tr[1]/td[1]")).getText();
 
 			Core.DataTable.setCellData("Unit_to_Reconcile_Output", "Unit", 				i, Unit);
 			Core.DataTable.setCellData("Unit_to_Reconcile_Output", "Unit_desc", 		i, PO);
 			Core.DataTable.setCellData("Unit_to_Reconcile_Output", "VIN", 				i, driver.findElement(By.xpath("//*[@id='resultsTable_data']/tr[1]/td[2]")).getText());
 			Core.DataTable.setCellData("Unit_to_Reconcile_Output", "Vendor", 			i, driver.findElement(By.xpath("//*[@id='resultsTable_data']/tr[1]/td[3]")).getText());
+
+			//	Get the give amount for the selected PO
 			String PO_Amount_Shown = driver.findElement(By.xpath("//*[@id='resultsTable_data']/tr[1]/td[4]")).getText();
 			Core.DataTable.setCellData("Unit_to_Reconcile_Output", "PO Amount_Shown", 	i, PO_Amount_Shown);
 
+			//	Click on first(Top most) PO
 			driver.findElement(By.xpath("//*[@id='resultsTable_data']/tr[1]/td[1]")).click();
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
+
+			//	Click on process for the selected PO
 			Process.click();
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
+
+			//	Get the PON number
 			PONum = driver.findElement(By.xpath("//*[@id='j_idt40' or text()='PO Number:']/following::td[2]")).getText();
 
 			Core.DataTable.setCellData("Unit_to_Reconcile_Output", "PON", 				i, PONum);
 
+			//	Clear the Invoice Number
 			InvoiceNumber.clear();
 			//System.out.println("INV"+PONum.substring(PONum.indexOf('N')+1,11));;
+
+			//	Enter the Invoice Number
 			InvoiceNumber.sendKeys("INV"+PONum.substring(PONum.indexOf('N')+1,11));
 
 			Core.DataTable.setCellData("Unit_to_Reconcile_Output", "INV_Entered", 		i, "INV"+PONum.substring(PONum.indexOf('N')+1,11));
 
+			//	Clear the Invoice Amount
 			InvoiceAmount.clear();
 			if(PO_Amount_Shown.equalsIgnoreCase("$0.00")){
 				actualAmount = (""+Math.abs((Math.random()*100))+"").substring(0,(""+Math.abs((Math.random()*100))+"").lastIndexOf('.')+3);
@@ -154,6 +170,122 @@ public class UnitReconcilePage {
 			}
 				
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
+
+			if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[6]/span/input")).size()>1){		//	Works for Main PO only, because Base Vehicle would be enable for main PO only.
+				String prev_BaseVehicleAmount = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[6]/span/input")).getAttribute("value");
+				String prev_BaseVehicleAmountClient = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input")).getAttribute("value");
+				if(prev_BaseVehicleAmount.indexOf(".")>=0){ 	// If value is not an integer
+					prev_BaseVehicleAmount = prev_BaseVehicleAmount.substring(0, prev_BaseVehicleAmount.lastIndexOf("."));		// Make it integer
+				}
+				if(prev_BaseVehicleAmount.indexOf(",")>=0){ 	// is having comma i.e ","
+					prev_BaseVehicleAmount = prev_BaseVehicleAmount.replace(",", "");
+				}
+				
+				// Enter new amount to the Base Vehicle (i.e. Previous + 100.00 $)
+				long new_BaseVehicleAmount = util.TestUtil.strToInt(prev_BaseVehicleAmount) + 100;
+				driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[6]/span/input")).clear();
+				WebElement e = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[6]/span/input"));
+				e.sendKeys("$"+new_BaseVehicleAmount+".00");
+				e.sendKeys(Keys.TAB);
+				
+				//	Update Base Vehile for client
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input")).size()>1){
+					if(prev_BaseVehicleAmountClient.indexOf(".")>=0){ 	// If value is not an integer
+						prev_BaseVehicleAmountClient = prev_BaseVehicleAmountClient.substring(0, prev_BaseVehicleAmountClient.lastIndexOf("."));		// Make it integer
+					}
+					if(prev_BaseVehicleAmountClient.indexOf(",")>=0){ 	// is having comma i.e ","
+						prev_BaseVehicleAmountClient = prev_BaseVehicleAmountClient.replace(",", "");
+					}
+					
+					// Enter new amount to the Base Vehicle (i.e. Previous + 100.00 $)
+					long new_BaeVehicleAmountClient = util.TestUtil.strToInt(prev_BaseVehicleAmountClient) + 200;
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input")).clear();
+					e = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input"));
+					e.sendKeys("$"+new_BaeVehicleAmountClient+".00");
+					e.sendKeys(Keys.TAB);
+				}
+
+				
+				//	Update reclaims only if they are enables and value is $0.00
+				String claim_Name = "VRB Reclaim";
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']")).size()==1
+						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input")).size()>0
+						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
+						){
+					e=driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input"));
+					e.sendKeys("100");
+					e.sendKeys(Keys.TAB);
+				}
+			
+				claim_Name = "Price Protection - Client";
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']")).size()==1
+						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input")).size()>0
+						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
+						){
+					e=driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input"));
+					e.sendKeys("200");
+					e.sendKeys(Keys.TAB);
+				}
+			
+				claim_Name = "Price Protection - Mike Albert";
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']")).size()==1
+						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input")).size()>0
+						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
+						){
+					e=driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input"));
+					e.sendKeys("300");
+					e.sendKeys(Keys.TAB);
+				}
+			
+				claim_Name = "MAL Incentive Money - Reclaim";
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']")).size()==1
+						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input")).size()>0
+						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
+						){
+					e=driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input"));
+					e.sendKeys("400");
+					e.sendKeys(Keys.TAB);
+				}
+			
+				claim_Name = "Reclaim Incentives - Dealer";
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']")).size()==1
+						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input")).size()>0
+						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
+						){
+					e=driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input"));
+					e.sendKeys("500");
+					e.sendKeys(Keys.TAB);
+				}
+			
+				claim_Name = "Reclaim Incentives - Manufacturer";
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']")).size()==1
+						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input")).size()>0
+						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
+						){
+					e=driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input"));
+					e.sendKeys("600");
+					e.sendKeys(Keys.TAB);
+				}
+			
+				claim_Name = "Early Order Incentive";
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']")).size()==1
+						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input")).size()>0
+						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
+						){
+					e=driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input"));
+					e.sendKeys("700");
+					e.sendKeys(Keys.TAB);
+				}
+			
+			}
+			
+			
+			
+			
+			
+			
+			
+			
 			PostInvoice.click();
 			while(!driver.findElement(By.id("confirmDialogId")).getAttribute("style").contains("block")){}
 			//System.out.println(driver.findElement(By.xpath("//*[@id='confirmDialogForm']")).getText());
