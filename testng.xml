@@ -26,14 +26,14 @@
 	</classes>
 </test> <!-- Test -->
 
-<!-- <test name="Test3">
+<test name="Test3">
 	<classes>
 		<class name="testScripts.AcceptQueue"/>
 	</classes>
 </test> 
- -->
 
-<!-- <test name="Test4">
+
+<test name="Test4">
 	<classes>
 		<class name="testScripts.ReleasePO">
 			<methods>
@@ -46,31 +46,25 @@
 	</classes>
 </test> 
 
- -->
 
-<!-- <test name="DB_Run">
-	<classes>
-		<class name="util.DBUtills"/>
-	</classes>
-</test> 
- -->
+
  
-<!--  
+ 
 <test name="Test5">
     <classes>
       <class name="testScripts.ThirdPartyProgress"/>
     </classes>
 </test> 
 
- --> 
-<!--  
+ 
+ 
  <test name="Test6">
     <classes>
       <class name="testScripts.UpfitProgress"/>
     </classes>
 </test> 
 
- -->
+
  
  
 <test name="Test7">

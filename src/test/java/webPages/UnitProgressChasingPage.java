@@ -221,6 +221,12 @@ public class UnitProgressChasingPage {
 					for(int i= 1 ; i <= driver.findElements(By.xpath(DocumentList+"/tr")).size() ; i++){
 						if(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a")).getText().equalsIgnoreCase("View")){
 							driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a")).click();
+							
+							
+							
+							
+							
+							
 							while(!(StyleOfBody.getAttribute("style").contains("none")) && 
 									!(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[3]//img")).getAttribute("id").contains("ccCheckMarkImg"))){}
 						}

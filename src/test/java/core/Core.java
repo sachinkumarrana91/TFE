@@ -243,7 +243,7 @@ public class Core {
 	*/		
 		  //monitoringMail.sendMail(TestConfig.server, TestConfig.from, TestConfig.username, TestConfig.password,TestConfig.port, TestConfig.to, TestConfig.subject, TestConfig.messageBody, Configuration.Report_Folder+"//"+strDate+".html", "emailable-report.html");
 			
-		  //driver.get("http://"+TestUtil.Handeler()+":8080/TestReports/"+strDate+".html");
+		  driver.get("http://"+TestUtil.Handeler()+":8080/TestReports/"+strDate+".html");
 		  //driver.quit();
 
 		}
