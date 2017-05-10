@@ -183,10 +183,13 @@ public class UnitReconcilePage {
 				
 				// Enter new amount to the Base Vehicle (i.e. Previous + 100.00 $)
 				long new_BaseVehicleAmount = util.TestUtil.strToInt(prev_BaseVehicleAmount) + 100;
+				//System.out.println(new_BaseVehicleAmount);
 				driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[6]/span/input")).clear();
 				WebElement e = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[6]/span/input"));
-				e.sendKeys("$"+new_BaseVehicleAmount+".00");
-				e.sendKeys(Keys.TAB);
+				//e.sendKeys("$"+new_BaseVehicleAmount+".00");
+				e.sendKeys(""+new_BaseVehicleAmount+"");
+				driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[4]")).click();
+				//e.sendKeys(Keys.TAB);
 				
 				//	Update Base Vehile for client
 				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input")).size()>1){
@@ -202,79 +205,80 @@ public class UnitReconcilePage {
 					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input")).clear();
 					e = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input"));
 					e.sendKeys("$"+new_BaeVehicleAmountClient+".00");
-					e.sendKeys(Keys.TAB);
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[4]")).click();
+					//e.sendKeys(Keys.TAB);
 				}
 
 				
 				//	Update reclaims only if they are enables and value is $0.00
 				String claim_Name = "VRB Reclaim";
-				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']")).size()==1
-						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input")).size()>0
-						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']")).size()==1
+						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).size()>0
+						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
 						){
-					e=driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input"));
-					e.sendKeys("100");
-					e.sendKeys(Keys.TAB);
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).clear();
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).sendKeys("100");
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[4]")).click();
 				}
 			
 				claim_Name = "Price Protection - Client";
-				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']")).size()==1
-						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input")).size()>0
-						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']")).size()==1
+						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).size()>0
+						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
 						){
-					e=driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input"));
-					e.sendKeys("200");
-					e.sendKeys(Keys.TAB);
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).clear();
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).sendKeys("200");
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[4]")).click();
 				}
 			
 				claim_Name = "Price Protection - Mike Albert";
-				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']")).size()==1
-						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input")).size()>0
-						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']")).size()==1
+						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).size()>0
+						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
 						){
-					e=driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input"));
-					e.sendKeys("300");
-					e.sendKeys(Keys.TAB);
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).clear();
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).sendKeys("300");
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[4]")).click();
 				}
 			
 				claim_Name = "MAL Incentive Money - Reclaim";
-				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']")).size()==1
-						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input")).size()>0
-						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']")).size()==1
+						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).size()>0
+						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
 						){
-					e=driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input"));
-					e.sendKeys("400");
-					e.sendKeys(Keys.TAB);
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).clear();
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).sendKeys("400");
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[4]")).click();
 				}
 			
 				claim_Name = "Reclaim Incentives - Dealer";
-				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']")).size()==1
-						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input")).size()>0
-						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']")).size()==1
+						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).size()>0
+						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
 						){
-					e=driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input"));
-					e.sendKeys("500");
-					e.sendKeys(Keys.TAB);
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).clear();
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).sendKeys("500");
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[4]")).click();
 				}
 			
 				claim_Name = "Reclaim Incentives - Manufacturer";
-				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']")).size()==1
-						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input")).size()>0
-						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']")).size()==1
+						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).size()>0
+						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
 						){
-					e=driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input"));
-					e.sendKeys("600");
-					e.sendKeys(Keys.TAB);
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).clear();
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).sendKeys("600");
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[4]")).click();
 				}
 			
 				claim_Name = "Early Order Incentive";
-				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']")).size()==1
-						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input")).size()>0
-						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']")).size()==1
+						&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).size()>0
+						&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
 						){
-					e=driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='claim_Name']/parent::*/following-sibling::td[6]/span/input"));
-					e.sendKeys("700");
-					e.sendKeys(Keys.TAB);
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).clear();
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).sendKeys("700");
+					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[4]")).click();
 				}
 			
 			}

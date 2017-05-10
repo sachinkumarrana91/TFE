@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <parameter name="BrowserName" value="Chrome"/>
-  <parameter name="env" value="QA3"/>
+  <parameter name="BrowserName" value="IE"/>
+  <parameter name="env" value="QA2"/>
   <test name="Test1">
     <classes>
       <class name="core.Core"/>
@@ -13,19 +13,29 @@
       <class name="testScripts.VisionLogin"/>
     </classes>
   </test> <!-- Test2 -->
-  <test name="Test5">
-    <classes>
-      <class name="testScripts.ThirdPartyProgress"/>
-    </classes>
-  </test> <!-- Test5 -->
-  <test name="Test6">
-    <classes>
-      <class name="testScripts.UpfitProgress"/>
-    </classes>
-  </test> <!-- Test6 -->
   <test name="Test7">
     <classes>
       <class name="testScripts.UnitReconcile"/>
     </classes>
   </test> <!-- Test7 -->
+  <test name="Test7(failed)">
+    <classes>
+      <class name="testScripts.VisionLogin">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- testScripts.VisionLogin -->
+      <class name="testScripts.UnitReconcile">
+        <methods>
+          <include name="addNewSheet"/>
+          <include name="endScript"/>
+          <include name="startTesting"/>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+          <include name="UntRec"/>
+        </methods>
+      </class> <!-- testScripts.UnitReconcile -->
+    </classes>
+  </test> <!-- Test7(failed) -->
 </suite> <!-- Failed suite [Suite] -->
