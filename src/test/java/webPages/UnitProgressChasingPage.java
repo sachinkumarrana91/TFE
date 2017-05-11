@@ -167,6 +167,10 @@ public class UnitProgressChasingPage {
 			}
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
 			
+			//	Get number of 3rd Parties
+			String ThirdPartyCount = driver.findElement(By.xpath("//*[@id='maintainPOPanelMain_content']//*[text()='No. of 3rd Party POs:']/parent::*/following-sibling::td[1]/span")).getText();
+			Core.DataTable.setCellData("PO_Detail", "DA?", Core.DataTable.getCellRowNum("PO_Detail", "UnitNoToMaintain", UnitNo), ThirdPartyCount);
+			
 			//	Click Save button
 			Core.isElementClickable(SaveButton).click();
 

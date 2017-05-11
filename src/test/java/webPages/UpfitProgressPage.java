@@ -130,10 +130,10 @@ public class UpfitProgressPage {
 		}
 		else{
 			if(driver.findElements(By.xpath("//*[@id='unitProgress_data']//td[3]//span[text()='"+UnitNo+"']")).size()==0){
-				al.add("<br> Unit# "+UnitNo+" not found for UpFit");
+				al.add("<br> Unit# <FONT COLOR=red>"+UnitNo+"</font>  not found for UpFit");
 			}
 			else{
-				al.add("<br> Unit# "+UnitNo+" multiple records found for UpFit");
+				al.add("<br> Unit# <FONT COLOR=red>"+UnitNo+"</font> multiple records found for UpFit");
 			}
 			
 		}

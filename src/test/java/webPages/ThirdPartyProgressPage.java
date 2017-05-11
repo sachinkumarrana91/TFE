@@ -120,7 +120,7 @@ public class ThirdPartyProgressPage {
 						while(!StyleOfBody.getAttribute("style").contains("none")){}
 					}
 				}
-				driver.findElement(By.xpath("//*[@id='documentListDialog:ccDoneBtn']/span")).click();;
+				driver.findElement(By.xpath("//*[@id='documentListDialog:ccDoneBtn']/span")).click();
 			}
 			al.add("<br> Unit# "+UnitNo+" has been released");
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
@@ -128,7 +128,7 @@ public class ThirdPartyProgressPage {
 		else{
 			if(driver.findElements(By.xpath("//*[@id='DT_UI_ID_data']//td[2]/span[contains(text(),'"+UnitNo+"')]")).size()==0){
 				al.add("<br> Unit# <FONT COLOR=red>"+UnitNo+"</font> Not Found");
-				System.out.println("Unit# "+UnitNo+" Not Found ");
+				System.out.println("Unit# <FONT COLOR=red>"+UnitNo+"</font> Not Found ");
 			}
 				
 			else{
