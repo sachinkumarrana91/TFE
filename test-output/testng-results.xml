@@ -2,14 +2,18 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="655871" started-at="2017-05-10T14:32:30Z" finished-at="2017-05-10T14:43:26Z">
+  <suite name="Suite" duration-ms="46171" started-at="2017-05-11T15:00:24Z" finished-at="2017-05-11T15:01:10Z">
     <groups>
     </groups>
-    <test name="Test1" duration-ms="10" started-at="2017-05-10T14:32:30Z" finished-at="2017-05-10T14:32:30Z">
+    <test name="Test1" duration-ms="10" started-at="2017-05-11T15:00:24Z" finished-at="2017-05-11T15:00:24Z">
     </test> <!-- Test1 -->
-    <test name="Test2" duration-ms="11351" started-at="2017-05-10T14:32:30Z" finished-at="2017-05-10T14:32:41Z">
+    <test name="Test2" duration-ms="10614" started-at="2017-05-11T15:00:24Z" finished-at="2017-05-11T15:00:35Z">
       <class name="testScripts.VisionLogin">
-        <test-method status="PASS" signature="loginQA(java.lang.String)[pri:0, instance:testScripts.VisionLogin@26b3fd41]" name="loginQA" duration-ms="11231" started-at="2017-05-10T20:02:30Z" finished-at="2017-05-10T20:02:41Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.VisionLogin@42f93a98]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-05-11T20:30:24Z" finished-at="2017-05-11T20:30:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="loginQA(java.lang.String)[pri:0, instance:testScripts.VisionLogin@42f93a98]" name="loginQA" duration-ms="10464" started-at="2017-05-11T20:30:24Z" finished-at="2017-05-11T20:30:34Z">
           <params>
             <param index="0">
               <value>
@@ -20,19 +24,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginQA -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.VisionLogin@26b3fd41]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-05-10T20:02:30Z" finished-at="2017-05-10T20:02:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.VisionLogin@26b3fd41]" name="AfterMethod" is-config="true" duration-ms="120" started-at="2017-05-10T20:02:41Z" finished-at="2017-05-10T20:02:41Z">
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.VisionLogin@42f93a98]" name="AfterMethod" is-config="true" duration-ms="150" started-at="2017-05-11T20:30:34Z" finished-at="2017-05-11T20:30:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMethod -->
       </class> <!-- testScripts.VisionLogin -->
     </test> <!-- Test2 -->
-    <test name="Test8" duration-ms="644480" started-at="2017-05-10T14:32:41Z" finished-at="2017-05-10T14:43:26Z">
-      <class name="testScripts.VehicleOrderStatus">
-        <test-method status="PASS" signature="startTesting(java.lang.String, java.lang.String)[pri:0, instance:testScripts.VehicleOrderStatus@687e99d8]" name="startTesting" is-config="true" duration-ms="3075" started-at="2017-05-10T20:02:27Z" finished-at="2017-05-10T20:02:30Z">
+    <test name="Test9" duration-ms="35507" started-at="2017-05-11T15:00:35Z" finished-at="2017-05-11T15:01:10Z">
+      <class name="testScripts.InService">
+        <test-method status="PASS" signature="startTesting(java.lang.String, java.lang.String)[pri:0, instance:testScripts.InService@1d8d30f7]" name="startTesting" is-config="true" duration-ms="3503" started-at="2017-05-11T20:30:20Z" finished-at="2017-05-11T20:30:24Z">
           <params>
             <param index="0">
               <value>
@@ -48,11 +48,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startTesting -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.VehicleOrderStatus@687e99d8]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-05-10T20:02:41Z" finished-at="2017-05-10T20:02:41Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.InService@1d8d30f7]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-05-11T20:30:35Z" finished-at="2017-05-11T20:30:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="refresh(java.lang.String)[pri:0, instance:testScripts.VehicleOrderStatus@687e99d8]" name="refresh" is-config="true" duration-ms="0" started-at="2017-05-10T20:02:41Z" finished-at="2017-05-10T20:02:41Z">
+        <test-method status="PASS" signature="refresh(java.lang.String)[pri:0, instance:testScripts.InService@1d8d30f7]" name="refresh" is-config="true" duration-ms="0" started-at="2017-05-11T20:30:35Z" finished-at="2017-05-11T20:30:35Z">
           <params>
             <param index="0">
               <value>
@@ -63,19 +63,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- refresh -->
-        <test-method status="PASS" signature="VehicleOrderStatusTest()[pri:0, instance:testScripts.VehicleOrderStatus@687e99d8]" name="VehicleOrderStatusTest" duration-ms="642389" started-at="2017-05-10T20:02:41Z" finished-at="2017-05-10T20:13:24Z">
+        <test-method status="PASS" signature="enterInServiceDate()[pri:1, instance:testScripts.InService@1d8d30f7]" name="enterInServiceDate" duration-ms="35327" started-at="2017-05-11T20:30:35Z" finished-at="2017-05-11T20:31:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VehicleOrderStatusTest -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.VehicleOrderStatus@687e99d8]" name="AfterMethod" is-config="true" duration-ms="355" started-at="2017-05-10T20:13:25Z" finished-at="2017-05-10T20:13:26Z">
+        </test-method> <!-- enterInServiceDate -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.InService@1d8d30f7]" name="AfterMethod" is-config="true" duration-ms="180" started-at="2017-05-11T20:31:10Z" finished-at="2017-05-11T20:31:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMethod -->
-        <test-method status="PASS" signature="endScript()[pri:0, instance:testScripts.VehicleOrderStatus@687e99d8]" name="endScript" is-config="true" duration-ms="451" started-at="2017-05-10T20:13:26Z" finished-at="2017-05-10T20:13:27Z">
+        <test-method status="PASS" signature="endScript()[pri:0, instance:testScripts.InService@1d8d30f7]" name="endScript" is-config="true" duration-ms="270" started-at="2017-05-11T20:31:10Z" finished-at="2017-05-11T20:31:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endScript -->
-      </class> <!-- testScripts.VehicleOrderStatus -->
-    </test> <!-- Test8 -->
+      </class> <!-- testScripts.InService -->
+    </test> <!-- Test9 -->
   </suite> <!-- Suite -->
 </testng-results>

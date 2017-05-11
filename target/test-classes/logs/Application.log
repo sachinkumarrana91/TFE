@@ -1,8 +1,9 @@
-10/05/2017 20:02:30 devpinoyLogger Test Case: loginQA Starts Running
-10/05/2017 20:02:37 devpinoyLogger Test Method: doLogin Starts Running
-10/05/2017 20:02:41 devpinoyLogger Test Case: loginQA Passed
-10/05/2017 20:02:41 devpinoyLogger Test Case: VehicleOrderStatusTest Starts Running
-10/05/2017 20:02:41 devpinoyLogger Test Method: openVehicleOrderStatus Starts Running
-10/05/2017 20:02:50 devpinoyLogger Test Method: enterStatus Starts Running
-10/05/2017 20:13:00 devpinoyLogger Test Method: enterStatus Starts Running
-10/05/2017 20:13:23 devpinoyLogger Test Case: VehicleOrderStatusTest Passed
+11/05/2017 18:50:43 devpinoyLogger Test Case: loginQA Starts Running
+11/05/2017 18:50:47 devpinoyLogger Test Method: doLogin Starts Running
+11/05/2017 18:50:54 devpinoyLogger Test Case: loginQA Passed
+11/05/2017 18:50:54 devpinoyLogger Test Case: ThirdPartyProgressTest Starts Running
+11/05/2017 18:50:54 devpinoyLogger Test Method: openThirdPartyProgress Starts Running
+11/05/2017 18:51:02 devpinoyLogger Test Case: ThirdPartyProgressTest Passed
+11/05/2017 18:51:03 devpinoyLogger Test Case: UpfitProgressTest Starts Running
+11/05/2017 18:51:03 devpinoyLogger Test Method: openUpfitProgress Starts Running
+11/05/2017 18:51:26 devpinoyLogger Test Case: UpfitProgressTest Passed

@@ -46,7 +46,6 @@
 	</classes>
 </test> 
 
- -->
 
  
  
@@ -67,7 +66,7 @@
 
  
  
-<!-- <test name="Test7">
+<test name="Test7">
     <classes>
       <class name="testScripts.UnitReconcile"/>
     </classes>
@@ -78,5 +77,14 @@
       <class name="testScripts.VehicleOrderStatus"/>
     </classes>
 </test> 
- -->
+ 
+  -->
+<test name="Test9">
+    <classes>
+      <class name="testScripts.InService"/>
+    </classes>
+</test> 
+
+
+
 </suite> <!-- Suite -->
