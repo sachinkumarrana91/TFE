@@ -1,7 +1,7 @@
-11/05/2017 20:30:24 devpinoyLogger Test Case: loginQA Starts Running
-11/05/2017 20:30:27 devpinoyLogger Test Method: doLogin Starts Running
-11/05/2017 20:30:34 devpinoyLogger Test Case: loginQA Passed
-11/05/2017 20:30:35 devpinoyLogger Test Case: enterInServiceDate Starts Running
-11/05/2017 20:30:35 devpinoyLogger Test Method: openInServiceDateProgress Starts Running
-11/05/2017 20:30:52 devpinoyLogger Test Method: enterInService Starts Running
-11/05/2017 20:31:10 devpinoyLogger Test Case: enterInServiceDate Passed
+05/06/2017 22:20:33 devpinoyLogger Test Case: loginQA Starts Running
+05/06/2017 22:20:35 devpinoyLogger Test Method: doLogin Starts Running
+05/06/2017 22:20:41 devpinoyLogger Test Case: loginQA Passed
+05/06/2017 22:20:42 devpinoyLogger Test Case: UntRec Starts Running
+05/06/2017 22:20:42 devpinoyLogger Test Method: openUnitReconcilation Starts Running
+05/06/2017 22:20:47 devpinoyLogger Test Method: getPOforUnit Starts Running
+05/06/2017 22:20:55 devpinoyLogger Test Method: processPO Starts Running

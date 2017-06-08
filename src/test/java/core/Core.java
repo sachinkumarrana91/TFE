@@ -201,24 +201,18 @@ public class Core {
 			if(BrowserName.equalsIgnoreCase("Firefox") ){
 				try{
 				System.setProperty("webdriver.firefox.marionette","geckodriver.exe");
-//				File file = new File("C://Users//Sachin.kumar//Downloads//firebug-2.0.18.xpi");
 
-				ProfilesIni prof = new ProfilesIni();
+/*				ProfilesIni prof = new ProfilesIni();
 				FirefoxProfile ffProfile= prof.getProfile ("FireFoxwithFirebug");
-//				FirefoxProfile ffProfile = new FirefoxProfile();
-		
 				ffProfile.addExtension(new File(System.getProperty("user.dir")+"//mandatory_Jars//firebug-2.0.18.xpi"));
 				ffProfile.addExtension(new File(System.getProperty("user.dir")+"//mandatory_Jars//firepath-0.9.7-fx.xpi"));
-				
 				ffProfile.setAcceptUntrustedCertificates(true);
 				ffProfile.setAssumeUntrustedCertificateIssuer(false);
-				
 				dr = new FirefoxDriver(ffProfile);
+*/
+				dr = new FirefoxDriver();
 				}catch(Exception e){
-/*					System.out.println("////////////////////////////////////////////////////////////////////////////////////////////////////");
-					System.out.println(e);
-					System.out.println("////////////////////////////////////////////////////////////////////////////////////////////////////");
-*/					e.printStackTrace();
+					e.printStackTrace();
 				}
 				
 			}
@@ -244,6 +238,8 @@ public class Core {
 		  //monitoringMail.sendMail(TestConfig.server, TestConfig.from, TestConfig.username, TestConfig.password,TestConfig.port, TestConfig.to, TestConfig.subject, TestConfig.messageBody, Configuration.Report_Folder+"//"+strDate+".html", "emailable-report.html");
 			
 		  driver.get("http://"+TestUtil.Handeler()+":8080/TestReports/"+strDate+".html");
+		  
+		  
 		  //driver.quit();
 
 		}

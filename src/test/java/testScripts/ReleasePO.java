@@ -21,7 +21,7 @@ public class ReleasePO extends Core{
 	@Parameters({"env"})
 	public static void refresh(String env){
 
- 		int i = Core.DataTable.getCellRowNum("loginQA", "dbName", env);
+/* 		int i = Core.DataTable.getCellRowNum("loginQA", "dbName", env);
 
 		try {
 			util.DBUtills.refreshQueue(
@@ -36,7 +36,7 @@ public class ReleasePO extends Core{
 			e.printStackTrace();
 		}
 
-		
+*/		
 	}
 	
 	

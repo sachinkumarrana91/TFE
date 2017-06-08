@@ -1,9 +1,7 @@
-11/05/2017 18:50:43 devpinoyLogger Test Case: loginQA Starts Running
-11/05/2017 18:50:47 devpinoyLogger Test Method: doLogin Starts Running
-11/05/2017 18:50:54 devpinoyLogger Test Case: loginQA Passed
-11/05/2017 18:50:54 devpinoyLogger Test Case: ThirdPartyProgressTest Starts Running
-11/05/2017 18:50:54 devpinoyLogger Test Method: openThirdPartyProgress Starts Running
-11/05/2017 18:51:02 devpinoyLogger Test Case: ThirdPartyProgressTest Passed
-11/05/2017 18:51:03 devpinoyLogger Test Case: UpfitProgressTest Starts Running
-11/05/2017 18:51:03 devpinoyLogger Test Method: openUpfitProgress Starts Running
-11/05/2017 18:51:26 devpinoyLogger Test Case: UpfitProgressTest Passed
+05/06/2017 22:20:33 devpinoyLogger Test Case: loginQA Starts Running
+05/06/2017 22:20:35 devpinoyLogger Test Method: doLogin Starts Running
+05/06/2017 22:20:41 devpinoyLogger Test Case: loginQA Passed
+05/06/2017 22:20:42 devpinoyLogger Test Case: UntRec Starts Running
+05/06/2017 22:20:42 devpinoyLogger Test Method: openUnitReconcilation Starts Running
+05/06/2017 22:20:47 devpinoyLogger Test Method: getPOforUnit Starts Running
+05/06/2017 22:20:55 devpinoyLogger Test Method: processPO Starts Running

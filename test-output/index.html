@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Suite">
-                    <span class="test-stats">3 tests</span>
+                    <span class="test-stats">5 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,26 +91,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">2 methods, 2 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Suite">
+                    <div class="method-list-content failed suite-Suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="testScripts.InService" hash-for-method="enterInServiceDate">enterInServiceDate</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="testScripts.UnitReconcile" hash-for-method="UntRec">UntRec</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="testScripts.VisionLogin" hash-for-method="loginQA(QA2)">loginQA(QA2)</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="testScripts.VisionLogin" hash-for-method="loginQA(QA2, rajput)">loginQA(QA2, rajput)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -122,37 +122,45 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">testScripts.VisionLogin</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="loginQA(QA2)">
-                  </a> <!-- loginQA(QA2) -->
+                  <a name="loginQA(QA2, rajput)">
+                  </a> <!-- loginQA(QA2, rajput) -->
                   <span class="method-name">loginQA</span>
-                  <span class="parameters">(QA2)</span>
+                  <span class="parameters">(QA2, rajput)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at testScripts.VisionLogin.loginQA(VisionLogin.java:53)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">testScripts.InService</span>
+              <img src="failed.png"/>
+              <span class="class-name">testScripts.UnitReconcile</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="enterInServiceDate">
-                  </a> <!-- enterInServiceDate -->
-                  <span class="method-name">enterInServiceDate</span>
+                  <a name="UntRec">
+                  </a> <!-- UntRec -->
+                  <span class="method-name">UntRec</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at testScripts.UnitReconcile.UntRec(UnitReconcile.java:67)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-failed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -165,6 +173,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
   &lt;parameter name=&quot;BrowserName&quot; value=&quot;IE&quot;/&gt;
   &lt;parameter name=&quot;env&quot; value=&quot;QA2&quot;/&gt;
+  &lt;parameter name=&quot;user&quot; value=&quot;rajput&quot;/&gt;
   &lt;test name=&quot;Test1&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;core.Core&quot;/&gt;
@@ -175,11 +184,51 @@
       &lt;class name=&quot;testScripts.VisionLogin&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test2 --&gt;
-  &lt;test name=&quot;Test9&quot;&gt;
+  &lt;test name=&quot;Test7&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testScripts.InService&quot;/&gt;
+      &lt;class name=&quot;testScripts.UnitReconcile&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test9 --&gt;
+  &lt;/test&gt; &lt;!-- Test7 --&gt;
+  &lt;test name=&quot;Test2(failed)&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;testScripts.VisionLogin&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;loginQA&quot; invocation-numbers=&quot;0&quot;/&gt;
+          &lt;include name=&quot;beforeMethod&quot;/&gt;
+          &lt;include name=&quot;AfterMethod&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- testScripts.VisionLogin --&gt;
+      &lt;class name=&quot;testScripts.UnitReconcile&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;addNewSheet&quot;/&gt;
+          &lt;include name=&quot;endScript&quot;/&gt;
+          &lt;include name=&quot;startTesting&quot;/&gt;
+          &lt;include name=&quot;beforeMethod&quot;/&gt;
+          &lt;include name=&quot;AfterMethod&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- testScripts.UnitReconcile --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test2(failed) --&gt;
+  &lt;test name=&quot;Test7(failed)&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;testScripts.VisionLogin&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;beforeMethod&quot;/&gt;
+          &lt;include name=&quot;AfterMethod&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- testScripts.VisionLogin --&gt;
+      &lt;class name=&quot;testScripts.UnitReconcile&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;addNewSheet&quot;/&gt;
+          &lt;include name=&quot;endScript&quot;/&gt;
+          &lt;include name=&quot;startTesting&quot;/&gt;
+          &lt;include name=&quot;beforeMethod&quot;/&gt;
+          &lt;include name=&quot;AfterMethod&quot;/&gt;
+          &lt;include name=&quot;UntRec&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- testScripts.UnitReconcile --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test7(failed) --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -197,7 +246,13 @@
                 <span class="test-name">Test2 (1 class)</span>
               </li>
               <li>
-                <span class="test-name">Test9 (1 class)</span>
+                <span class="test-name">Test7 (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Test2(failed) (2 classes)</span>
+              </li>
+              <li>
+                <span class="test-name">Test7(failed) (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -225,18 +280,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'enterInServiceDate')
-data.setCell(0, 2, 'testScripts.InService')
-data.setCell(0, 3, 35327);
+data.setCell(0, 1, 'loginQA')
+data.setCell(0, 2, 'testScripts.VisionLogin')
+data.setCell(0, 3, 7176);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'loginQA')
-data.setCell(1, 2, 'testScripts.VisionLogin')
-data.setCell(1, 3, 10464);
+data.setCell(1, 1, 'UntRec')
+data.setCell(1, 2, 'testScripts.UnitReconcile')
+data.setCell(1, 3, 3325);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 45 seconds</span>
+              <span class="suite-total-time">Total running time: 10 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -262,7 +317,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testScripts.InService</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testScripts.UnitReconcile</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">startTesting(IE, QA2)</span>
                 <span class="method-start">0 ms</span>
@@ -272,38 +327,42 @@ return data;
               <div class="chronological-class-name">testScripts.VisionLogin</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">3533 ms</span>
+                <span class="method-start">3267 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">loginQA(QA2)</span>
-                <span class="method-start">3533 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">loginQA(QA2, rajput)</span>
+                <span class="method-start">3269 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">AfterMethod</span>
-                <span class="method-start">13997 ms</span>
+                <span class="method-start">10448 ms</span>
               </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">testScripts.InService</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
+              <div class="chronological-class-name">testScripts.UnitReconcile</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">14167 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">enterInServiceDate</span>
-                <span class="method-start">14167 ms</span>
-              </div> <!-- test-method -->
+                <span class="method-start">10863 ms</span>
+              </div> <!-- configuration-test before -->
               <div class="configuration-class before">
-                <span class="method-name">refresh(QA2)</span>
-                <span class="method-start">14167 ms</span>
+                <span class="method-name">addNewSheet</span>
+                <span class="method-start">10864 ms</span>
               </div> <!-- configuration-class before -->
-              <div class="configuration-method after">
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">UntRec</span>
+                <span class="method-start">11344 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
                 <span class="method-name">AfterMethod</span>
-                <span class="method-start">49494 ms</span>
-              </div> <!-- configuration-method after -->
+                <span class="method-start">14670 ms</span>
+              </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
                 <span class="method-name">endScript</span>
-                <span class="method-start">49694 ms</span>
+                <span class="method-start">15070 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

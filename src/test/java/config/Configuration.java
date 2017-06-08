@@ -6,12 +6,15 @@ public class Configuration {
 	//public static final String Report_Folder="E://downloads//Data//Reports//";
 	public static final String Report_Folder="C://Program Files//Apache Software Foundation//Tomcat 8.5//webapps//ROOT//TestReports";
 	public static final String imgPath = "C://Program Files//Apache Software Foundation//Tomcat 8.5//webapps//ROOT//screenshots//";
-	public static final String QA1="http://vis-qa1/vision/view";
+	public static final String exlPath_File = System.getProperty("user.dir")+"//src//test//java//config//DataTable.xlsx";
+	
+	
+/*	public static final String QA1="http://vis-qa1/vision/view";
 	public static final String QA2="http://vis-qa2/vision/view";
 	public static final String QA3="http://vis-qa3/vision/view";
 	public static final String QA4="http://vis-qa4/vision/view";
 	public static final String STG1="http://vis-STG1/vision/view";
-
+*/
 	
 	
 	//DB Configuration

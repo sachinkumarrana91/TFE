@@ -73,17 +73,20 @@ public class UnitReconcilePage {
 	
 	public void openUnitReconcilation(){
 		Core.APPLICATION_LOGS.debug("Test Method: "+new Object(){}.getClass().getEnclosingMethod().getName()+" Starts Running");
+		while(!StyleOfBody.getAttribute("style").contains("none")){}
 
-		if(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span")).isDisplayed()){
-			Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
-		}
-		while(!driver.findElement(By.xpath("//*[@id='left']")).getAttribute("style").contains("display: block")){
-			Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
+		//Expand left Bar
+		if(driver.findElement(By.xpath("//*[@id='left-toggler']/span")).getAttribute("style").contains("display: block")){
+			while(driver.findElement(By.xpath("//*[@id='left-toggler']/span")).getAttribute("style").contains("display: block")){
+				Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
+			}
 		}
 
 		
+		while(!StyleOfBody.getAttribute("style").contains("none")){}
 		if(!RentalCalculation.getAttribute("aria-expanded").equalsIgnoreCase("true")){
 			Core.isElementVisible(RentalCalculation).click();
+			while(!StyleOfBody.getAttribute("style").contains("none")){}
 		}
 		Core.isElementClickable(UnitReconciliation).click();
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
@@ -173,7 +176,6 @@ public class UnitReconcilePage {
 
 			if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[6]/span/input")).size()>1){		//	Works for Main PO only, because Base Vehicle would be enable for main PO only.
 				String prev_BaseVehicleAmount = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[6]/span/input")).getAttribute("value");
-				String prev_BaseVehicleAmountClient = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]")).getAttribute("value");
 				if(prev_BaseVehicleAmount.indexOf(".")>=0){ 	// If value is not an integer
 					prev_BaseVehicleAmount = prev_BaseVehicleAmount.substring(0, prev_BaseVehicleAmount.lastIndexOf("."));		// Make it integer
 				}
@@ -191,8 +193,9 @@ public class UnitReconcilePage {
 				driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[4]")).click();
 				//e.sendKeys(Keys.TAB);
 				
-				//	Update Base Vehile for client
-				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input")).size()>0){
+				//	Update Base Vehicle for client
+				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input")).size()>1){
+					String prev_BaseVehicleAmountClient = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input[2]")).getAttribute("value");
 					if(prev_BaseVehicleAmountClient.indexOf(".")>=0){ 	// If value is not an integer
 						prev_BaseVehicleAmountClient = prev_BaseVehicleAmountClient.substring(0, prev_BaseVehicleAmountClient.lastIndexOf("."));		// Make it integer
 					}
@@ -204,7 +207,7 @@ public class UnitReconcilePage {
 					long new_BaeVehicleAmountClient = util.TestUtil.strToInt(prev_BaseVehicleAmountClient) + 200;
 					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input")).clear();
 					e = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input"));
-					e.sendKeys("$"+new_BaeVehicleAmountClient+".00");
+					e.sendKeys(""+new_BaeVehicleAmountClient+"");
 					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[4]")).click();
 					//e.sendKeys(Keys.TAB);
 				}
@@ -218,6 +221,7 @@ public class UnitReconcilePage {
 					if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']")).size()==1
 							&&	driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).size()>0
 							&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input[2]")).getAttribute("value").equalsIgnoreCase("0")
+							&&	driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/img")).getAttribute("title").equalsIgnoreCase("Possible Reclaim")
 							){
 						driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='"+claim_Name+"']/parent::*/following-sibling::td[6]/span/input")).clear();
 						lastClaim = lastClaim + 100 ;
@@ -273,6 +277,7 @@ public class UnitReconcilePage {
 				while(!driver.findElement(By.id("confirmDialogId")).getAttribute("style").contains("block")){}
 			}
 
+			//System.out.println("Its Timeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 			PostPopUp.click();
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
 			//System.out.println(PONum+" for "+Unit+" "+Message.getText());

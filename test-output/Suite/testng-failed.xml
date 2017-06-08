@@ -3,6 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <parameter name="BrowserName" value="IE"/>
   <parameter name="env" value="QA2"/>
+  <parameter name="user" value="rajput"/>
   <test name="Test1">
     <classes>
       <class name="core.Core"/>
@@ -13,9 +14,49 @@
       <class name="testScripts.VisionLogin"/>
     </classes>
   </test> <!-- Test2 -->
-  <test name="Test9">
+  <test name="Test7">
     <classes>
-      <class name="testScripts.InService"/>
+      <class name="testScripts.UnitReconcile"/>
     </classes>
-  </test> <!-- Test9 -->
+  </test> <!-- Test7 -->
+  <test name="Test2(failed)">
+    <classes>
+      <class name="testScripts.VisionLogin">
+        <methods>
+          <include name="loginQA" invocation-numbers="0"/>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- testScripts.VisionLogin -->
+      <class name="testScripts.UnitReconcile">
+        <methods>
+          <include name="addNewSheet"/>
+          <include name="endScript"/>
+          <include name="startTesting"/>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- testScripts.UnitReconcile -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+  <test name="Test7(failed)">
+    <classes>
+      <class name="testScripts.VisionLogin">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- testScripts.VisionLogin -->
+      <class name="testScripts.UnitReconcile">
+        <methods>
+          <include name="addNewSheet"/>
+          <include name="endScript"/>
+          <include name="startTesting"/>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+          <include name="UntRec"/>
+        </methods>
+      </class> <!-- testScripts.UnitReconcile -->
+    </classes>
+  </test> <!-- Test7(failed) -->
 </suite> <!-- Failed suite [Suite] -->

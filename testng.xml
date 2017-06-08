@@ -2,7 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 
-<parameter name="env" value="QA2"/>
+<parameter name="env" value="QA1"/>
+<parameter name="user" value="rajput"/>
 
 
 <!-- <parameter name="BrowserName" value="Chrome"/>
@@ -32,7 +33,6 @@
 	</classes>
 </test> 
 
-
 <test name="Test4">
 	<classes>
 		<class name="testScripts.ReleasePO">
@@ -46,10 +46,10 @@
 	</classes>
 </test> 
 
-
+ -->
  
  
-<test name="Test5">
+<!-- <test name="Test5">
     <classes>
       <class name="testScripts.ThirdPartyProgress"/>
     </classes>
@@ -63,6 +63,7 @@
     </classes>
 </test> 
 
+ -->
 
  
  
@@ -71,20 +72,20 @@
       <class name="testScripts.UnitReconcile"/>
     </classes>
 </test> 
-
+<!-- 
 <test name="Test8">
     <classes>
       <class name="testScripts.VehicleOrderStatus"/>
     </classes>
 </test> 
  
-  -->
+ 
 <test name="Test9">
     <classes>
       <class name="testScripts.InService"/>
     </classes>
 </test> 
 
-
+ -->
 
 </suite> <!-- Suite -->

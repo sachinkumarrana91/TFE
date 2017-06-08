@@ -24,8 +24,8 @@ public class VisionLogin extends Core{
 	}
 
 	@Test
-	@Parameters({"env"})
-	public void loginQA(String env) {
+	@Parameters({"env","user"})
+	public void loginQA(String env, String user) {
 		try{
 			String TestCaseName = new Object(){}.getClass().getEnclosingMethod().getName();
 			setTCName(TestCaseName);
@@ -37,10 +37,11 @@ public class VisionLogin extends Core{
 			if(env.equalsIgnoreCase("QA4")) driver.get(Configuration.QA4);
 			if(env.equalsIgnoreCase("STG1")) driver.get(Configuration.STG1);
 */
+			
 			driver.get("http://vis-"+env+"/vision/view");
 			
 			VisionLoginPage vlp = PageFactory.initElements(driver, VisionLoginPage.class);
-			vlp.doLogin(DataTable.getCellData(TestCaseName, "UserName", 2),DataTable.getCellData(TestCaseName, "Password", 2));
+			vlp.doLogin(user,DataTable.getCellData(TestCaseName, "Password", DataTable.getCellRowNum(TestCaseName, "UserName", user)));
 
 			Description = "Pass";
 			APPLICATION_LOGS.debug("Test Case: "+TestCaseName+" Passed");

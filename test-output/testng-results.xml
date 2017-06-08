@@ -1,38 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="2" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="46171" started-at="2017-05-11T15:00:24Z" finished-at="2017-05-11T15:01:10Z">
+  <suite name="Suite" duration-ms="11816" started-at="2017-06-05T16:49:39Z" finished-at="2017-06-05T16:49:51Z">
     <groups>
     </groups>
-    <test name="Test1" duration-ms="10" started-at="2017-05-11T15:00:24Z" finished-at="2017-05-11T15:00:24Z">
+    <test name="Test1" duration-ms="4" started-at="2017-06-05T16:49:39Z" finished-at="2017-06-05T16:49:39Z">
     </test> <!-- Test1 -->
-    <test name="Test2" duration-ms="10614" started-at="2017-05-11T15:00:24Z" finished-at="2017-05-11T15:00:35Z">
+    <test name="Test2" duration-ms="7582" started-at="2017-06-05T16:49:39Z" finished-at="2017-06-05T16:49:47Z">
       <class name="testScripts.VisionLogin">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.VisionLogin@42f93a98]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-05-11T20:30:24Z" finished-at="2017-05-11T20:30:24Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.VisionLogin@42f93a98]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-06-05T22:19:39Z" finished-at="2017-06-05T22:19:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="loginQA(java.lang.String)[pri:0, instance:testScripts.VisionLogin@42f93a98]" name="loginQA" duration-ms="10464" started-at="2017-05-11T20:30:24Z" finished-at="2017-05-11T20:30:34Z">
+        <test-method status="FAIL" signature="loginQA(java.lang.String, java.lang.String)[pri:0, instance:testScripts.VisionLogin@42f93a98]" name="loginQA" duration-ms="7176" started-at="2017-06-05T22:19:39Z" finished-at="2017-06-05T22:19:46Z">
           <params>
             <param index="0">
               <value>
                 <![CDATA[QA2]]>
               </value>
             </param>
+            <param index="1">
+              <value>
+                <![CDATA[rajput]]>
+              </value>
+            </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at testScripts.VisionLogin.loginQA(VisionLogin.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginQA -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.VisionLogin@42f93a98]" name="AfterMethod" is-config="true" duration-ms="150" started-at="2017-05-11T20:30:34Z" finished-at="2017-05-11T20:30:35Z">
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.VisionLogin@42f93a98]" name="AfterMethod" is-config="true" duration-ms="400" started-at="2017-06-05T22:19:46Z" finished-at="2017-06-05T22:19:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMethod -->
       </class> <!-- testScripts.VisionLogin -->
     </test> <!-- Test2 -->
-    <test name="Test9" duration-ms="35507" started-at="2017-05-11T15:00:35Z" finished-at="2017-05-11T15:01:10Z">
-      <class name="testScripts.InService">
-        <test-method status="PASS" signature="startTesting(java.lang.String, java.lang.String)[pri:0, instance:testScripts.InService@1d8d30f7]" name="startTesting" is-config="true" duration-ms="3503" started-at="2017-05-11T20:30:20Z" finished-at="2017-05-11T20:30:24Z">
+    <test name="Test7" duration-ms="4193" started-at="2017-06-05T16:49:47Z" finished-at="2017-06-05T16:49:51Z">
+      <class name="testScripts.UnitReconcile">
+        <test-method status="PASS" signature="startTesting(java.lang.String, java.lang.String)[pri:0, instance:testScripts.UnitReconcile@436e852b]" name="startTesting" is-config="true" duration-ms="3240" started-at="2017-06-05T22:19:36Z" finished-at="2017-06-05T22:19:39Z">
           <params>
             <param index="0">
               <value>
@@ -48,34 +91,65 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startTesting -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.InService@1d8d30f7]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-05-11T20:30:35Z" finished-at="2017-05-11T20:30:35Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.UnitReconcile@436e852b]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2017-06-05T22:19:47Z" finished-at="2017-06-05T22:19:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="refresh(java.lang.String)[pri:0, instance:testScripts.InService@1d8d30f7]" name="refresh" is-config="true" duration-ms="0" started-at="2017-05-11T20:30:35Z" finished-at="2017-05-11T20:30:35Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[QA2]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="addNewSheet()[pri:0, instance:testScripts.UnitReconcile@436e852b]" name="addNewSheet" is-config="true" duration-ms="480" started-at="2017-06-05T22:19:47Z" finished-at="2017-06-05T22:19:47Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- refresh -->
-        <test-method status="PASS" signature="enterInServiceDate()[pri:1, instance:testScripts.InService@1d8d30f7]" name="enterInServiceDate" duration-ms="35327" started-at="2017-05-11T20:30:35Z" finished-at="2017-05-11T20:31:10Z">
+        </test-method> <!-- addNewSheet -->
+        <test-method status="FAIL" signature="UntRec()[pri:0, instance:testScripts.UnitReconcile@436e852b]" name="UntRec" duration-ms="3325" started-at="2017-06-05T22:19:47Z" finished-at="2017-06-05T22:19:50Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at testScripts.UnitReconcile.UntRec(UnitReconcile.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- enterInServiceDate -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.InService@1d8d30f7]" name="AfterMethod" is-config="true" duration-ms="180" started-at="2017-05-11T20:31:10Z" finished-at="2017-05-11T20:31:10Z">
+        </test-method> <!-- UntRec -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.UnitReconcile@436e852b]" name="AfterMethod" is-config="true" duration-ms="386" started-at="2017-06-05T22:19:50Z" finished-at="2017-06-05T22:19:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMethod -->
-        <test-method status="PASS" signature="endScript()[pri:0, instance:testScripts.InService@1d8d30f7]" name="endScript" is-config="true" duration-ms="270" started-at="2017-05-11T20:31:10Z" finished-at="2017-05-11T20:31:10Z">
+        <test-method status="PASS" signature="endScript()[pri:0, instance:testScripts.UnitReconcile@436e852b]" name="endScript" is-config="true" duration-ms="277" started-at="2017-06-05T22:19:51Z" finished-at="2017-06-05T22:19:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endScript -->
-      </class> <!-- testScripts.InService -->
-    </test> <!-- Test9 -->
+      </class> <!-- testScripts.UnitReconcile -->
+    </test> <!-- Test7 -->
   </suite> <!-- Suite -->
 </testng-results>
