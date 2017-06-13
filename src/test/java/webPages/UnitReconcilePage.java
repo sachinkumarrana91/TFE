@@ -175,7 +175,8 @@ public class UnitReconcilePage {
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
 
 			if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[6]/span/input")).size()>1){		//	Works for Main PO only, because Base Vehicle would be enable for main PO only.
-				String prev_BaseVehicleAmount = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[6]/span/input")).getAttribute("value");
+				String prev_BaseVehicleAmount = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[4]/label")).getText();
+				
 				if(prev_BaseVehicleAmount.indexOf(".")>=0){ 	// If value is not an integer
 					prev_BaseVehicleAmount = prev_BaseVehicleAmount.substring(0, prev_BaseVehicleAmount.lastIndexOf("."));		// Make it integer
 				}
@@ -195,16 +196,20 @@ public class UnitReconcilePage {
 				
 				//	Update Base Vehicle for client
 				if(driver.findElements(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input")).size()>1){
-					String prev_BaseVehicleAmountClient = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input[2]")).getAttribute("value");
+
+					/*
+					String prev_BaseVehicleAmountClient = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::following-sibling::td[9]/span/input[2]")).getAttribute("value");
 					if(prev_BaseVehicleAmountClient.indexOf(".")>=0){ 	// If value is not an integer
 						prev_BaseVehicleAmountClient = prev_BaseVehicleAmountClient.substring(0, prev_BaseVehicleAmountClient.lastIndexOf("."));		// Make it integer
 					}
 					if(prev_BaseVehicleAmountClient.indexOf(",")>=0){ 	// is having comma i.e ","
 						prev_BaseVehicleAmountClient = prev_BaseVehicleAmountClient.replace(",", "");
 					}
+					*/
 					
 					// Enter new amount to the Base Vehicle (i.e. Previous + 100.00 $)
-					long new_BaeVehicleAmountClient = util.TestUtil.strToInt(prev_BaseVehicleAmountClient) + 200;
+					long new_BaeVehicleAmountClient = util.TestUtil.strToInt(prev_BaseVehicleAmount) + 200;
+
 					driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input")).clear();
 					e = driver.findElement(By.xpath("//*[@id='capitalCostDatatableTable_data']//*[text()='Base Vehicle']/parent::*/following-sibling::td[9]/span/input"));
 					e.sendKeys(""+new_BaeVehicleAmountClient+"");

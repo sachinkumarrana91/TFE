@@ -60,7 +60,7 @@ public class ThirdPartyProgressPage {
 	
 	}
 
-	public void releaseThirdParty(String UnitNo){
+	public void releaseThirdParty(String UnitNo) throws InterruptedException{
 		Core.APPLICATION_LOGS.debug("Test Method: "+new Object(){}.getClass().getEnclosingMethod().getName()+" Starts Running");
 		
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
@@ -109,16 +109,36 @@ public class ThirdPartyProgressPage {
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
 			Core.isElementClickable(driver.findElement(By.xpath("//*[@id='releasePOBtn']"))).click();
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
-			if(driver.findElements(By.xpath("//*[@id='documentListDialog:documentListDT_data']")).size()!=0 && driver.findElement(By.xpath("//*[@id='documentListDialog:documentListDT_data']")).isDisplayed()){
+			if(driver.findElements(By.xpath("//*[@id='documentListDialog:documentListDT_data']")).size()!=0 && 
+					driver.findElement(By.xpath("//*[@id='documentListDialog:documentListDT_data']")).isDisplayed()){
+				String originalHandle = driver.getWindowHandle();
+				int winCount;
 				for(int i= 1 ; i <= driver.findElements(By.xpath("//*[@id='documentListDialog:documentListDT_data']/tr")).size() ; i++){
+					
 					if(driver.findElement(By.xpath("//*[@id='documentListDialog:documentListDT_data']/tr["+i+"]/td[2]//a")).getText().equalsIgnoreCase("View")){
-						driver.findElement(By.xpath("//*[@id='documentListDialog:documentListDT_data']/tr["+i+"]/td[2]//a")).click();
+						winCount = driver.getWindowHandles().size();
+						while(!(driver.getWindowHandles().size() == winCount+1)){
+							Thread.sleep(1500);
+							Core.isElementClickable(driver.findElement(By.xpath("//*[@id='documentListDialog:documentListDT_data']/tr["+i+"]/td[2]//a"))).click();
+						}
+						winCount = 0;
+						
 						while(!(StyleOfBody.getAttribute("style").contains("none")) && 
 								!(driver.findElement(By.xpath("//*[@id='documentListDialog:documentListDT_data']"+"/tr["+i+"]/td[3]//img")).getAttribute("id").contains("ccCheckMarkImg"))){}
 						while(!StyleOfBody.getAttribute("style").contains("none")){}
 					}
 				}
+				while(!StyleOfBody.getAttribute("style").contains("none")){}
+				for(String handle : driver.getWindowHandles()) {
+					if (!handle.equals(originalHandle)) {
+						driver.switchTo().window(handle);
+						driver.close();
+					}
+				}
+				driver.switchTo().window(originalHandle);
+				Thread.sleep(1500);
 				driver.findElement(By.xpath("//*[@id='documentListDialog:ccDoneBtn']/span")).click();
+			
 			}
 			al.add("<br> Unit# "+UnitNo+" has been released");
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
