@@ -55,13 +55,12 @@ public class AcceptanceQueuePage {
 		Core.APPLICATION_LOGS.debug("Test Method: "+new Object(){}.getClass().getEnclosingMethod().getName()+" Starts Running");
 
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
-		if(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span")).isDisplayed()){
-			Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
-		}
-
-		while(!StyleOfBody.getAttribute("style").contains("none")){}
-		while(!driver.findElement(By.xpath("//*[@id='left']")).getAttribute("style").contains("display: block")){
-			Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
+		
+		//Expand left Bar
+		if(driver.findElement(By.xpath("//*[@id='left-toggler']/span")).getAttribute("style").contains("display: block")){
+			while(driver.findElement(By.xpath("//*[@id='left-toggler']/span")).getAttribute("style").contains("display: block")){
+				Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
+			}
 		}
 
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
@@ -105,11 +104,12 @@ public class AcceptanceQueuePage {
 
 			//	Was it successfully accepted
 			if(message.contains("accepted")){
-				Core.DataTable.setCellData("PO_Detail", "UnitNoToMaintain", Core.DataTable.getRowCount("PO_Detail")+1, message.substring(message.length()-8,message.length()));
+				Core.DataTable.setCellData("PO_Detail", "UnitNoToMaintain", Core.DataTable.getCellRowNum("PO_Detail", "Quote", QuoteNo), message.substring(message.length()-8,message.length()));
 			}
 			
 			al.add("<br> "+message);
-			}
+
+		}
 
 		//	not the expected condition
 		else

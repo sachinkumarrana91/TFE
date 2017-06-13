@@ -3,6 +3,7 @@ package webPages;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -91,25 +92,24 @@ public class UnitProgressChasingPage {
 		Core.APPLICATION_LOGS.debug("Test Method: "+new Object(){}.getClass().getEnclosingMethod().getName()+" Starts Running");
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
 		
-		if(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span")).isDisplayed()){
-			Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
+		//Expand left Bar
+		if(driver.findElement(By.xpath("//*[@id='left-toggler']/span")).getAttribute("style").contains("display: block")){
+			while(driver.findElement(By.xpath("//*[@id='left-toggler']/span")).getAttribute("style").contains("display: block")){
+				Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
+			}
 		}
-
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
-		while(!driver.findElement(By.xpath("//*[@id='left']")).getAttribute("style").contains("display: block")){
-
-			Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
-			while(!StyleOfBody.getAttribute("style").contains("none")){}
-		}
-
+		
 		//	check! Whether the OrderToDelivery is expanded or not
 		if(!OrderToDelivery.getAttribute("aria-expanded").equalsIgnoreCase("true")){
 
 			//	if not! click OrderToDelivery button
-			Core.isElementVisible(OrderToDelivery).click();
-			while(!StyleOfBody.getAttribute("style").contains("none")){}
+			while(!OrderToDelivery.getAttribute("aria-expanded").equalsIgnoreCase("true")){
+				while(!StyleOfBody.getAttribute("style").contains("none")){}
+				Core.isElementVisible(OrderToDelivery).click();
+				while(!StyleOfBody.getAttribute("style").contains("none")){}
+			}
 		}
-
 		//	Click on Unit Progress Chasing link at side window
 		Core.isElementClickable(driver.findElement(By.xpath("//*[@id='menuForm:j_idt19']//*[text()='Unit Progress Chasing']"))).click();
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
@@ -166,6 +166,10 @@ public class UnitProgressChasingPage {
 			}
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
 			
+			//	Get number of 3rd Parties
+			String ThirdPartyCount = driver.findElement(By.xpath("//*[@id='maintainPOPanelMain_content']//*[text()='No. of 3rd Party POs:']/parent::*/following-sibling::td[1]/span")).getText();
+			Core.DataTable.setCellData("PO_Detail", "DA?", Core.DataTable.getCellRowNum("PO_Detail", "UnitNoToMaintain", UnitNo), ThirdPartyCount);
+			
 			//	Click Save button
 			Core.isElementClickable(SaveButton).click();
 
@@ -190,7 +194,7 @@ public class UnitProgressChasingPage {
 }
 
 	
-	public void releasePO(String UnitNo){
+	public void releasePO(String UnitNo) throws InterruptedException{
 		Core.APPLICATION_LOGS.debug("Test Method: "+new Object(){}.getClass().getEnclosingMethod().getName()+" Starts Running");
 
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
@@ -200,31 +204,52 @@ public class UnitProgressChasingPage {
 		driver.findElement(By.xpath("//*[@id='filter']")).click();
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
 
-		if(driver.findElements(By.xpath(this.UnitNo+UnitNo+"')]")).size()==1){
+		if((driver.findElements(By.xpath(this.UnitNo+UnitNo+"')]")).size()==1)	&&	
+				!(driver.findElement(By.xpath("//*[@id='DT_UI_ID_data']//td[4]/span[contains(text(),'"+UnitNo+"')]"+
+				"/parent::td[1]/following-sibling::td[6]/span")).getText().equalsIgnoreCase("Released"))){
+
 			Core.isElementClickable(driver.findElement(By.xpath(this.UnitNo+UnitNo+"')]"))).click();
 			Core.isElementClickable(maintainPOButton).click();
 			al.add("<br> Unit# "+UnitNo+" Found to release");
 		
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
-			if(ReleasePOBtn.getAttribute("aria-disabled").contentEquals("false")){
-				ReleasePOBtn.click();
-			}
-			else{
-				throw new NoSuchElementException(UnitNo+" has already been release please proceed to confirm the unit");
-			}
-
+			ReleasePOBtn.click();
+			while(!StyleOfBody.getAttribute("style").contains("none")){}
+			
 			//	Handle VIN Pop-ups
 			Core.handleVINpopup();
 
 			if(!(driver.findElements(By.xpath("//*[@id='documentListDialog:documentListDT_data']")).size()== 0)){
+				String originalHandle = driver.getWindowHandle();
 				if(driver.findElements(By.xpath(DocumentList)).size()>0){
 					for(int i= 1 ; i <= driver.findElements(By.xpath(DocumentList+"/tr")).size() ; i++){
+						int winCount;
 						if(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a")).getText().equalsIgnoreCase("View")){
-							driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a")).click();
+							
+							winCount = driver.getWindowHandles().size();
+							while(!(driver.getWindowHandles().size() == winCount+1)){
+								Thread.sleep(1500);
+								Core.isElementClickable(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a"))).click();
+							}
+							winCount = 0;
+
+							while(!StyleOfBody.getAttribute("style").contains("none")){}
+							driver.switchTo().window(originalHandle);
+							
 							while(!(StyleOfBody.getAttribute("style").contains("none")) && 
 									!(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[3]//img")).getAttribute("id").contains("ccCheckMarkImg"))){}
 						}
 					}
+					
+					
+					while(!StyleOfBody.getAttribute("style").contains("none")){}
+					for(String handle : driver.getWindowHandles()) {
+				        if (!handle.equals(originalHandle)) {
+				            driver.switchTo().window(handle);
+				            driver.close();
+				        }
+				    }
+				    driver.switchTo().window(originalHandle);
 					while(!StyleOfBody.getAttribute("style").contains("none")){}
 					driver.findElement(By.xpath("//*[@id='documentListDialog:ccDoneBtn']/span")).click();
 					while(!StyleOfBody.getAttribute("style").contains("none")){}
@@ -233,20 +258,26 @@ public class UnitProgressChasingPage {
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
 		}
 		else
-			if(driver.findElements(By.xpath(this.UnitNo+UnitNo+"')]")).size()==0){
-				al.add("<br> Unit# <FONT COLOR=red>"+UnitNo+"</font> Not Found for release");
-				System.out.println("Unit# "+UnitNo+" Not Found for release");
-				//throw new NoSuchElementException("Not Able to find the Unit No. on Purchase Order Release Page for Relase");
+			if(driver.findElement(By.xpath("//*[@id='DT_UI_ID_data']//td[4]/span[contains(text(),'"+UnitNo+"')]"+
+					"/parent::td[1]/following-sibling::td[6]/span")).getText().equalsIgnoreCase("Released")){
+				al.add("<br> Unit# <FONT COLOR=red>"+UnitNo+"</font> has been released already");
+				System.out.println("Unit# "+UnitNo+" has been released already");
 			}
-			else{
-				al.add("<br> Unit# <FONT COLOR=red>"+UnitNo+"</font> Found with duplicate entries");
-				System.out.println("Unit# "+UnitNo+" Found with duplicate entries");
-				//throw new NoSuchElementException("Duplicate entries for Unit No. "+UnitNo+" with the same number found on Purchase Order Release Page for Relase");
-			}
-			while(!StyleOfBody.getAttribute("style").contains("none")){}
+			else
+				if(driver.findElements(By.xpath(this.UnitNo+UnitNo+"')]")).size()==0){
+					al.add("<br> Unit# <FONT COLOR=red>"+UnitNo+"</font> Not Found for release");
+					System.out.println("Unit# "+UnitNo+" Not Found for release");
+					//throw new NoSuchElementException("Not Able to find the Unit No. on Purchase Order Release Page for Relase");
+				}
+				else{
+					al.add("<br> Unit# <FONT COLOR=red>"+UnitNo+"</font> Found with duplicate entries");
+					System.out.println("Unit# "+UnitNo+" Found with duplicate entries");
+					//throw new NoSuchElementException("Duplicate entries for Unit No. "+UnitNo+" with the same number found on Purchase Order Release Page for Relase");
+				}
+		while(!StyleOfBody.getAttribute("style").contains("none")){}
 	}
 	
-	public void confirmPO(String UnitNo){
+	public void confirmPO(String UnitNo) throws InterruptedException{
 		Core.APPLICATION_LOGS.debug("Test Method: "+new Object(){}.getClass().getEnclosingMethod().getName()+" Starts Running");
 
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
@@ -271,9 +302,21 @@ public class UnitProgressChasingPage {
 			
 				if(driver.findElement(By.xpath(DocumentList)).isDisplayed()){
 					String originalHandle = driver.getWindowHandle();
+					int winCount;
 					for(int i= 1 ; i <= driver.findElements(By.xpath(DocumentList+"/tr")).size() ; i++){
 						if(Core.isElementVisible(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a"))).getText().equalsIgnoreCase("View")){
-							Core.isElementClickable(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a"))).click();
+
+							winCount = driver.getWindowHandles().size();
+							while(!(driver.getWindowHandles().size() == winCount+1)){
+								Thread.sleep(1500);
+								driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[2]//a")).click();
+							}
+							winCount = 0;
+							
+							while(!StyleOfBody.getAttribute("style").contains("none")){}
+							driver.switchTo().window(originalHandle);
+							
+							
 							while(!(StyleOfBody.getAttribute("style").contains("none")) && 
 									!(driver.findElement(By.xpath(DocumentList+"/tr["+i+"]/td[3]//img")).getAttribute("id").contains("ccCheckMarkImg"))){}
 						

@@ -4,6 +4,8 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+import config.Configuration;
+
 public class RunJobOnly {
 
 	public static ExcelReader datatable;
@@ -13,7 +15,9 @@ public class RunJobOnly {
 
 		ENV = "QA3";
 
-		datatable = new ExcelReader(System.getProperty("user.dir")+"//src//test//java//config//DataTable.xlsx");
+		//datatable = new ExcelReader(System.getProperty("user.dir")+"//src//test//java//config//DataTable.xlsx");
+		datatable = new ExcelReader(Configuration.exlPath_File);
+		
 		int i = datatable.getCellRowNum("loginQA", "dbName", ENV);
 		
 		
@@ -21,7 +25,7 @@ public class RunJobOnly {
 		try {
 			//refreshQueue(													// For Continue
 			util.DBUtills.refreshQueue(									// For once only
-					datatable.getCellData("loginQA", "IP", i),
+					datatable.getCellData("loginQA", "IP", i), 
 					datatable.getCellData("loginQA", "Port", i),
 					datatable.getCellData("loginQA", "dbName", i),
 					datatable.getCellData("loginQA", "UN", i),
@@ -35,12 +39,6 @@ public class RunJobOnly {
 	}
 
 	
-	
-	
-	
-	
-	
-	
 	private final static String dcn = "oracle.jdbc.driver.OracleDriver";
 	private static Connection con;
 	
@@ -52,6 +50,10 @@ public class RunJobOnly {
 			int j = 0;
 			while(1==1){
 				System.out.println("============  "+j+++"  ============");
+/*				String s = "Select TAH_ID, SRLH_SRLH_ID, TRX_CODE, FMS_FMS_ID, STATUS, EA_ACCOUNT_CODE,CREATE_DATE, TAL_REASON, ORIGIN_PGM from TAL_TRX_HEADER WHERE FMS_FMS_ID IN "
+						+ "(SELECT FMS_ID FROM FLEET_MASTERS WHERE UNIT_NO = 00996515)";
+*/
+
 				CallableStatement stmt = con.prepareCall("BEGIN willow2k.process_stage_maint.refresh_stages(); END;");
 				System.out.println("Start Execution");
 				stmt.execute();

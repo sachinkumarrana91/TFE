@@ -32,20 +32,41 @@ public class VisionLoginPage {
 	public WebElement StyleOfBody;
 
 	
-	public void doLogin(String UserName, String Password){
+	public void doLogin(String UserName, String Password) throws InterruptedException{
 		Core.APPLICATION_LOGS.debug("Test Method: "+new Object(){}.getClass().getEnclosingMethod().getName()+" Starts Running");
+
 		username.sendKeys(UserName);
 		passsword.sendKeys(Password);
 		loginButton.click();
+		
 
-		if(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span")).isDisplayed()){
+		//Expand left Bar
+		if(driver.findElement(By.xpath("//*[@id='left-toggler']/span")).getAttribute("style").contains("display: block")){
 			Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
-		}
-		while(!driver.findElement(By.xpath("//*[@id='left']")).getAttribute("style").contains("display: block")){
-			Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
+			while(!StyleOfBody.getAttribute("style").contains("none")){}
 		}
 
+
+
+	
 	}
+	
+	public void doLogin(String SessionId, String env, String abcd) throws InterruptedException{
+		Core.APPLICATION_LOGS.debug("Test Method: "+new Object(){}.getClass().getEnclosingMethod().getName()+" Starts Running");
+
+		driver.navigate().to("http://vis-"+env+"/vision/view/handler.xhtml?audsid="+SessionId+"&corp_entity=1&origin=UTMENULP&query_mode=N&LOGIN_USER=GROVER_S&module=acceptance_queue&width=1920&height=1080");
+
+		//Expand left Bar
+		if(driver.findElement(By.xpath("//*[@id='left-toggler']/span")).getAttribute("style").contains("display: block")){
+			Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
+			while(!StyleOfBody.getAttribute("style").contains("none")){}
+		}
+
+
+
+	
+	}
+	
 	
 	
 	

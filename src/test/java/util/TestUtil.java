@@ -44,6 +44,26 @@ public class TestUtil extends Core{
 	 public static String to_date=null;
 	 //public static Xlfile_Reader datareader=null;
 	
+	 
+	 
+	 
+	 public static long strToInt(String s){
+		 long number = 0;
+		 long k = 1;
+		 for(int j = 1; j <= s.length()-1;j++){
+			 k = k*10;
+		 }
+		 for(int i = 0; i <= s.length()-1; i++ ){
+			 number = number + ((s.charAt(i)-48) * k);
+			 k = k / 10;
+		 }
+		 return number;
+	 }
+		
+	 
+	 
+	 
+	 
 	 public static String Handeler()   
 		{
 		try{	

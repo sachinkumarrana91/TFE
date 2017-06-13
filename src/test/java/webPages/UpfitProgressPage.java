@@ -40,13 +40,12 @@ public class UpfitProgressPage {
 		Core.APPLICATION_LOGS.debug("Test Method: "+new Object(){}.getClass().getEnclosingMethod().getName()+" Starts Running");
 
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
-		if(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span")).isDisplayed()){
-			Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
-		}
 
-		while(!StyleOfBody.getAttribute("style").contains("none")){}
-		while(!driver.findElement(By.xpath("//*[@id='left']")).getAttribute("style").contains("display: block")){
-			Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
+		//Expand left Bar
+		if(driver.findElement(By.xpath("//*[@id='left-toggler']/span")).getAttribute("style").contains("display: block")){
+			while(driver.findElement(By.xpath("//*[@id='left-toggler']/span")).getAttribute("style").contains("display: block")){
+				Core.isElementClickable(driver.findElement(By.xpath("//*[@id='left-toggler']/span/a/span"))).click();
+			}
 		}
 
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
@@ -130,10 +129,10 @@ public class UpfitProgressPage {
 		}
 		else{
 			if(driver.findElements(By.xpath("//*[@id='unitProgress_data']//td[3]//span[text()='"+UnitNo+"']")).size()==0){
-				al.add("<br> Unit# "+UnitNo+" not found for UpFit");
+				al.add("<br> Unit# <FONT COLOR=red>"+UnitNo+"</font>  not found for UpFit");
 			}
 			else{
-				al.add("<br> Unit# "+UnitNo+" multiple records found for UpFit");
+				al.add("<br> Unit# <FONT COLOR=red>"+UnitNo+"</font> multiple records found for UpFit");
 			}
 			
 		}

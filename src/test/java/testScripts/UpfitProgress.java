@@ -24,19 +24,28 @@ public class UpfitProgress extends Core{
 	@Parameters({"env"})
 	public static void refresh(String env){
 
- 		int i = Core.DataTable.getCellRowNum("loginQA", "dbName", env);
-
-		try {
-			util.DBUtills.refreshQueue(
-					DataTable.getCellData("loginQA", "IP", i),
-					DataTable.getCellData("loginQA", "Port", i),
-					DataTable.getCellData("loginQA", "dbName", i),
-					DataTable.getCellData("loginQA", "UN", i),
-					DataTable.getCellData("loginQA", "PW", i)
-					);
-		} catch (Exception e) {
-			System.out.println("Something went worg while running the job at back-end at environment: "+	DataTable.getCellData("loginQA", "dbName", 3));
-			e.printStackTrace();
+		Boolean b = false;
+		for(int i = 2; i <= DataTable.getRowCount("PO_Detail"); i++){
+			if(!DataTable.getCellData("PO_Detail", "DA?", i).equalsIgnoreCase("1")){
+				b= true;
+			}
+		}		
+		
+		
+		if(b==true){
+			int i = Core.DataTable.getCellRowNum("loginQA", "dbName", env);
+			try {
+				util.DBUtills.refreshQueue(
+						DataTable.getCellData("loginQA", "IP", i),
+						DataTable.getCellData("loginQA", "Port", i),
+						DataTable.getCellData("loginQA", "dbName", i),
+						DataTable.getCellData("loginQA", "UN", i),
+						DataTable.getCellData("loginQA", "PW", i)
+						);
+			} catch (Exception e) {
+				System.out.println("Something went worg while running the job at back-end at environment: "+	DataTable.getCellData("loginQA", "dbName", 3));
+				e.printStackTrace();
+			}
 		}
 
 	}
@@ -58,9 +67,13 @@ public class UpfitProgress extends Core{
 			UpfitProgressPage upp = PageFactory.initElements(driver, UpfitProgressPage.class);
 			upp.openUpfitProgress();
 			for(int i = 2; i <= DataTable.getRowCount("PO_Detail"); i++){
-				upp.processUnit(DataTable.getCellData("PO_Detail", "UnitNoToMaintain", i));
+				if(!DataTable.getCellData("PO_Detail", "DA?", i).equalsIgnoreCase("1")){
+					upp.processUnit(DataTable.getCellData("PO_Detail", "UnitNoToMaintain", i));
+				}
+				else{
+					upp.al.add("<br> Unit# <FONT COLOR=red>"+DataTable.getCellData("PO_Detail", "UnitNoToMaintain", i)+"</font> have no Dealer Accessory");
+				}
 			}
-			//upp.processUnit("00995897");
 
 			Description = "Pass";
 			for(int j = 0 ; j< upp.al.size() ; j++){

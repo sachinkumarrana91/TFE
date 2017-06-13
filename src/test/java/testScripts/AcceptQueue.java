@@ -75,8 +75,8 @@ public class AcceptQueue extends Core{
 			APPLICATION_LOGS.debug("Test Case: "+TestCaseName+" Starts Running");
 			
 			AcceptanceQueuePage aqp = PageFactory.initElements(driver, AcceptanceQueuePage.class);
-			for(int i = 2; i <= DataTable.getRowCount(TestCaseName); i++){
-				aqp.AcceptQuote(DataTable.getCellData(TestCaseName, "Quote #", i));
+			for(int i = 2; i <= DataTable.getRowCount("PO_Detail"); i++){
+				aqp.AcceptQuote(DataTable.getCellData("PO_Detail", "Quote", i));
 			}
 			
 			

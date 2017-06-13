@@ -35,8 +35,8 @@ public class ReleasePO extends Core{
 			System.out.println("Something went worg while running the job at back-end at environment: "+	DataTable.getCellData("loginQA", "dbName", 3));
 			e.printStackTrace();
 		}
-*/
-		
+
+*/		
 	}
 	
 	

@@ -9,6 +9,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.StringTokenizer;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -29,8 +30,8 @@ import util.ExcelReader;
 import util.Log;
 public class TestDemo {
 
-	
-/*	@BeforeClass
+/*	
+	@BeforeClass
 	public void beforeClass(){
 		System.out.println(new Object(){}.getClass().getEnclosingMethod().getName());
 	}	
@@ -70,10 +71,56 @@ public class TestDemo {
 		System.out.println(new Object(){}.getClass().getEnclosingMethod().getName());
 	}	
 	
-*/	
+*/
+	
+	
+	
 	public static void main(String... ertsakjcbskcbs) throws ParseException{
+		
+		String s  = "pirates of the carribeans : dead men tell no tales";
+		
+		StringTokenizer st = new StringTokenizer(s, " ");
+		while(st.hasMoreTokens()){
+			System.out.print(new StringBuffer(st.nextToken()).reverse());
+			System.out.print(" ");
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+String prev_BaeVehicleAmount = "12245";
 
-		int crystal = 25;
+//System.out.println(new SimpleDateFormat("MMddyyyy").format(Calendar.getInstance().getTime()));
+	
+
+		
+
+/*		int crystal = 25;
 		
 		for(int i=1; i<=crystal; i++){
 			for(int j=1; j<=crystal-i; j++){
@@ -114,7 +161,7 @@ public class TestDemo {
 			System.out.println();
 		}
 
-	
+*/	
 	
 /*		for(int i=1; i<=crystal; i++){
 			for(int j=1; j<=crystal-i; j++){

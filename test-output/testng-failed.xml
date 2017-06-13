@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <parameter name="BrowserName" value="Chrome"/>
-  <parameter name="env" value="QA3"/>
+  <parameter name="BrowserName" value="IE"/>
+  <parameter name="env" value="QA1"/>
+  <parameter name="user" value="rajput"/>
+  <parameter name="SessionId" value="1113723997"/>
+  <parameter name="overrideLoginPage" value="NO"/>
   <test name="Test1">
     <classes>
       <class name="core.Core"/>
@@ -13,19 +16,16 @@
       <class name="testScripts.VisionLogin"/>
     </classes>
   </test> <!-- Test2 -->
-  <test name="Test5">
+  <test name="Test4">
     <classes>
-      <class name="testScripts.ThirdPartyProgress"/>
+      <class name="testScripts.ReleasePO">
+        <methods>
+          <include name="openPurchaseOrderRelease"/>
+          <include name="savePO"/>
+          <include name="releasePO"/>
+          <include name="confirmPO"/>
+        </methods>
+      </class> <!-- testScripts.ReleasePO -->
     </classes>
-  </test> <!-- Test5 -->
-  <test name="Test6">
-    <classes>
-      <class name="testScripts.UpfitProgress"/>
-    </classes>
-  </test> <!-- Test6 -->
-  <test name="Test7">
-    <classes>
-      <class name="testScripts.UnitReconcile"/>
-    </classes>
-  </test> <!-- Test7 -->
+  </test> <!-- Test4 -->
 </suite> <!-- Failed suite [Suite] -->
