@@ -59,7 +59,7 @@ public class Core {
 	public static final Logger SELENIUM_LOGS = Logger.getRootLogger();
 	public static final Logger APPLICATION_LOGS = Logger.getLogger("devpinoyLogger");
 
-	public static String Description = "Pagal";
+	public static String Description;
 	
 	private String TestCaseName;
 	public String testStatus;

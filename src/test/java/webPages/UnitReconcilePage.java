@@ -149,7 +149,7 @@ public class UnitReconcilePage {
 			//System.out.println("INV"+PONum.substring(PONum.indexOf('N')+1,11));;
 
 			//	Enter the Invoice Number
-			InvoiceNumber.sendKeys("INV"+PONum.substring(PONum.indexOf('N')+1,11));
+			InvoiceNumber.sendKeys("INV"+PONum.substring(PONum.indexOf('N')+3,11));
 
 			Core.DataTable.setCellData("Unit_to_Reconcile_Output", "INV_Entered", 		i, "INV"+PONum.substring(PONum.indexOf('N')+1,11));
 

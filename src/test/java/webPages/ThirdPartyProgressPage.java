@@ -122,6 +122,8 @@ public class ThirdPartyProgressPage {
 							Core.isElementClickable(driver.findElement(By.xpath("//*[@id='documentListDialog:documentListDT_data']/tr["+i+"]/td[2]//a"))).click();
 						}
 						winCount = 0;
+						while(!StyleOfBody.getAttribute("style").contains("none")){}
+						driver.switchTo().window(originalHandle);
 						
 						while(!(StyleOfBody.getAttribute("style").contains("none")) && 
 								!(driver.findElement(By.xpath("//*[@id='documentListDialog:documentListDT_data']"+"/tr["+i+"]/td[3]//img")).getAttribute("id").contains("ccCheckMarkImg"))){}

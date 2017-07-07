@@ -13,8 +13,7 @@ public class RunJobOnly {
 
 		String ENV;
 
-		ENV = "QA3";
-
+		ENV = "STG1";
 		//datatable = new ExcelReader(System.getProperty("user.dir")+"//src//test//java//config//DataTable.xlsx");
 		datatable = new ExcelReader(Configuration.exlPath_File);
 		

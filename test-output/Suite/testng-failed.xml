@@ -2,10 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <parameter name="BrowserName" value="IE"/>
-  <parameter name="env" value="QA1"/>
+  <parameter name="env" value="STG1"/>
   <parameter name="user" value="rajput"/>
-  <parameter name="SessionId" value="1113723997"/>
-  <parameter name="overrideLoginPage" value="NO"/>
+  <parameter name="SessionId" value="1154986626"/>
+  <parameter name="overrideLoginPage" value="YES"/>
   <test name="Test1">
     <classes>
       <class name="core.Core"/>
@@ -16,16 +16,9 @@
       <class name="testScripts.VisionLogin"/>
     </classes>
   </test> <!-- Test2 -->
-  <test name="Test4">
+  <test name="Test9">
     <classes>
-      <class name="testScripts.ReleasePO">
-        <methods>
-          <include name="openPurchaseOrderRelease"/>
-          <include name="savePO"/>
-          <include name="releasePO"/>
-          <include name="confirmPO"/>
-        </methods>
-      </class> <!-- testScripts.ReleasePO -->
+      <class name="testScripts.InService"/>
     </classes>
-  </test> <!-- Test4 -->
+  </test> <!-- Test9 -->
 </suite> <!-- Failed suite [Suite] -->
