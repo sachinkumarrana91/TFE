@@ -4,7 +4,7 @@
   <parameter name="BrowserName" value="IE"/>
   <parameter name="env" value="STG1"/>
   <parameter name="user" value="rajput"/>
-  <parameter name="SessionId" value="1154986626"/>
+  <parameter name="SessionId" value="1173816618"/>
   <parameter name="overrideLoginPage" value="YES"/>
   <test name="Test1">
     <classes>
@@ -16,9 +16,232 @@
       <class name="testScripts.VisionLogin"/>
     </classes>
   </test> <!-- Test2 -->
+  <test name="Test3">
+    <classes>
+      <class name="testScripts.AcceptQueue"/>
+    </classes>
+  </test> <!-- Test3 -->
+  <test name="Test4">
+    <classes>
+      <class name="testScripts.ReleasePO">
+        <methods>
+          <include name="openPurchaseOrderRelease"/>
+          <include name="savePO"/>
+          <include name="releasePO"/>
+          <include name="confirmPO"/>
+        </methods>
+      </class> <!-- testScripts.ReleasePO -->
+    </classes>
+  </test> <!-- Test4 -->
+  <test name="Test5">
+    <classes>
+      <class name="testScripts.ThirdPartyProgress"/>
+    </classes>
+  </test> <!-- Test5 -->
+  <test name="Test6">
+    <classes>
+      <class name="testScripts.UpfitProgress"/>
+    </classes>
+  </test> <!-- Test6 -->
+  <test name="Test7">
+    <classes>
+      <class name="testScripts.UnitReconcile"/>
+    </classes>
+  </test> <!-- Test7 -->
+  <test name="Test8">
+    <classes>
+      <class name="testScripts.VehicleOrderStatus"/>
+    </classes>
+  </test> <!-- Test8 -->
   <test name="Test9">
     <classes>
       <class name="testScripts.InService"/>
     </classes>
   </test> <!-- Test9 -->
+  <test name="Test7(failed)">
+    <classes>
+      <class name="testScripts.UnitReconcile">
+        <methods>
+          <include name="addNewSheet"/>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+          <include name="UntRec"/>
+        </methods>
+      </class> <!-- testScripts.UnitReconcile -->
+      <class name="testScripts.ThirdPartyProgress">
+        <methods>
+          <include name="refresh"/>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- testScripts.ThirdPartyProgress -->
+      <class name="testScripts.InService">
+        <methods>
+          <include name="refresh"/>
+          <include name="endScript"/>
+          <include name="startTesting"/>
+          <include name="AfterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testScripts.InService -->
+      <class name="testScripts.ReleasePO">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+          <include name="refresh"/>
+        </methods>
+      </class> <!-- testScripts.ReleasePO -->
+      <class name="testScripts.AcceptQueue">
+        <methods>
+          <include name="refresh"/>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- testScripts.AcceptQueue -->
+      <class name="testScripts.VehicleOrderStatus">
+        <methods>
+          <include name="AfterMethod"/>
+          <include name="beforeMethod"/>
+          <include name="refresh"/>
+        </methods>
+      </class> <!-- testScripts.VehicleOrderStatus -->
+      <class name="testScripts.VisionLogin">
+        <methods>
+          <include name="AfterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testScripts.VisionLogin -->
+      <class name="testScripts.UpfitProgress">
+        <methods>
+          <include name="refresh"/>
+          <include name="AfterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testScripts.UpfitProgress -->
+    </classes>
+  </test> <!-- Test7(failed) -->
+  <test name="Test8(failed)">
+    <classes>
+      <class name="testScripts.UnitReconcile">
+        <methods>
+          <include name="addNewSheet"/>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- testScripts.UnitReconcile -->
+      <class name="testScripts.ThirdPartyProgress">
+        <methods>
+          <include name="refresh"/>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- testScripts.ThirdPartyProgress -->
+      <class name="testScripts.InService">
+        <methods>
+          <include name="refresh"/>
+          <include name="endScript"/>
+          <include name="startTesting"/>
+          <include name="AfterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testScripts.InService -->
+      <class name="testScripts.ReleasePO">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+          <include name="refresh"/>
+        </methods>
+      </class> <!-- testScripts.ReleasePO -->
+      <class name="testScripts.AcceptQueue">
+        <methods>
+          <include name="refresh"/>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- testScripts.AcceptQueue -->
+      <class name="testScripts.VehicleOrderStatus">
+        <methods>
+          <include name="VehicleOrderStatusTest"/>
+          <include name="AfterMethod"/>
+          <include name="beforeMethod"/>
+          <include name="refresh"/>
+        </methods>
+      </class> <!-- testScripts.VehicleOrderStatus -->
+      <class name="testScripts.VisionLogin">
+        <methods>
+          <include name="AfterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testScripts.VisionLogin -->
+      <class name="testScripts.UpfitProgress">
+        <methods>
+          <include name="refresh"/>
+          <include name="AfterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testScripts.UpfitProgress -->
+    </classes>
+  </test> <!-- Test8(failed) -->
+  <test name="Test9(failed)">
+    <classes>
+      <class name="testScripts.UnitReconcile">
+        <methods>
+          <include name="addNewSheet"/>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- testScripts.UnitReconcile -->
+      <class name="testScripts.ThirdPartyProgress">
+        <methods>
+          <include name="refresh"/>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- testScripts.ThirdPartyProgress -->
+      <class name="testScripts.InService">
+        <methods>
+          <include name="refresh"/>
+          <include name="endScript"/>
+          <include name="startTesting"/>
+          <include name="enterInServiceDate"/>
+          <include name="AfterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testScripts.InService -->
+      <class name="testScripts.ReleasePO">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+          <include name="refresh"/>
+        </methods>
+      </class> <!-- testScripts.ReleasePO -->
+      <class name="testScripts.AcceptQueue">
+        <methods>
+          <include name="refresh"/>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- testScripts.AcceptQueue -->
+      <class name="testScripts.VehicleOrderStatus">
+        <methods>
+          <include name="AfterMethod"/>
+          <include name="beforeMethod"/>
+          <include name="refresh"/>
+        </methods>
+      </class> <!-- testScripts.VehicleOrderStatus -->
+      <class name="testScripts.VisionLogin">
+        <methods>
+          <include name="AfterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testScripts.VisionLogin -->
+      <class name="testScripts.UpfitProgress">
+        <methods>
+          <include name="refresh"/>
+          <include name="AfterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- testScripts.UpfitProgress -->
+    </classes>
+  </test> <!-- Test9(failed) -->
 </suite> <!-- Failed suite [Suite] -->

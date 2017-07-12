@@ -229,6 +229,7 @@ public class Core {
 	  public static void endScript() throws Exception{
 		  //System.out.println("AfterSuite");
 		  String lastUpdated_Report = TestUtil.now("dd.MMMMM.yyyy hh.mm.ss aaa");
+		  
 		  TestReports.updateEndTime(lastUpdated_Report);
 
 	/*	  extent.endTest(logger);

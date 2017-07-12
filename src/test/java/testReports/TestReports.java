@@ -42,58 +42,98 @@ public class TestReports {
 	    out.newLine();
 	  
 	    out.write("<html>\n");
-	    out.write("<HEAD>\n");
-	    out.write(" <TITLE>Devil Project</TITLE>\n");
-	     out.write("</HEAD>\n");
+	    	out.write("<HEAD>\n");
+	    		out.write("<TITLE>Devil Project</TITLE>\n");
+	    	out.write("</HEAD>\n");
+	    	out.write("<body>\n");
+	    		out.write("<table  border=0 cellspacing=0 cellpadding=0 >\n");
+	    			out.write("<tr>\n");
+	    				out.write("<td width=150 align=left>\n");
+	    					out.write("<FONT COLOR=#E0E0E0 FACE=Arial SIZE=2.75>\n");
+	    						out.write("<img src=\"file:/C:/Users/Sachin.kumar/Desktop/MAL_DIRECT_LOGO_TAG.png\" align=right></img>\n");
+	    					out.write("</FONT>\n"); 
+	    				out.write("</td>\n"); 
+	    			out.write("</tr>\n");
+	    		out.write("</table>\n");
+
+	    		out.write("<h2 align=center><FONT COLOR=BLACK FACE=AriaL SIZE=6><u><b>Test Automation Report</b></u></FONT></h2>\n");
 	     
-	     out.write("<body>\n");
-	   
-	   
-	     out.write("<table  border=0 cellspacing=0 cellpadding=0 >\n");
+	     
+	     out.write("<table align=left border=1 cellspacing=1 cellpadding=1 >\n");
+
 	     out.write("<tr>\n");
-	     
-	    out.write("<td width=150 align=left><FONT COLOR=#E0E0E0 FACE=Arial SIZE=2.75> <img src='cm_logo.png' align=right></img></td>\n"); 
-	     
-	         
+	     out.write("<th colspan=2><FONT bgcolor=#E0E0E0 COLOR=BLACK FACE=Arial SIZE=4.5><u>Test Details</u></FONT></th>\n");
 	     out.write("</tr>\n");
-	     
-	     out.write("</table>\n");
-	     out.write("<h2 align=center><FONT COLOR=660066 FACE=AriaL SIZE=6><b>Test Automation Report</b></h2>\n");
-	     
-	     
-	     out.write("<table  border=1 cellspacing=1 cellpadding=1 >\n");
+
 	     out.write("<tr>\n");
-	   
+         out.write("<td width=125 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Run Date</b></FONT></td>\n");
+         out.write("<td width=175 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+RUN_DATE+"</b></FONT></td>\n");
+	     out.write("</tr>\n");
 	     		
-	           out.write("<h4> <FONT COLOR=black FACE=Arial SIZE=4.5> <u>Test Details :</u></h4>\n");
-	           out.write("<td width=150 align=left bgcolor=red><FONT COLOR=#E0E0E0 FACE=Arial SIZE=2.75><b>Run Date</b></td>\n");
-	           out.write("<td width=150 align=left><FONT COLOR=black FACE=Arial SIZE=2.75><b>"+RUN_DATE+"</b></td>\n");
-	     out.write("</tr>\n");
 	     out.write("<tr>\n");
-	           
-	           out.write("<td width=150 align=left bgcolor=red><FONT COLOR=#E0E0E0 FACE=Arial SIZE=2.75><b>Run StartTime</b></td>\n");
+         out.write("<td width=125 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Run StartTime</b></FONT></td>\n");
+         out.write("<td width=175 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+testStartTime+"</b></FONT></td>\n");
+	     out.write("</tr>\n");
 
-	           out.write("<td width=150 align=left><FONT COLOR=black FACE=Arial SIZE=2.75><b>"+testStartTime+"</b></td>\n");
-	     out.write("</tr>\n");
 	     out.write("<tr>\n");
-	    // out.newLine();   
-	           out.write("<td width=150 align= left  bgcolor=red><FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2.75><b>Run EndTime</b></td>\n");
-	           out.write("<td width=150 align= left ><FONT COLOR=black FACE= Arial  SIZE=2.75><b>END_TIME</b></td>\n");
+         out.write("<td width=125 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Run EndTime</b></FONT></td>\n");
+         out.write("<td width=175 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>END_TIME</b></FONT></td>\n");
 	     out.write("</tr>\n");
+
 	     out.write("<tr>\n");
-	   //  out.newLine();
-	           
-	           out.write("<td width=150 align= left  bgcolor=red><FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2.75><b>Environment</b></td>\n");
-	           out.write("<td width=150 align= left ><FONT COLOR=black FACE= Arial  SIZE=2.75><b>"+ENVIRONMENT+"</b></td>\n");
+         out.write("<td width=125 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Environment</b></FONT></td>\n");
+         out.write("<td width=175 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+ENVIRONMENT+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
+	     
 	     out.write("<tr>\n");
-	           
-	           out.write("<td width=150 align= left  bgcolor=red><FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2.75><b>Release</b></td>\n");
-	           out.write("<td width=150 align= left ><FONT COLOR=black FACE= Arial  SIZE=2.75><b>"+RELEASE+"</b></td>\n");
+         out.write("<td width=125 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Release</b></FONT></td>\n");
+         out.write("<td width=175 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+RELEASE+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
 
 	     out.write("</table>\n");
 	     
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	     
+	     out.write("<table align=right border=1 cellspacing=1 cellpadding=1 >\n");
+
+	     out.write("<tr>\n");
+	     out.write("<th colspan=2><FONT bgcolor=#E0E0E0 COLOR=BLACK FACE=Arial SIZE=4.5><u>Execution Statistics</u></FONT></th>\n");
+	     out.write("</tr>\n");
+
+	     out.write("<tr>\n");
+         out.write("<td width=125 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Test Case Executed</b></FONT></td>\n");
+         out.write("<td width=175 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+"#####"+"</b></FONT></td>\n");
+	     out.write("</tr>\n");
+	     		
+	     out.write("<tr>\n");
+         out.write("<td width=125 align=left bgcolor=#BCE954><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Test Case Passed</b></FONT></td>\n");
+         out.write("<td width=175 align=left bgcolor=#BCE954><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+"#####"+"</b></FONT></td>\n");
+	     out.write("</tr>\n");
+
+	     out.write("<tr>\n");
+         out.write("<td width=125 align=left bgcolor=#BCE954><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Pass Percentage</b></FONT></td>\n");
+         out.write("<td width=175 align=left bgcolor=#BCE954><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+"#####"+"</b></FONT></td>\n");
+	     out.write("</tr>\n");
+
+	     out.write("<tr>\n");
+         out.write("<td width=125 align=left bgcolor=RED><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Test Case Failed</b></FONT></td>\n");
+         out.write("<td width=175 align=left bgcolor=RED><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+"#####"+"</b></FONT></td>\n");
+	     out.write("</tr>\n");
+	     
+	     out.write("<tr>\n");
+         out.write("<td width=125 align=left bgcolor=RED><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Fail Percentage</b></FONT></td>\n");
+         out.write("<td width=175 align=left bgcolor=RED><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+"#####"+"</b></FONT></td>\n");
+	     out.write("</tr>\n");
+
+	     out.write("</table>\n");
+	     
+	     out.write("<br>\n");
+	     out.write("<br>\n");
+	     out.write("<br>\n");
+	     out.write("<br>\n");
+	     out.write("<br>\n");
+	     out.write("<br>\n");
+	     out.write("<br>\n");
 
 	    //Close the output stream
 	    out.close();
@@ -122,14 +162,13 @@ public class TestReports {
     	out.write("<h4> <FONT COLOR=black FACE= Arial  SIZE=4.5> <u>"+suiteName+" Report :</u></h4>\n");
         out.write("<table  border=1 cellspacing=1 cellpadding=1 width=100%>\n");
     	out.write("<tr>\n");
-        out.write("<td width=5%  align= center  bgcolor=red><FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2><b>Test Script#</b></td>\n");
-
-        out.write("<td width=20% align= center  bgcolor=red><FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2><b>Test Case Name</b></td>\n");
-        out.write("<td width=5% align= center  bgcolor=red><FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2><b>Status</b></td>\n");
-        out.write("<td width=35% align= center  bgcolor=red><FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2><b>Description</b></td>\n");
-        out.write("<td width=15% align= center  bgcolor=red><FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2><b>Run Start Time</b></td>\n");
-        out.write("<td width=15% align= center  bgcolor=red><FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2><b>Run End Time</b></td>\n");
-        out.write("<td width=5% align= center  bgcolor=red><FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2><b>Screen Shot</b></td>\n");
+        out.write("<td width=5%  align= center  bgcolor=#E0E0E0><FONT COLOR=BLACK FACE= Arial  SIZE=2><b>Test Script#</b></td>\n");
+        out.write("<td width=20% align= center  bgcolor=#E0E0E0><FONT COLOR=BLACK FACE= Arial  SIZE=2><b>Test Case Name</b></td>\n");
+        out.write("<td width=5% align= center  bgcolor=#E0E0E0><FONT COLOR=BLACK FACE= Arial  SIZE=2><b>Status</b></td>\n");
+        out.write("<td width=35% align= center  bgcolor=#E0E0E0><FONT COLOR=BLACK FACE= Arial  SIZE=2><b>Description</b></td>\n");
+        out.write("<td width=15% align= center  bgcolor=#E0E0E0><FONT COLOR=BLACK FACE= Arial  SIZE=2><b>Run Start Time</b></td>\n");
+        out.write("<td width=15% align= center  bgcolor=#E0E0E0><FONT COLOR=BLACK FACE= Arial  SIZE=2><b>Run End Time</b></td>\n");
+        out.write("<td width=5% align= center  bgcolor=#E0E0E0><FONT COLOR=BLACK FACE= Arial  SIZE=2><b>Screen Shot</b></td>\n");
 
         out.write("</tr>\n");
         out.close();
@@ -213,6 +252,7 @@ public class TestReports {
 			return;
 		}finally{
 			try {
+				//out.write("</table>\n");
 				out.close();
 			} catch (IOException e) {
 				e.printStackTrace();
