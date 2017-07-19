@@ -113,7 +113,7 @@ public class InServicePage {
 		}
 		else{
 			al.add("<br> Unit# <FONT COLOR=red>"+UnitNo+"</font> Not Found");
-			System.out.println("Unit# "+UnitNo+" Found with duplicate entries");
+			//System.out.println("Unit# "+UnitNo+" Found with duplicate entries");
 			//throw new NoSuchElementException("Duplicate entries for Unit No. "+UnitNo+" with the same number found on Purchase Order Release Page for ConfirmPO");
 		}
 	}

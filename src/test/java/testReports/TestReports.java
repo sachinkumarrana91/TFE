@@ -50,7 +50,8 @@ public class TestReports {
 	    			out.write("<tr>\n");
 	    				out.write("<td width=150 align=left>\n");
 	    					out.write("<FONT COLOR=#E0E0E0 FACE=Arial SIZE=2.75>\n");
-	    						out.write("<img src=\"file:/C:/Users/Sachin.kumar/Desktop/MAL_DIRECT_LOGO_TAG.png\" align=right></img>\n");
+/*	    						out.write("<img src=\"file:/C:/Users/Sachin.kumar/Desktop/MAL_DIRECT_LOGO_TAG.png\" align=right></img>\n");
+*/	    						out.write("<img src=\"https://www.mikealbert.com/wp-content/uploads/DIRECT_LOGO_TAG.jpg\" align=right></img>\n");
 	    					out.write("</FONT>\n"); 
 	    				out.write("</td>\n"); 
 	    			out.write("</tr>\n");
@@ -62,7 +63,7 @@ public class TestReports {
 	     out.write("<table align=left border=1 cellspacing=1 cellpadding=1 >\n");
 
 	     out.write("<tr>\n");
-	     out.write("<th colspan=2><FONT bgcolor=#E0E0E0 COLOR=BLACK FACE=Arial SIZE=4.5><u>Test Details</u></FONT></th>\n");
+	     out.write("<th colspan=2  bgcolor=#E0E0E0 ><FONT COLOR=BLACK FACE=Arial SIZE=4.5><u>Test Details</u></FONT></th>\n");
 	     out.write("</tr>\n");
 
 	     out.write("<tr>\n");
@@ -97,32 +98,34 @@ public class TestReports {
 	     out.write("<table align=right border=1 cellspacing=1 cellpadding=1 >\n");
 
 	     out.write("<tr>\n");
-	     out.write("<th colspan=2><FONT bgcolor=#E0E0E0 COLOR=BLACK FACE=Arial SIZE=4.5><u>Execution Statistics</u></FONT></th>\n");
+	     out.write("<th colspan=2 bgcolor=#E0E0E0 ><FONT COLOR=BLACK FACE=Arial SIZE=4.5><u>Execution Statistics</u></FONT></th>\n");
 	     out.write("</tr>\n");
 
 	     out.write("<tr>\n");
-         out.write("<td width=125 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Test Case Executed</b></FONT></td>\n");
-         out.write("<td width=175 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+"#####"+"</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Test Case Executed</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+"Test_Case_Executed#"+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
 	     		
 	     out.write("<tr>\n");
-         out.write("<td width=125 align=left bgcolor=#BCE954><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Test Case Passed</b></FONT></td>\n");
-         out.write("<td width=175 align=left bgcolor=#BCE954><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+"#####"+"</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Test Case Passed</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=#04ED37 FACE=Arial SIZE=2.75><b>"+"Test_Case_Passed#"+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
 
 	     out.write("<tr>\n");
-         out.write("<td width=125 align=left bgcolor=#BCE954><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Pass Percentage</b></FONT></td>\n");
-         out.write("<td width=175 align=left bgcolor=#BCE954><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+"#####"+"</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Pass Percentage</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=#04ED37 FACE=Arial SIZE=2.75><b>"+"Pass_Percentage#"+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
-
+	     
+	     //#BCE954
+	     
 	     out.write("<tr>\n");
-         out.write("<td width=125 align=left bgcolor=RED><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Test Case Failed</b></FONT></td>\n");
-         out.write("<td width=175 align=left bgcolor=RED><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+"#####"+"</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Test Case Failed</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=RED FACE=Arial SIZE=2.75><b>"+"Test_Case_Failed#"+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
 	     
 	     out.write("<tr>\n");
-         out.write("<td width=125 align=left bgcolor=RED><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Fail Percentage</b></FONT></td>\n");
-         out.write("<td width=175 align=left bgcolor=RED><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+"#####"+"</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Fail Percentage</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=RED FACE=Arial SIZE=2.75><b>"+"Fail_Percentage#"+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
 
 	     out.write("</table>\n");
@@ -305,14 +308,192 @@ public class TestReports {
 		    }catch (Exception e){//Catch exception if any
 		      System.err.println("Error: " + e.getMessage());
 		    }
+		
+	}
+
 	
-		
-		
-		
-		
-		
-		
-		
+	public static void updateTestCount(String TestCaseExecuted) {
+		StringBuffer buf = new StringBuffer();
+		try{
+		    // Open the file that is the first 
+		    // command line parameter
+		    FileInputStream fstream = new FileInputStream(indexResultFilename);
+		    // Get the object of DataInputStream
+		    DataInputStream in = new DataInputStream(fstream);
+		        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+		    String strLine;
+		    
+		    
+		    
+		    //Read File Line By Line
+		    
+		    while ((strLine = br.readLine()) != null)   {
+		    	
+		    
+		    	
+		     if(strLine.indexOf("Test_Case_Executed#") !=-1){
+		    	 strLine=strLine.replace("Test_Case_Executed#", TestCaseExecuted);
+		     }
+		     buf.append(strLine);
+		     
+		     
+		    }
+		  //Close the input stream
+		    in.close();
+		    //System.out.println(buf);
+		    FileOutputStream fos=new FileOutputStream(indexResultFilename);
+			 DataOutputStream   output = new DataOutputStream (fos);	 
+	    	 output.writeBytes(buf.toString());
+	    	 fos.close();
+		    
+		    }catch (Exception e){//Catch exception if any
+		      System.err.println("Error: " + e.getMessage());
+		    }
+	}
+
+	public static void updatePassedTestCount(String TestCasePassed) {
+		StringBuffer buf = new StringBuffer();
+		try{
+		    // Open the file that is the first 
+		    // command line parameter
+		    FileInputStream fstream = new FileInputStream(indexResultFilename);
+		    // Get the object of DataInputStream
+		    DataInputStream in = new DataInputStream(fstream);
+		        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+		    String strLine;
+		    
+		    
+		    
+		    //Read File Line By Line
+		    
+		    while ((strLine = br.readLine()) != null)   {
+		    	
+		    
+		    	
+		     if(strLine.indexOf("Test_Case_Passed#") !=-1){
+		    	 strLine=strLine.replace("Test_Case_Passed#", TestCasePassed);
+		     }
+		     buf.append(strLine);
+		     
+		     
+		    }
+		  //Close the input stream
+		    in.close();
+		    //System.out.println(buf);
+		    FileOutputStream fos=new FileOutputStream(indexResultFilename);
+			 DataOutputStream   output = new DataOutputStream (fos);	 
+	    	 output.writeBytes(buf.toString());
+	    	 fos.close();
+		    
+		    }catch (Exception e){//Catch exception if any
+		      System.err.println("Error: " + e.getMessage());
+		    }
+	}
+	
+	public static void updateFailedTestCount(String TestCaseFailed) {
+		StringBuffer buf = new StringBuffer();
+		try{
+		    // Open the file that is the first 
+		    // command line parameter
+		    FileInputStream fstream = new FileInputStream(indexResultFilename);
+		    // Get the object of DataInputStream
+		    DataInputStream in = new DataInputStream(fstream);
+		        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+		    String strLine;
+		    
+		    //Read File Line By Line
+		    
+		    while ((strLine = br.readLine()) != null)   {
+		    	
+		     if(strLine.indexOf("Test_Case_Failed#") !=-1){
+		    	 strLine=strLine.replace("Test_Case_Failed#", TestCaseFailed);
+		     }
+		     buf.append(strLine);
+		     
+		     
+		    }
+		  //Close the input stream
+		    in.close();
+		    //System.out.println(buf);
+		    FileOutputStream fos=new FileOutputStream(indexResultFilename);
+			 DataOutputStream   output = new DataOutputStream (fos);	 
+	    	 output.writeBytes(buf.toString());
+	    	 fos.close();
+		    
+		    }catch (Exception e){//Catch exception if any
+		      System.err.println("Error: " + e.getMessage());
+		    }
+	}
+	
+
+	public static void updatePassedTestPercentage(String TestPassPercentage) {
+		StringBuffer buf = new StringBuffer();
+		try{
+		    // Open the file that is the first 
+		    // command line parameter
+		    FileInputStream fstream = new FileInputStream(indexResultFilename);
+		    // Get the object of DataInputStream
+		    DataInputStream in = new DataInputStream(fstream);
+		        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+		    String strLine;
+		    
+		    //Read File Line By Line
+		    
+		    while ((strLine = br.readLine()) != null)   {
+		    	
+		     if(strLine.indexOf("Pass_Percentage#") !=-1){
+		    	 strLine=strLine.replace("Pass_Percentage#", TestPassPercentage+"%");
+		     }
+		     buf.append(strLine);
+		     
+		     
+		    }
+		  //Close the input stream
+		    in.close();
+		    //System.out.println(buf);
+		    FileOutputStream fos=new FileOutputStream(indexResultFilename);
+			 DataOutputStream   output = new DataOutputStream (fos);	 
+	    	 output.writeBytes(buf.toString());
+	    	 fos.close();
+		    
+		    }catch (Exception e){//Catch exception if any
+		      System.err.println("Error: " + e.getMessage());
+		    }
+	}
+
+	public static void updateFailedTestPercentage(String TestFailPercentage) {
+		StringBuffer buf = new StringBuffer();
+		try{
+		    // Open the file that is the first 
+		    // command line parameter
+		    FileInputStream fstream = new FileInputStream(indexResultFilename);
+		    // Get the object of DataInputStream
+		    DataInputStream in = new DataInputStream(fstream);
+		        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+		    String strLine;
+		    
+		    //Read File Line By Line
+		    
+		    while ((strLine = br.readLine()) != null)   {
+		    	
+		     if(strLine.indexOf("Fail_Percentage#") !=-1){
+		    	 strLine=strLine.replace("Fail_Percentage#", TestFailPercentage+"%");
+		     }
+		     buf.append(strLine);
+		     
+		     
+		    }
+		  //Close the input stream
+		    in.close();
+		    //System.out.println(buf);
+		    FileOutputStream fos=new FileOutputStream(indexResultFilename);
+			 DataOutputStream   output = new DataOutputStream (fos);	 
+	    	 output.writeBytes(buf.toString());
+	    	 fos.close();
+		    
+		    }catch (Exception e){//Catch exception if any
+		      System.err.println("Error: " + e.getMessage());
+		    }
 	}
 	
 }

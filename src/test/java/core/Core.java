@@ -11,6 +11,8 @@ import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import javax.enterprise.inject.New;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -31,6 +33,7 @@ import org.testng.asserts.SoftAssert;
 
 import config.Configuration;
 import testReports.TestReports;
+import testReports.TestStatistics;
 import util.ExcelReader;
 import util.TestUtil;
 
@@ -159,8 +162,8 @@ public class Core {
 	
 	
 	@BeforeSuite
-	@Parameters({"BrowserName","env"})
-	public void startTesting(String BrowserName, String env) throws Exception{
+	@Parameters({"BrowserName","env","Release_Version"})
+	public void startTesting(String BrowserName, String env, String Release_Version) throws Exception{
 		System.setProperty("Logs.Dir", System.getProperty("user.dir")+"\\src\\test\\java\\logs");
 		DataTable = new ExcelReader(System.getProperty("user.dir")+"\\src\\test\\java\\config\\DataTable.xlsx");
 		//System.out.println("BeforeSuite");
@@ -175,8 +178,8 @@ public class Core {
 
 			TestReports.startTesting(Configuration.Report_Folder+"//"+strDate+".html",
 					TestUtil.now("dd.MMMMM.yyyy hh.mm.ss aaa"),
-					env,
-					"Release_Version_#");										
+					env+" - "+BrowserName,
+					Release_Version);										
 				
 			if(BrowserName.equalsIgnoreCase("Chrome") ){
 				System.setProperty("webdriver.chrome.driver","chromedriver.exe");
@@ -222,15 +225,39 @@ public class Core {
 			driver = new EventFiringWebDriver(dr);	
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);	
-			TestReports.startSuite("Test_Suite_Name or Number");
+			//System.out.println(TestStatistics.getSuiteName());
+			TestReports.startSuite("fdbjnfdboi");
 			} 
 
 	  @AfterSuite
 	  public static void endScript() throws Exception{
 		  //System.out.println("AfterSuite");
 		  String lastUpdated_Report = TestUtil.now("dd.MMMMM.yyyy hh.mm.ss aaa");
-		  
 		  TestReports.updateEndTime(lastUpdated_Report);
+
+		  
+		  long PassedTestCount = TestStatistics.passedTestCount();
+		  long FailedTestCount = TestStatistics.failedTestCount();
+		  long SkippedTestCount = TestStatistics.skippedTestCount();
+		  long TestCount = PassedTestCount + FailedTestCount + SkippedTestCount;
+		  float PassPercentage = 0;
+		  float FailPercentage = 0;
+		  if(TestCount!=0) {
+			  PassPercentage = (float) ((PassedTestCount*100)/TestCount);
+			  FailPercentage = (float) ((FailedTestCount*100)/TestCount);
+		  }
+
+/*		  System.out.println(PassedTestCount);
+		  System.out.println(FailedTestCount);
+		  System.out.println(SkippedTestCount);
+		  System.out.println(TestCount);
+*/		  
+		  TestReports.updateTestCount(""+TestCount+"");
+		  TestReports.updatePassedTestCount(""+PassedTestCount+"");
+		  TestReports.updateFailedTestCount(""+FailedTestCount+"");
+		  TestReports.updatePassedTestPercentage(""+PassPercentage+"");
+		  TestReports.updateFailedTestPercentage(""+FailPercentage+"");
+		  
 
 	/*	  extent.endTest(logger);
 		  extent.flush();
