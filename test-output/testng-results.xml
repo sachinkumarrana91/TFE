@@ -1,23 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="5" passed="5">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="192962" started-at="2017-06-13T13:59:47Z" finished-at="2017-06-13T14:03:00Z">
+  <suite name="MySuite" duration-ms="66662" started-at="2017-07-27T14:15:49Z" finished-at="2017-07-27T14:16:55Z">
     <groups>
     </groups>
-    <test name="Test1" duration-ms="3" started-at="2017-06-13T13:59:47Z" finished-at="2017-06-13T13:59:47Z">
+    <test name="Test1" duration-ms="5" started-at="2017-07-27T14:15:49Z" finished-at="2017-07-27T14:15:49Z">
     </test> <!-- Test1 -->
-    <test name="Test2" duration-ms="7463" started-at="2017-06-13T13:59:48Z" finished-at="2017-06-13T13:59:55Z">
+    <test name="Test2" duration-ms="66623" started-at="2017-07-27T14:15:49Z" finished-at="2017-07-27T14:16:55Z">
       <class name="testScripts.VisionLogin">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.VisionLogin@36b4cef0]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-06-13T19:29:48Z" finished-at="2017-06-13T19:29:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="loginQA(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScripts.VisionLogin@36b4cef0]" name="loginQA" duration-ms="7332" started-at="2017-06-13T19:29:48Z" finished-at="2017-06-13T19:29:55Z">
+        <test-method status="PASS" signature="startTesting(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScripts.VisionLogin@32d2fa64]" name="startTesting" is-config="true" duration-ms="3068" started-at="2017-07-27T19:45:46Z" finished-at="2017-07-27T19:45:49Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[QA1]]>
+                <![CDATA[IE]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[STG1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTesting -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.VisionLogin@32d2fa64]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-07-27T19:45:49Z" finished-at="2017-07-27T19:45:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="loginQA(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testScripts.VisionLogin@32d2fa64]" name="loginQA" duration-ms="66280" started-at="2017-07-27T19:45:49Z" finished-at="2017-07-27T19:46:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[STG1]]>
               </value>
             </param>
             <param index="1">
@@ -27,106 +48,65 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[1113723997]]>
+                <![CDATA[1192476633]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[NO]]>
+                <![CDATA[YES]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at testScripts.VisionLogin.loginQA(VisionLogin.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginQA -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.VisionLogin@36b4cef0]" name="AfterMethod" is-config="true" duration-ms="127" started-at="2017-06-13T19:29:55Z" finished-at="2017-06-13T19:29:55Z">
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.VisionLogin@32d2fa64]" name="AfterMethod" is-config="true" duration-ms="334" started-at="2017-07-27T19:46:55Z" finished-at="2017-07-27T19:46:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMethod -->
-      </class> <!-- testScripts.VisionLogin -->
-    </test> <!-- Test2 -->
-    <test name="Test4" duration-ms="185463" started-at="2017-06-13T13:59:55Z" finished-at="2017-06-13T14:03:00Z">
-      <class name="testScripts.ReleasePO">
-        <test-method status="PASS" signature="startTesting(java.lang.String, java.lang.String)[pri:0, instance:testScripts.ReleasePO@587d1d39]" name="startTesting" is-config="true" duration-ms="3200" started-at="2017-06-13T19:29:44Z" finished-at="2017-06-13T19:29:47Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[IE]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[QA1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- startTesting -->
-        <test-method status="PASS" signature="refresh(java.lang.String)[pri:0, instance:testScripts.ReleasePO@587d1d39]" name="refresh" is-config="true" duration-ms="0" started-at="2017-06-13T19:29:55Z" finished-at="2017-06-13T19:29:55Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[QA1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- refresh -->
-        <test-method status="PASS" signature="openPurchaseOrderRelease()[pri:1, instance:testScripts.ReleasePO@587d1d39]" name="openPurchaseOrderRelease" duration-ms="7782" started-at="2017-06-13T19:29:55Z" finished-at="2017-06-13T19:30:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openPurchaseOrderRelease -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.ReleasePO@587d1d39]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-06-13T19:29:55Z" finished-at="2017-06-13T19:29:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.ReleasePO@587d1d39]" name="AfterMethod" is-config="true" duration-ms="132" started-at="2017-06-13T19:30:03Z" finished-at="2017-06-13T19:30:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.ReleasePO@587d1d39]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-06-13T19:30:03Z" finished-at="2017-06-13T19:30:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="savePO()[pri:2, instance:testScripts.ReleasePO@587d1d39]" name="savePO" duration-ms="29107" started-at="2017-06-13T19:30:03Z" finished-at="2017-06-13T19:30:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- savePO -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.ReleasePO@587d1d39]" name="AfterMethod" is-config="true" duration-ms="124" started-at="2017-06-13T19:30:32Z" finished-at="2017-06-13T19:30:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-        <test-method status="PASS" signature="releasePO()[pri:3, instance:testScripts.ReleasePO@587d1d39]" name="releasePO" duration-ms="78116" started-at="2017-06-13T19:30:32Z" finished-at="2017-06-13T19:31:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- releasePO -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.ReleasePO@587d1d39]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-06-13T19:30:32Z" finished-at="2017-06-13T19:30:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.ReleasePO@587d1d39]" name="AfterMethod" is-config="true" duration-ms="53" started-at="2017-06-13T19:31:50Z" finished-at="2017-06-13T19:31:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testScripts.ReleasePO@587d1d39]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2017-06-13T19:31:50Z" finished-at="2017-06-13T19:31:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="confirmPO()[pri:4, instance:testScripts.ReleasePO@587d1d39]" name="confirmPO" duration-ms="70027" started-at="2017-06-13T19:31:50Z" finished-at="2017-06-13T19:33:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- confirmPO -->
-        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testScripts.ReleasePO@587d1d39]" name="AfterMethod" is-config="true" duration-ms="118" started-at="2017-06-13T19:33:00Z" finished-at="2017-06-13T19:33:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AfterMethod -->
-        <test-method status="PASS" signature="endScript()[pri:0, instance:testScripts.ReleasePO@587d1d39]" name="endScript" is-config="true" duration-ms="270" started-at="2017-06-13T19:33:00Z" finished-at="2017-06-13T19:33:01Z">
+        <test-method status="PASS" signature="endScript()[pri:0, instance:testScripts.VisionLogin@32d2fa64]" name="endScript" is-config="true" duration-ms="419" started-at="2017-07-27T19:46:55Z" finished-at="2017-07-27T19:46:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endScript -->
-      </class> <!-- testScripts.ReleasePO -->
-    </test> <!-- Test4 -->
-  </suite> <!-- Suite -->
+      </class> <!-- testScripts.VisionLogin -->
+    </test> <!-- Test2 -->
+  </suite> <!-- MySuite -->
 </testng-results>

@@ -175,6 +175,25 @@
     <systemPath>${basedir}/mandatory_Jars/ojdbc7_PATCHED-12.1.0.2.0.jar</systemPath> <!-- must match file name  -->
 </dependency>
 
+ 
+<!-- https://mvnrepository.com/artifact/com.hynnet/jacob  -->
+<dependency>
+    <groupId>com.hynnet</groupId>
+    <artifactId>jacob</artifactId>
+    <version>1.18</version>
+</dependency>
+
+<dependency>
+    <groupId>autoitx4java</groupId>
+    <artifactId>autoitx4java</artifactId>
+    <version>1</version>
+    <scope>system</scope>
+    <systemPath>${basedir}/mandatory_Jars/AutoItX4Java.jar</systemPath> 
+</dependency>
+
+
+
+
 </dependencies>
   
   

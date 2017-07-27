@@ -7,8 +7,14 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.concurrent.TimeUnit;
 
@@ -25,13 +31,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.sun.xml.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
+
 import core.Core;
 import util.ExcelReader;
 import util.Log;
 public class TestDemo {
 
-/*	
-	@BeforeClass
+	
+/*	@BeforeClass
 	public void beforeClass(){
 		System.out.println(new Object(){}.getClass().getEnclosingMethod().getName());
 	}	
@@ -76,132 +84,38 @@ public class TestDemo {
 	
 	
 	public static void main(String... ertsakjcbskcbs) throws ParseException{
-		
-		String s  = "pirates of the carribeans : dead men tell no tales";
-		
-		StringTokenizer st = new StringTokenizer(s, " ");
-		while(st.hasMoreTokens()){
-			System.out.print(new StringBuffer(st.nextToken()).reverse());
-			System.out.print(" ");
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-String prev_BaeVehicleAmount = "12245";
-
-//System.out.println(new SimpleDateFormat("MMddyyyy").format(Calendar.getInstance().getTime()));
-	
-
-		
-
-/*		int crystal = 25;
-		
-		for(int i=1; i<=crystal; i++){
-			for(int j=1; j<=crystal-i; j++){
-				System.out.print(" ");
-			}
-			for(int k=crystal-i+1; k<=crystal; k++){
-				if(i==k)			System.out.print(" ");
-				if(i+k==crystal*2)	System.out.print(" ");
-				else				System.out.print("*");
-			}
-			for(int l=crystal+1; l<crystal+i; l++){
-				if(i==l)			System.out.print(" ");
-				if(i+l==crystal*2)	System.out.print(" ");
-				else				System.out.print("*");
-			}
-			for(int l=crystal+i; l<=(crystal*2)-1; l++){
-				System.out.print(" ");
-			}
-			System.out.println();
-		}
-		for(int i=(crystal-1); i>=1; i--){
-			for(int j=1; j<=crystal-i; j++){
-				System.out.print(" ");
-			}
-			for(int k=crystal-i+1; k<=crystal; k++){
-				if(i==k)			System.out.print(" ");
-				if(i+k==crystal*2)	System.out.print(" ");
-				else				System.out.print("*");
-			}
-			for(int l=crystal+1; l<crystal+i; l++){
-				if(i==l)			System.out.print(" ");
-				if(i+l==crystal*2)	System.out.print(" ");
-				else				System.out.print("*");
-			}
-			for(int l=crystal+i; l<=(crystal*2)-1; l++){
-				System.out.print(" ");
-			}
-			System.out.println();
-		}
-
-*/	
-	
-/*		for(int i=1; i<=crystal; i++){
-			for(int j=1; j<=crystal-i; j++){
-				System.out.print(" ");
-			}
-			for(int k=crystal-i+1; k<=crystal; k++){
-				System.out.print("*");
-			}
-			for(int l=crystal+1; l<crystal+i; l++){
-				System.out.print("*");
-			}
-			for(int l=crystal+i; l<=(crystal*2)-1; l++){
-				System.out.print(" ");
-			}
-			System.out.println();
-		}
-		for(int i=(crystal-1); i>=1; i--){
-			for(int j=1; j<=crystal-i; j++){
-				System.out.print(" ");
-			}
-			for(int k=crystal-i+1; k<=crystal; k++){
-				System.out.print("*");
-			}
-			for(int l=crystal+1; l<crystal+i; l++){
-				System.out.print("*");
-			}
-			for(int l=crystal+i; l<=(crystal*2)-1; l++){
-				System.out.print(" ");
-			}
-			System.out.println();
-		}
-
-*/		
+		executeDone();
+			System.out.println("sachin");
+			
 	
 	
-	}
+	}	
 
 
 
 
-	
-	
+
+	 public static void executeDone(){
+		 for(int i=0;;i++) {
+			 for(int j=0;;j++) {
+				 long mul = i*j;
+				 if((""+mul+"").equalsIgnoreCase(new String(new StringBuffer(""+i+"").reverse()))) {
+					 System.out.println(i+" * "+j+" = "+(i*j));
+				 }
+					break; 
+			 }
+			 
+			 
+			 //System.out.print(i+" ");
+		 }
+	 
+	 
+	 
+	 
+	 }
+	 
+	 
+	 
+		 
+
 }

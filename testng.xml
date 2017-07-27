@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
 
-<parameter name="env" value="QA1"/>
+
+
+<suite name="MySuite">
+
+
+<listeners>
+	<listener class-name="testReports.TestStatistics" />
+</listeners>
+
+
+<parameter name="env" value="STG1"/>
 <parameter name="user" value="rajput"/>
-<parameter name="SessionId" value="1113723997"/>
-<parameter name="overrideLoginPage" value="NO"/>
+<parameter name="SessionId" value="1192476633"/>
+<parameter name="overrideLoginPage" value="YES"/>
 
 <!-- <parameter name="BrowserName" value="Chrome"/>
  -->
@@ -15,6 +24,7 @@
  
  <parameter name="BrowserName" value="IE"/>
 
+<parameter name="Release_Version" value="1"/>
 
 <test name="Test1">
 	<classes>
@@ -22,20 +32,24 @@
 	</classes>
 </test> <!-- Test -->
 
+
 <test name="Test2">
 	<classes>
 		<class name="testScripts.VisionLogin"/>
 	</classes>
-</test> <!-- Test -->
+</test> 
 
-<!-- <test name="Test3">
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+<!-- 
+ <test name="Test3">
 	<classes>
 		<class name="testScripts.AcceptQueue"/>
 	</classes>
-</test> 
+</test>  
 
- -->
-<test name="Test4">
+ <test name="Test4">
 	<classes>
 		<class name="testScripts.ReleasePO">
 			<methods>
@@ -49,14 +63,11 @@
 </test> 
 
  
- 
-<!-- <test name="Test5">
+<test name="Test5">
     <classes>
       <class name="testScripts.ThirdPartyProgress"/>
     </classes>
 </test> 
-
- 
  
  <test name="Test6">
     <classes>
@@ -65,15 +76,13 @@
 </test> 
 
 
- 
- 
+
 <test name="Test7">
     <classes>
       <class name="testScripts.UnitReconcile"/>
     </classes>
-</test> 
-
-
+</test>
+  
 <test name="Test8">
     <classes>
       <class name="testScripts.VehicleOrderStatus"/>
@@ -86,6 +95,6 @@
       <class name="testScripts.InService"/>
     </classes>
 </test> 
-
- -->
-</suite> <!-- Suite -->
+-->
+ 
+ </suite> <!-- Suite -->

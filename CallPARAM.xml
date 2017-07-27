@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" [<!ENTITY parent SYSTEM "src/test/resources/parameters.xml">]>
+<suite name="Suite">
+
+<!-- 
+<parameter name="env" value="TRN1"/>
+<parameter name="user" value="rajput"/>
+<parameter name="SessionId" value="1107016643"/>
+<parameter name="overrideLoginPage" value="YES"/>
+<parameter name="BrowserName" value="IE"/>
+
+ -->
+ 
+<parameters>&parent;</parameters>
+ 
+ 
+ 
+ <test name="Test1">
+	<classes>
+		<class name="core.Core"/>
+	</classes>
+</test> <!-- Test -->
+
+
+
+<test name="Test2">
+	<classes>
+		<class name="testScripts.VisionLogin"/>
+	</classes>
+</test> <!-- Test -->
+
+<!--  <test name="Test3">
+	<classes>
+		<class name="testScripts.AcceptQueue"/>
+	</classes>
+</test>  
+
+<test name="Test4">
+	<classes>
+		<class name="testScripts.ReleasePO">
+			<methods>
+				<include name="openPurchaseOrderRelease"/>
+ 				<include name="savePO" />
+				<include name="releasePO" />
+				<include name="confirmPO" />
+			</methods>
+		</class>
+	</classes>
+</test> 
+
+  
+<test name="Test5">
+    <classes>
+      <class name="testScripts.ThirdPartyProgress"/>
+    </classes>
+</test> 
+
+ 
+ 
+ 
+ <test name="Test6">
+    <classes>
+      <class name="testScripts.UpfitProgress"/>
+    </classes>
+</test> 
+
+
+<test name="Test7">
+    <classes>
+      <class name="testScripts.UnitReconcile"/>
+    </classes>
+</test> 
+
+
+<test name="Test8">
+    <classes>
+      <class name="testScripts.VehicleOrderStatus"/>
+    </classes>
+</test> 
+
+ -->
+ 
+ 
+<test name="Test9">
+    <classes>
+      <class name="testScripts.InService"/>
+    </classes>
+</test> 
+ 
+ 
+ </suite> <!-- Suite -->

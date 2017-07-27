@@ -1,15 +1,11 @@
-13/06/2017 19:29:48 devpinoyLogger Test Case: loginQA Starts Running
-13/06/2017 19:29:49 devpinoyLogger Test Method: doLogin Starts Running
-13/06/2017 19:29:55 devpinoyLogger Test Case: loginQA Passed
-13/06/2017 19:29:55 devpinoyLogger Test Case: openPurchaseOrderRelease Starts Running
-13/06/2017 19:29:55 devpinoyLogger Test Method: clickPurchaseOrderReleaseButton Starts Running
-13/06/2017 19:30:03 devpinoyLogger Test Case: openPurchaseOrderRelease Passed
-13/06/2017 19:30:03 devpinoyLogger Test Case: savePO Starts Running
-13/06/2017 19:30:03 devpinoyLogger Test Method: savePO Starts Running
-13/06/2017 19:30:32 devpinoyLogger Test Case: savePO Passed
-13/06/2017 19:30:32 devpinoyLogger Test Case: releasePO Starts Running
-13/06/2017 19:30:32 devpinoyLogger Test Method: releasePO Starts Running
-13/06/2017 19:31:50 devpinoyLogger Test Case: releasePO Passed
-13/06/2017 19:31:50 devpinoyLogger Test Case: confirmPO Starts Running
-13/06/2017 19:31:50 devpinoyLogger Test Method: confirmPO Starts Running
-13/06/2017 19:33:00 devpinoyLogger Test Case: confirmPO Passed
+27/07/2017 19:45:49 devpinoyLogger Test Case: loginQA Starts Running
+27/07/2017 19:46:31 devpinoyLogger Test Method: doLogin Starts Running
+27/07/2017 19:46:55 devpinoyLogger Test Case: loginQA Failed and error message is : Unable to find element with xpath == //*[@id='left-toggler']/span (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 3.02 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.3.1', revision: '5234b325d5', time: '2017-03-10 09:10:29 +0000'
+System info: host: 'C40SF-118-', ip: '10.131.80.22', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_102'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities [{browserAttachTimeout=0, ie.enableFullPageScreenshot=true, enablePersistentHover=true, ie.forceCreateProcessApi=false, ie.forceShellWindowsApi=false, pageLoadStrategy=normal, ignoreZoomSetting=false, ie.fileUploadDialogTimeout=3000, version=11, platform=WINDOWS, nativeEvents=true, ie.ensureCleanSession=false, elementScrollBehavior=0, ie.browserCommandLineSwitches=, requireWindowFocus=false, browserName=internet explorer, initialBrowserUrl=http://localhost:32021/, javascriptEnabled=true, ignoreProtectedModeSettings=false, enableElementCacheCleanup=true, unexpectedAlertBehaviour=dismiss}]
+Session ID: c383afca-dabd-4fdf-b90f-49da9fab454a
+*** Element info: {Using=xpath, value=//*[@id='left-toggler']/span}

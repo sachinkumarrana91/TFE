@@ -65,7 +65,9 @@ public class AcceptanceQueuePage {
 
 		while(!StyleOfBody.getAttribute("style").contains("none")){}
 		if(!OrderToDelivery.getAttribute("aria-expanded").equalsIgnoreCase("true")){
-		Core.isElementVisible(OrderToDelivery).click();
+			while(!OrderToDelivery.getAttribute("aria-expanded").equalsIgnoreCase("true")) {
+				Core.isElementVisible(OrderToDelivery).click();
+			}
 		}
 
 		while(!StyleOfBody.getAttribute("style").contains("none")){}

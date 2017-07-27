@@ -175,6 +175,7 @@ public class UnitProgressChasingPage {
 
 			//	Handle VIN Pop-ups
 			Core.handleVINpopup();
+			while(!driver.findElement(By.xpath("//*[@id='unitNoTxtId']")).isDisplayed()) {}
 		
 		}
 		else
@@ -256,6 +257,8 @@ public class UnitProgressChasingPage {
 				}
 			}
 			while(!StyleOfBody.getAttribute("style").contains("none")){}
+			while(!driver.findElement(By.xpath("//*[@id='unitNoTxtId']")).isDisplayed()) {}
+
 		}
 		else
 			if(driver.findElement(By.xpath("//*[@id='DT_UI_ID_data']//td[4]/span[contains(text(),'"+UnitNo+"')]"+
@@ -333,6 +336,7 @@ public class UnitProgressChasingPage {
 					while(!StyleOfBody.getAttribute("style").contains("none")){}
 					driver.findElement(By.xpath("//*[@id='documentListDialog:ccDoneBtn']/span")).click();
 					while(!StyleOfBody.getAttribute("style").contains("none")){}
+					while(!driver.findElement(By.xpath("//*[@id='unitNoTxtId']")).isDisplayed()) {}
 				}
 			
 			}

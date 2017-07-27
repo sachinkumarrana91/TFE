@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [MySuite]">
   <parameter name="BrowserName" value="IE"/>
-  <parameter name="env" value="QA1"/>
+  <parameter name="Release_Version" value="1"/>
+  <parameter name="env" value="STG1"/>
   <parameter name="user" value="rajput"/>
-  <parameter name="SessionId" value="1113723997"/>
-  <parameter name="overrideLoginPage" value="NO"/>
+  <parameter name="SessionId" value="1192476633"/>
+  <parameter name="overrideLoginPage" value="YES"/>
+  <listeners>
+    <listener class-name="testReports.TestStatistics"/>
+  </listeners>
   <test name="Test1">
     <classes>
       <class name="core.Core"/>
@@ -16,16 +20,17 @@
       <class name="testScripts.VisionLogin"/>
     </classes>
   </test> <!-- Test2 -->
-  <test name="Test4">
+  <test name="Test2(failed)">
     <classes>
-      <class name="testScripts.ReleasePO">
+      <class name="testScripts.VisionLogin">
         <methods>
-          <include name="openPurchaseOrderRelease"/>
-          <include name="savePO"/>
-          <include name="releasePO"/>
-          <include name="confirmPO"/>
+          <include name="loginQA" invocation-numbers="0"/>
+          <include name="endScript"/>
+          <include name="startTesting"/>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
         </methods>
-      </class> <!-- testScripts.ReleasePO -->
+      </class> <!-- testScripts.VisionLogin -->
     </classes>
-  </test> <!-- Test4 -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Test2(failed) -->
+</suite> <!-- Failed suite [MySuite] -->

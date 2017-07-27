@@ -18,7 +18,7 @@ public class TestConfig{
 	public static String server="smtp.gmail.com";
 	public static String from = "pooja.sen537@gmail.com";
 	//public static String from = "aaa@gmail.com";
-	public static String password = "21872187";
+	public static String password = "****************************************************************************";
 	public static String[] to ={"sachinkumarrana91@gmail.com"};
 	//public static String[] to ={"raman@abcd.com","kjhjk@abc.com"};
 	public static String subject = "Test Automation Report";
