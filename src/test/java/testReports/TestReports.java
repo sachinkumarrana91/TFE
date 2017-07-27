@@ -44,12 +44,80 @@ public class TestReports {
 	    out.write("<html>\n");
 	    	out.write("<HEAD>\n");
 	    		out.write("<TITLE>Devil Project</TITLE>\n");
+
+	    		// For Matrix Rain Fall effect on the report {
+	    		out.write("<style>\n");
+	    		out.write("*{\n");
+	    		out.write("margin: 0;\n");
+	    		out.write("padding: 0;\n");
+	    		out.write("}\n");
+	    		out.write("body {background: black;}\n");
+	    		out.write("canvas {\n");
+	    		out.write("display:block;\n");
+	    		out.write("width: 100vw;\n");
+	    		out.write("height: 100vh;\n");
+	    		out.write("display: absolute;\n");
+	    		out.write("position: fixed;\n");
+	    		out.write("top: 0;\n");
+	    		out.write("left: 0;\n");
+	    		out.write("z-index: -9999;\n");
+	    		out.write("}\n");
+	    		out.write("</style>\n");
+	    		// For Matrix Rain Fall effect on the report {
+	    		
+	    		
 	    	out.write("</HEAD>\n");
 	    	out.write("<body>\n");
-	    		out.write("<table  border=0 cellspacing=0 cellpadding=0 >\n");
+
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+    		// For Matrix Rain Fall effect on the report {
+    		out.write("<canvas id=\"c\"></canvas>\n");
+    		out.write("<script>\n");
+    		out.write("var c = document.getElementById(\"c\");\n");
+	    	out.write("var ctx = c.getContext(\"2d\");\n");
+    		out.write("c.height = window.innerHeight;\n");
+	    	out.write("c.width = window.innerWidth;\n");
+    		out.write("var matrix = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%\";\n");
+	    	out.write("matrix = matrix.split(\"\");\n");
+    		out.write("var font_size = 10;\n");
+	    	out.write("var columns = c.width/font_size;\n");
+    		out.write("var drops = [];\n");
+	    	out.write("for(var x = 0; x < columns; x++)\n");
+    		out.write("drops[x] = 1;\n");
+	    	out.write("function draw()\n");
+    		out.write("{\n");
+	    	out.write("ctx.fillStyle = \"rgba(0, 0, 0, 0.04)\";\n");
+    		out.write("ctx.fillRect(0, 0, c.width, c.height);\n");
+	    	out.write("ctx.fillStyle = \"#0F0\";\n");
+    		out.write("ctx.font = font_size + \"px arial\";\n");
+	    	out.write("for(var i = 0; i < drops.length; i++)\n");
+    		out.write("{\n");
+	    	out.write("var text = matrix[Math.floor(Math.random()*matrix.length)];\n");
+    		out.write("ctx.fillText(text, i*font_size, drops[i]*font_size);\n");
+	    	out.write("if(drops[i]*font_size > c.height && Math.random() > 0.975)\n");
+    		out.write("drops[i] = 0;\n");
+    		out.write("drops[i]++;\n");
+	    	out.write("}\n");
+    		out.write("}\n");
+	    	out.write("setInterval(draw, 35);\n");
+    		out.write("</script>\n");
+    		// For Matrix Rain Fall effect on the report {
+
+	    	
+	    	
+	    	
+	    	
+	    	out.write("<table  border=0 cellspacing=0 cellpadding=0 >\n");
 	    			out.write("<tr>\n");
 	    				out.write("<td width=150 align=left>\n");
 	    					out.write("<FONT COLOR=#E0E0E0 FACE=Arial SIZE=2.75>\n");
+
+	    					
 /*	    						out.write("<img src=\"file:/C:/Users/Sachin.kumar/Desktop/MAL_DIRECT_LOGO_TAG.png\" align=right></img>\n");
 */	    						out.write("<img src=\"https://www.mikealbert.com/wp-content/uploads/DIRECT_LOGO_TAG.jpg\" align=right></img>\n");
 	    					out.write("</FONT>\n"); 
@@ -57,7 +125,7 @@ public class TestReports {
 	    			out.write("</tr>\n");
 	    		out.write("</table>\n");
 
-	    		out.write("<h2 align=center><FONT COLOR=BLACK FACE=AriaL SIZE=6><u><b>Test Automation Report</b></u></FONT></h2>\n");
+	    		out.write("<h2 align=center><FONT COLOR=WHITE FACE=AriaL SIZE=6><u><b>Test Automation Report</b></u></FONT></h2>\n");
 	     
 	     
 	     out.write("<table align=left border=1 cellspacing=1 cellpadding=1 >\n");
@@ -162,7 +230,7 @@ public class TestReports {
 	    fstream = new FileWriter(indexResultFilename,true);
 	  	out = new BufferedWriter(fstream);
 	      
-    	out.write("<h4> <FONT COLOR=black FACE= Arial  SIZE=4.5> <u>"+suiteName+" Report :</u></h4>\n");
+    	out.write("<h4> <FONT COLOR=WHITE FACE= Arial  SIZE=4.5> <u>"+suiteName+" Report :</u></h4>\n");
         out.write("<table  border=1 cellspacing=1 cellpadding=1 width=100%>\n");
     	out.write("<tr>\n");
         out.write("<td width=5%  align= center  bgcolor=#E0E0E0><FONT COLOR=BLACK FACE= Arial  SIZE=2><b>Test Script#</b></td>\n");
@@ -221,13 +289,13 @@ public class TestReports {
 			
 			 out.write("<tr>\n");
 			 //System.out.println(currentSuitePath);
-		     out.write("<td width=5% align= center ><FONT COLOR=black FACE= Arial  SIZE=2><b>"+scriptNumber+"</b></td>\n");
+		     out.write("<td width=5% align= center ><FONT COLOR=WHITE FACE= Arial  SIZE=2><b>"+scriptNumber+"</b></td>\n");
 		     if(status.equalsIgnoreCase("Skipped") || status.equalsIgnoreCase("Skip"))
-		    	 out.write("<td width=20% align= center ><FONT COLOR=black FACE= Arial  SIZE=2><b>"+testCaseName+"</b></td>\n");
+		    	 out.write("<td width=20% align= center ><FONT COLOR=WHITE FACE= Arial  SIZE=2><b>"+testCaseName+"</b></td>\n");
 		     else
 		    	// out.write("<td width=40% align= center ><FONT COLOR=black FACE= Arial  SIZE=2><b><a href=file:///"+currentDir+"//"+currentSuiteName+"_TC"+tcid+"_"+testCaseName.replaceAll(" ", "_")+DriverScript.year+"_"+DriverScript.date+"_"+(DriverScript.month+1)+"_"+DriverScript.day+"_"+DriverScript.min+"_" +DriverScript.sec+".html>"+testCaseName+"</a></b></td>\n");
 		    	//out.write("<td width=40% align= center ><FONT COLOR=black FACE= Arial  SIZE=2><b><a href=http://"+TestUtil.Handeler()+":8080"+"//TestReports"+"//"+currentSuiteName+"_TC"+tcid+"_"+testCaseName.replaceAll(" ", "_")+PageFactory_TestCase.year+"_"+PageFactory_TestCase.date+"_"+(PageFactory_TestCase.month+1)+"_"+PageFactory_TestCase.day+"_"+PageFactory_TestCase.min+"_" +PageFactory_TestCase.sec+".html>"+testCaseName+"</a></b></td>\n");
-		     	out.write("<td width=20% align= center ><FONT COLOR=black FACE= Arial  SIZE=2><b>"+testCaseName.replaceAll(" ", "_")+"</b></td>\n");
+		     	out.write("<td width=20% align= center ><FONT COLOR=WHITE FACE= Arial  SIZE=2><b>"+testCaseName.replaceAll(" ", "_")+"</b></td>\n");
 		    	 //out.write("<td width=40% align= center ><FONT COLOR=black FACE= Arial  SIZE=2><b><a href="+currentSuiteName+"_TC"+tcid+"_"+testCaseName.replaceAll(" ", "_")+".html>"+testCaseName+"</a></b></td>\n");
 		     tcid++;
 		     if(status.startsWith("Pass")){
@@ -242,9 +310,9 @@ public class TestReports {
 			     out.write("<td width=5% align= center  bgcolor=yellow><FONT COLOR=153E7E FACE=Arial SIZE=2><b>"+status+"</b></td>\n");
 			     out.write("<td width=5% align= center  bgcolor=yellow><FONT COLOR=153E7E FACE=Arial SIZE=2><b>"+Description+"</b></td>\n");
 		     }
-		     out.write("<td width=15% align= center ><FONT COLOR=black FACE= Arial  SIZE=2><b>"+testCaseStartTime+"</b></td>\n");
-		     out.write("<td width=15% align= center ><FONT COLOR=black FACE= Arial  SIZE=2><b>"+testCaseEndTime+"</b></td>\n");
- 			 out.write("<td align=center width=5%><FONT COLOR=black FACE=Arial SIZE=1><b><a href=http://"+TestUtil.Handeler()+":8080/screenshots/"+ScreenShotPath+".jpeg"+" target=_blank>Screen Shot</a></b></td>");
+		     out.write("<td width=15% align= center ><FONT COLOR=WHITE FACE= Arial  SIZE=2><b>"+testCaseStartTime+"</b></td>\n");
+		     out.write("<td width=15% align= center ><FONT COLOR=WHITE FACE= Arial  SIZE=2><b>"+testCaseEndTime+"</b></td>\n");
+ 			 out.write("<td align=center width=5%><FONT COLOR=WHITE FACE=Arial SIZE=1><b><a href=http://"+TestUtil.Handeler()+":8080/screenshots/"+ScreenShotPath+".jpeg"+" target=_blank>Screen Shot</a></b></td>");
  			 //out.write("<td align=center width=10%><FONT COLOR=black FACE=Arial SIZE=1><b><a href=http://"+TestUtil.Handeler()+":8080/screenshots/"+ScreenShotPath+".jpeg"+" target=_blank>"+"C:/Selenium_3rd_Tools/apache-tomcat-9.0.0.M13/webapps/ROOT/screenshots/"+ScreenShotPath+".jpeg"+"</a></b></td>");
 
 		     out.write("</tr>\n");

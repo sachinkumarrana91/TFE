@@ -11,10 +11,9 @@
 </listeners>
 
 
-
 <parameter name="env" value="STG1"/>
 <parameter name="user" value="rajput"/>
-<parameter name="SessionId" value="1189476622"/>
+<parameter name="SessionId" value="1192476633"/>
 <parameter name="overrideLoginPage" value="YES"/>
 
 <!-- <parameter name="BrowserName" value="Chrome"/>
@@ -32,13 +31,18 @@
 		<class name="core.Core"/>
 	</classes>
 </test> <!-- Test -->
-<!--
+
+
 <test name="Test2">
 	<classes>
 		<class name="testScripts.VisionLogin"/>
 	</classes>
 </test> 
 
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+<!-- 
  <test name="Test3">
 	<classes>
 		<class name="testScripts.AcceptQueue"/>
@@ -59,7 +63,6 @@
 </test> 
 
  
- 
 <test name="Test5">
     <classes>
       <class name="testScripts.ThirdPartyProgress"/>
@@ -73,12 +76,13 @@
 </test> 
 
 
+
 <test name="Test7">
     <classes>
       <class name="testScripts.UnitReconcile"/>
     </classes>
 </test>
- 
+  
 <test name="Test8">
     <classes>
       <class name="testScripts.VehicleOrderStatus"/>

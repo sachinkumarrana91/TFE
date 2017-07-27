@@ -84,12 +84,9 @@ public class TestDemo {
 	
 	
 	public static void main(String... ertsakjcbskcbs) throws ParseException{
-		
-		//String s  = "pirates of the carribeans : dead men tell no tales pirates of the carribeans : dead men tell no tales";
-		String s  = "PON00216216";
-			//executeDone(s);
-
-			System.out.println("INV"+s.substring(s.indexOf('N')+3,11));
+		executeDone();
+			System.out.println("sachin");
+			
 	
 	
 	}	
@@ -98,22 +95,23 @@ public class TestDemo {
 
 
 
-	 public static void executeDone(String given){
-		 int number = 0;
-		 int decimalLocation = 0;
-		 String check;
-		 if(given.contains(".")){
-			 decimalLocation = given.length()-(given.indexOf(".")+1);
-			 check = given.replace(".", "");
+	 public static void executeDone(){
+		 for(int i=0;;i++) {
+			 for(int j=0;;j++) {
+				 long mul = i*j;
+				 if((""+mul+"").equalsIgnoreCase(new String(new StringBuffer(""+i+"").reverse()))) {
+					 System.out.println(i+" * "+j+" = "+(i*j));
+				 }
+					break; 
+			 }
+			 
+			 
+			 //System.out.print(i+" ");
 		 }
-		 else
-			 check=given;
-		 
-		 for(int i = 0 ; i<check.length(); i++){
-			 number = (int)(number + (check.charAt(i)-48)*(Math.pow(10, (check.length()-i-1))));
-		 }
-		 
-		 System.out.println(number/Math.pow(10, decimalLocation));
+	 
+	 
+	 
+	 
 	 }
 	 
 	 

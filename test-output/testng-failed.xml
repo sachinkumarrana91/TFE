@@ -5,7 +5,7 @@
   <parameter name="Release_Version" value="1"/>
   <parameter name="env" value="STG1"/>
   <parameter name="user" value="rajput"/>
-  <parameter name="SessionId" value="1189476622"/>
+  <parameter name="SessionId" value="1192476633"/>
   <parameter name="overrideLoginPage" value="YES"/>
   <listeners>
     <listener class-name="testReports.TestStatistics"/>
@@ -15,4 +15,22 @@
       <class name="core.Core"/>
     </classes>
   </test> <!-- Test1 -->
+  <test name="Test2">
+    <classes>
+      <class name="testScripts.VisionLogin"/>
+    </classes>
+  </test> <!-- Test2 -->
+  <test name="Test2(failed)">
+    <classes>
+      <class name="testScripts.VisionLogin">
+        <methods>
+          <include name="loginQA" invocation-numbers="0"/>
+          <include name="endScript"/>
+          <include name="startTesting"/>
+          <include name="beforeMethod"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- testScripts.VisionLogin -->
+    </classes>
+  </test> <!-- Test2(failed) -->
 </suite> <!-- Failed suite [MySuite] -->

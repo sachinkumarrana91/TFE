@@ -226,7 +226,7 @@ public class Core {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);	
 			//System.out.println(TestStatistics.getSuiteName());
-			TestReports.startSuite("fdbjnfdboi");
+			TestReports.startSuite("MAL P&D");
 			} 
 
 	  @AfterSuite
@@ -252,6 +252,8 @@ public class Core {
 		  System.out.println(SkippedTestCount);
 		  System.out.println(TestCount);
 */		  
+
+		  
 		  TestReports.updateTestCount(""+TestCount+"");
 		  TestReports.updatePassedTestCount(""+PassedTestCount+"");
 		  TestReports.updateFailedTestCount(""+FailedTestCount+"");
@@ -259,7 +261,10 @@ public class Core {
 		  TestReports.updateFailedTestPercentage(""+FailPercentage+"");
 		  
 
-	/*	  extent.endTest(logger);
+
+		  
+		  
+/*	  extent.endTest(logger);
 		  extent.flush();
 		  driver.get("C:\\Selenium_Project\\POMFramework\\test-output\\MyReport.html");
 	*/		

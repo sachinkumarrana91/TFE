@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-MySuite">
-              <span class="suite-name border-passed">MySuite</span>
+              <span class="suite-name border-failed">MySuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-MySuite">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">3 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">0 methods,   </span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-MySuite" class="hide-methods failed suite-MySuite"> (hide)</a> <!-- hide-methods failed suite-MySuite -->
+                      <a href="#" panel-name="suite-MySuite" class="show-methods failed suite-MySuite"> (show)</a> <!-- show-methods failed suite-MySuite -->
+                    </span>
+                    <div class="method-list-content failed suite-MySuite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-MySuite" title="testScripts.VisionLogin" hash-for-method="loginQA(STG1, rajput, 1192476633, YES)">loginQA(STG1, rajput, 1192476633, YES)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-MySuite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -103,6 +117,26 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-MySuite" class="panel MySuite">
+          <div class="suite-MySuite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">testScripts.VisionLogin</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginQA(STG1, rajput, 1192476633, YES)">
+                  </a> <!-- loginQA(STG1, rajput, 1192476633, YES) -->
+                  <span class="method-name">loginQA</span>
+                  <span class="parameters">(STG1, rajput, 1192476633, YES)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at testScripts.VisionLogin.loginQA(VisionLogin.java:47)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-MySuite-class-failed -->
         </div> <!-- panel MySuite -->
         <div panel-name="test-xml-MySuite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -117,7 +151,7 @@
   &lt;parameter name=&quot;Release_Version&quot; value=&quot;1&quot;/&gt;
   &lt;parameter name=&quot;env&quot; value=&quot;STG1&quot;/&gt;
   &lt;parameter name=&quot;user&quot; value=&quot;rajput&quot;/&gt;
-  &lt;parameter name=&quot;SessionId&quot; value=&quot;1189476622&quot;/&gt;
+  &lt;parameter name=&quot;SessionId&quot; value=&quot;1192476633&quot;/&gt;
   &lt;parameter name=&quot;overrideLoginPage&quot; value=&quot;YES&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;testReports.TestStatistics&quot;/&gt;
@@ -127,6 +161,24 @@
       &lt;class name=&quot;core.Core&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test1 --&gt;
+  &lt;test name=&quot;Test2&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;testScripts.VisionLogin&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test2 --&gt;
+  &lt;test name=&quot;Test2(failed)&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;testScripts.VisionLogin&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;loginQA&quot; invocation-numbers=&quot;0&quot;/&gt;
+          &lt;include name=&quot;endScript&quot;/&gt;
+          &lt;include name=&quot;startTesting&quot;/&gt;
+          &lt;include name=&quot;beforeMethod&quot;/&gt;
+          &lt;include name=&quot;AfterMethod&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- testScripts.VisionLogin --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test2(failed) --&gt;
 &lt;/suite&gt; &lt;!-- MySuite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -139,6 +191,12 @@
             <ul>
               <li>
                 <span class="test-name">Test1 (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Test2 (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Test2(failed) (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -164,11 +222,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(0);
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'loginQA')
+data.setCell(0, 2, 'testScripts.VisionLogin')
+data.setCell(0, 3, 66280);
 window.suiteTableData['MySuite']= { tableData: data, tableDiv: 'times-div-MySuite'}
 return data;
 }
               </script>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-MySuite">
               </div> <!-- times-div-MySuite -->
             </div> <!-- times-div -->
@@ -194,14 +257,28 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">core.Core</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testScripts.VisionLogin</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">startTesting(IE, STG1, 1)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+              <div class="configuration-test before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">3108 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">loginQA(STG1, rajput, 1192476633, YES)</span>
+                <span class="method-start">3114 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">AfterMethod</span>
+                <span class="method-start">69396 ms</span>
+              </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
                 <span class="method-name">endScript</span>
-                <span class="method-start">2900 ms</span>
+                <span class="method-start">69750 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
