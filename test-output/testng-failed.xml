@@ -3,9 +3,9 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [MySuite]">
   <parameter name="BrowserName" value="IE"/>
   <parameter name="Release_Version" value="1"/>
-  <parameter name="env" value="STG1"/>
+  <parameter name="env" value="QA2"/>
   <parameter name="user" value="rajput"/>
-  <parameter name="SessionId" value="1192476633"/>
+  <parameter name="SessionId" value="1162528169"/>
   <parameter name="overrideLoginPage" value="YES"/>
   <listeners>
     <listener class-name="testReports.TestStatistics"/>
@@ -20,17 +20,14 @@
       <class name="testScripts.VisionLogin"/>
     </classes>
   </test> <!-- Test2 -->
-  <test name="Test2(failed)">
+  <test name="Test5">
     <classes>
-      <class name="testScripts.VisionLogin">
-        <methods>
-          <include name="loginQA" invocation-numbers="0"/>
-          <include name="endScript"/>
-          <include name="startTesting"/>
-          <include name="beforeMethod"/>
-          <include name="AfterMethod"/>
-        </methods>
-      </class> <!-- testScripts.VisionLogin -->
+      <class name="testScripts.ThirdPartyProgress"/>
     </classes>
-  </test> <!-- Test2(failed) -->
+  </test> <!-- Test5 -->
+  <test name="Test6">
+    <classes>
+      <class name="testScripts.UpfitProgress"/>
+    </classes>
+  </test> <!-- Test6 -->
 </suite> <!-- Failed suite [MySuite] -->

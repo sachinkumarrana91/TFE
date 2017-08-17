@@ -1,9 +1,0 @@
-19/07/2017 20:22:16 devpinoyLogger Test Case: loginQA Starts Running
-19/07/2017 20:22:19 devpinoyLogger Test Method: doLogin Starts Running
-19/07/2017 20:22:24 devpinoyLogger Test Case: loginQA Passed
-19/07/2017 20:23:18 devpinoyLogger Test Case: openAcceptanceQueue Starts Running
-19/07/2017 20:23:18 devpinoyLogger Test Method: OpenAcceptanceQueue Starts Running
-19/07/2017 20:23:22 devpinoyLogger Test Case: openAcceptanceQueue Passed
-19/07/2017 20:23:22 devpinoyLogger Test Case: acceptQueue Starts Running
-19/07/2017 20:23:22 devpinoyLogger Test Method: AcceptQuote Starts Running
-19/07/2017 20:23:30 devpinoyLogger Test Case: acceptQueue Passed

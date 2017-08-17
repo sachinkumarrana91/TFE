@@ -1,0 +1,338 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<meta charset="utf-8">
+		<title>Matrix</title>
+</head>
+<body>
+	<div align="center">
+	<canvas id="q" width="" height="650">Sorry Browser Won't Support</canvas>
+
+
+ 	</div>
+
+	<script>
+		$(document).ready(
+			function()
+				{
+					var s=window.screen;
+					var width = q.width=s.width;
+					var height = q.height;
+					var yPositions = Array(300).join(0).split('');
+					var ctx=q.getContext('2d');
+		 
+						var draw = function ()
+							{
+								ctx.fillStyle='rgba(0,0,0,.05)';
+								ctx.fillRect(0,0,width,height);
+								ctx.fillStyle='#0F0';
+								ctx.font = '10pt Georgia';
+								yPositions.map(
+									function(y, index)
+										{
+											text = String.fromCharCode(1e2+Math.random()*33);
+											x = (index * 10)+10;
+											q.getContext('2d').fillText(text, x, y);
+											if(y > 100 + Math.random()*1e4)
+											{
+												yPositions[index]=0;
+											}
+											else
+											{
+												yPositions[index] = y + 10;
+											}
+										});
+
+							};
+
+							RunMatrix();
+
+							function RunMatrix()
+								{
+									if(typeof Game_Interval != "undefined") clearInterval(Game_Interval);
+									Game_Interval = setInterval(draw, 33);
+								}
+
+							function StopMatrix()
+								{
+									clearInterval(Game_Interval);
+								}
+//setInterval(draw, 33);
+
+ 
+					})
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+		<table  border=0 cellspacing=0 cellpadding=0 >
+			<tr>
+				<td width=150 align=left>	
+					<FONT COLOR=#E0E0E0 FACE=Arial SIZE=2.75> 
+						<img src='C:\Users\Sachin.kumar\Desktop\MAL_DIRECT_LOGO_TAG.png' align=right></img>
+					</FONT>
+				</td>
+			</tr>
+		</table>
+		
+		<h2 align=center>
+			<FONT COLOR=BLACK FACE=AriaL SIZE=6>
+				<u>
+				<b>Test Automation Report</b>
+				</u>
+			</FONT>
+		
+		</h2>
+		
+		<table  align=left border=1 cellspacing=1 cellpadding=1 >
+			<tr>
+				<th colspan=2 bgcolor=#E0E0E0> 
+					<FONT COLOR=BLACK FACE=Arial SIZE=4.5> 
+						<u>Test Details</u>
+					</FONT>	
+				</th>
+			</tr>
+			
+			<tr>
+				<td width=125 align=left bgcolor=WHITE>
+					<FONT COLOR=BLACK FACE=Arial SIZE=2.75>
+						<b>Run Date</b>
+					</FONT>	
+				</td>
+				<td width=175 align=left bgcolor=WHITE>
+					<FONT COLOR=BLACK FACE=Arial SIZE=2.75>
+						<b>05.July.2017</b>
+					</FONT>	
+				</td>
+			</tr>
+			
+			<tr>
+				<td width=125 align=left bgcolor=WHITE>
+					<FONT COLOR=BLACK FACE=Arial SIZE=2.75>
+						<b>Run StartTime</b>
+					</FONT>	
+				</td>
+				<td width=175 align=left bgcolor=WHITE>
+					<FONT COLOR=BLACK FACE=Arial SIZE=2.75>
+						<b>05.July.2017 02.41.11 PM</b>
+					</FONT>	
+				</td>
+				
+			</tr>
+			
+			<tr>
+				<td width=125 align=left bgcolor=WHITE>
+					<FONT COLOR=BLACK FACE=Arial SIZE=2.75>
+						<b>Run EndTime</b>
+					</FONT>	
+				</td>
+				<td width=175 align=left bgcolor=WHITE>
+					<FONT COLOR=BLACK FACE=Arial SIZE=2.75>
+						<b>05.July.2017 02.50.32 PM</b>
+					</FONT>	
+				</td>
+			</tr>
+			
+			<tr>
+				<td width=125 align=left bgcolor=WHITE>
+					<FONT COLOR=BLACK FACE=Arial SIZE=2.75>
+						<b>Environment</b>
+					</FONT>	
+				</td>
+				<td width=175 align=left bgcolor=WHITE>
+					<FONT COLOR=BLACK FACE=Arial SIZE=2.75>
+						<b>STG1</b>
+					</FONT>	
+				</td>
+			</tr>
+			
+			<tr>
+				<td width=125 align=left bgcolor=WHITE>
+					<FONT COLOR=BLACK FACE=Arial SIZE=2.75>
+						<b>Release</b>
+					</FONT>	
+				</td>
+				<td width=175 align=left bgcolor=WHITE>
+					<FONT COLOR=BLACK FACE=Arial SIZE=2.75>
+						<b>Release_Version_#</b>
+					</FONT>	
+				</td>
+			</tr>
+
+		</table>
+			
+		
+		<table  align=right border=1 cellspacing=1 cellpadding=1 >
+			<tr>
+				<th colspan=2 bgcolor=#E0E0E0> 
+					<FONT COLOR=BLACK FACE=Arial SIZE=4.5> 
+						<u>Execution Statistics</u>
+					</FONT>	
+				</th>
+			</tr>
+			
+			<tr>
+				<td width=125 align=left bgcolor=WHITE>
+					<FONT COLOR=BLACK FACE=Arial SIZE=2.75>
+						<b>Test Case Executed</b>
+					</FONT>	
+				</td>
+				<td width=175 align=left bgcolor=WHITE>
+					<FONT COLOR=BLACK FACE=Arial SIZE=2.75>
+						<b>15</b>
+					</FONT>	
+				</td>
+			</tr>
+			
+			<tr>
+				<td width=125 align=left bgcolor=#BCE954>
+					<FONT COLOR=BLACK FACE=Arial SIZE=2.75>
+						<b>Test Case Passed</b>
+					</FONT>	
+				</td>
+				<td width=175 align=left bgcolor=#BCE954>
+					<FONT COLOR=black FACE=Arial SIZE=2.75>
+						<b>12</b>
+					</FONT>	
+				</td>
+				
+			</tr>
+			
+			<tr>
+				<td width=125 align= left  bgcolor=#BCE954>
+					<FONT COLOR=BLACK FACE= Arial  SIZE=2.75>
+						<b>Pass Percentage</b>
+					</FONT>	
+				</td>
+				<td width=175 align= left bgcolor=#BCE954>
+					<FONT COLOR=BLACK FACE= Arial  SIZE=2.75>
+						<b>80%</b>
+					</FONT>	
+				</td>
+			</tr>
+
+			<tr>
+				<td width=125 align= left  bgcolor=red>
+					<FONT COLOR=BLACK FACE= Arial  SIZE=2.75>
+						<b>Test Case Failed</b>
+					</FONT>	
+				</td>
+				<td width=175 align= left bgcolor=red>
+					<FONT COLOR=BLACK FACE= Arial  SIZE=2.75>
+						<b>3</b>
+					</FONT>	
+				</td>
+			</tr>
+			
+			<tr>
+				<td width=125 align= left  bgcolor=red >
+					<FONT COLOR=BLACK FACE= Arial  SIZE=2.75>
+						<b>Failure Percentage</b>
+					</FONT>	
+				</td>
+				<td width=175 align= left bgcolor=red>
+					<FONT COLOR=BLACK FACE= Arial  SIZE=2.75>
+						<b>20%</b>
+					</FONT>	
+				</td>
+			</tr>
+
+		</table>
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+	<h4> 
+		<FONT COLOR=black FACE= Arial  SIZE=4.5> </FONT>
+			<u>Test_Suite_Name or Number Report</u>
+	</h4>
+	
+	<table  border=1 cellspacing=1 cellpadding=1 width=100%>
+		<tr>
+			<td width=5%  align= center  bgcolor=red>
+				<FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2></FONT>
+					<b>Test Script#</b>
+			</td>
+			<td width=20% align= center  bgcolor=red>
+				<FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2></FONT>
+					<b>Test Case Name</b>
+			</td>
+			<td width=5% align= center  bgcolor=red>
+				<FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2></FONT>
+					<b>Status</b>
+			</td>
+			<td width=35% align= center  bgcolor=red>
+				<FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2></FONT>
+					<b>Description</b>
+			</td>
+			<td width=15% align= center  bgcolor=red>
+				<FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2></FONT>
+					<b>Run Start Time</b>
+			</td>
+			<td width=15% align= center  bgcolor=red>
+				<FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2></FONT>
+					<b>Run End Time</b>
+			</td>
+			<td width=5% align= center  bgcolor=red>
+				<FONT COLOR=#E0E0E0 FACE= Arial  SIZE=2></FONT>
+					<b>Screen Shot</b>
+			</td>
+		</tr>
+		<tr>
+			<td width=5% align= center >
+				<FONT COLOR=black FACE= Arial  SIZE=2></FONT>
+					<b>"+Sequence_Number+"</b>
+			</td>
+			<td width=20% align= center >
+				<FONT COLOR=black FACE= Arial  SIZE=2></FONT>
+					<b>"+TestCase_Name+"</b>
+			</td>
+			<td width=5% align= center  bgcolor=#BCE954>
+				<FONT COLOR=black FACE=Arial SIZE=2></FONT>
+					<b>"+TestCase_Result+"</b>
+			</td>
+			<td width=5% align= center  bgcolor=#BCE954>
+				<FONT COLOR=black FACE=Arial SIZE=2></FONT>
+					<b>"+TestCase_Result_and_Description+"</b>
+			</td>
+			<td width=15% align= center >
+				<FONT COLOR=black FACE= Arial  SIZE=2></FONT>
+					<b>"+TestCase_Execution_StartTime+"</b>
+			</td>
+			<td width=15% align= center >
+				<FONT COLOR=black FACE= Arial  SIZE=2></FONT>
+					<b>"+TestCase_Execution_EndTime+"</b>
+			</td>
+			<td align=center width=5%>
+				<FONT COLOR=black FACE=Arial SIZE=1></FONT>
+					<b>
+						<a href="+TestCase_ScreenShot_URL+" target=_blank>Screen Shot</a>
+					</b>
+			</td>
+
+
+		</tr>
+		
+
+
+</body></html>

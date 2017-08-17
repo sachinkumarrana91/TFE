@@ -89,12 +89,18 @@ public class UpfitProgressPage {
 						if(Core.daysDifferance(todaysDate, date)<9)		dateToEnter = Core.addDaystoDate(todaysDate, -1);
 						else											dateToEnter = Core.addDaystoDate(date, +7);
 
+						while(!driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT']/div[2]/table/tbody/tr["+i+"]/td[5]/span/input")).getAttribute("class").contains("ui-state-focus ui-state-hover")) {
+							driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT']/div[2]/table/tbody/tr["+i+"]/td[5]/span/input")).click();
+						}
 						driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT_data']/tr["+i+"]/td[5]//input")).clear();
 						driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT_data']/tr["+i+"]/td[5]//input")).sendKeys(dateToEnter);
 					}
 					else
 						{																																									//First Column is blank
 							date = Core.addDaystoDate(todaysDate, -60);
+							while(!driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT']/div[2]/table/tbody/tr["+i+"]/td[4]/span/input")).getAttribute("class").contains("ui-state-focus ui-state-hover")) {
+								driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT']/div[2]/table/tbody/tr["+i+"]/td[4]/span/input")).click();
+							}
 							driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT_data']/tr["+i+"]/td[4]//input")).clear();
 							driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT_data']/tr["+i+"]/td[4]//input")).sendKeys(date);
 						}
@@ -106,6 +112,9 @@ public class UpfitProgressPage {
 						if(Core.daysDifferance(todaysDate, date)<9)		dateToEnter = Core.addDaystoDate(todaysDate, -1);
 						else											dateToEnter = Core.addDaystoDate(date, +7);
 
+						while(!driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT']/div[2]/table/tbody/tr["+i+"]/td[5]/span/input")).getAttribute("class").contains("ui-state-focus ui-state-hover")) {
+							driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT']/div[2]/table/tbody/tr["+i+"]/td[5]/span/input")).click();
+						}
 						driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT_data']/tr["+i+"]/td[5]//input")).sendKeys(dateToEnter);
 					}
 					else																																									//First Column is blank
@@ -115,6 +124,9 @@ public class UpfitProgressPage {
 						if(Core.daysDifferance(todaysDate, date)<9)		dateToEnter = Core.addDaystoDate(todaysDate, -1);
 						else											dateToEnter = Core.addDaystoDate(date, +7);
 
+						while(!driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT']/div[2]/table/tbody/tr["+i+"]/td[4]/span/input")).getAttribute("class").contains("ui-state-focus ui-state-hover")) {
+							driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT']/div[2]/table/tbody/tr["+i+"]/td[4]/span/input")).click();
+						}
 						driver.findElement(By.xpath("//*[@id='ccUpfitProgress:ccUpfitProgressDT_data']/tr["+i+"]/td[4]//input")).sendKeys(dateToEnter);
 						}
 				}
@@ -142,9 +154,6 @@ public class UpfitProgressPage {
 	
 	
 	}
-			
-			
-			
 			
 			
 			
