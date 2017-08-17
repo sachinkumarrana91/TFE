@@ -23,7 +23,7 @@ public class TestReports {
 		indexResultFilename = filename;
 		currentDir = indexResultFilename.substring(0,indexResultFilename.lastIndexOf("//"));
 		
-		System.out.println("Current directory is: "+currentDir);
+		//System.out.println("Current directory is: "+currentDir);
 		System.out.println("Current filename is: "+indexResultFilename);
 		
 		FileWriter fstream =null;
@@ -115,48 +115,46 @@ public class TestReports {
 	    	out.write("<table  border=0 cellspacing=0 cellpadding=0 >\n");
 	    			out.write("<tr>\n");
 	    				out.write("<td width=150 align=left>\n");
-	    					out.write("<FONT COLOR=#E0E0E0 FACE=Arial SIZE=2.75>\n");
-
 	    					
-/*	    						out.write("<img src=\"file:/C:/Users/Sachin.kumar/Desktop/MAL_DIRECT_LOGO_TAG.png\" align=right></img>\n");
-*/	    						out.write("<img src=\"https://www.mikealbert.com/wp-content/uploads/DIRECT_LOGO_TAG.jpg\" align=right></img>\n");
-	    					out.write("</FONT>\n"); 
-	    				out.write("</td>\n"); 
+/*    						out.write("<img src=\"file:/C:/Users/Sachin.kumar/Desktop/MAL_DIRECT_LOGO_TAG.png\" alt="some_text" style="opacity:0.5;filter:alpha(opacity=40);\"/>\n");
+*/    						out.write("<img src=\"http://www.mikealbertlandscape.com/tco-calculator/images/logo.png\" alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\">\n");
+
+						out.write("</td>\n"); 
 	    			out.write("</tr>\n");
 	    		out.write("</table>\n");
 
-	    		out.write("<h2 align=center><FONT COLOR=WHITE FACE=AriaL SIZE=6><u><b>Test Automation Report</b></u></FONT></h2>\n");
+	    		out.write("<h2 align=center><FONT COLOR=WHITE alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\" FACE=AriaL SIZE=6><u><b>Test Automation Report</b></u></FONT></h2>\n");
 	     
 	     
 	     out.write("<table align=left border=1 cellspacing=1 cellpadding=1 >\n");
 
 	     out.write("<tr>\n");
-	     out.write("<th colspan=2  bgcolor=#E0E0E0 ><FONT COLOR=BLACK FACE=Arial SIZE=4.5><u>Test Details</u></FONT></th>\n");
+	     out.write("<th colspan=2  bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\" ><FONT COLOR=WHITE FACE=Arial SIZE=4.5><u>Test Details</u></FONT></th>\n");
 	     out.write("</tr>\n");
 
 	     out.write("<tr>\n");
-         out.write("<td width=125 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Run Date</b></FONT></td>\n");
-         out.write("<td width=175 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+RUN_DATE+"</b></FONT></td>\n");
+         out.write("<td width=125 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\" ><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>Run Date</b></FONT></td>\n");
+         out.write("<td width=175 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>"+RUN_DATE+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
 	     		
 	     out.write("<tr>\n");
-         out.write("<td width=125 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Run StartTime</b></FONT></td>\n");
-         out.write("<td width=175 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+testStartTime+"</b></FONT></td>\n");
+         out.write("<td width=125 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>Run StartTime</b></FONT></td>\n");
+         out.write("<td width=175 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>"+testStartTime+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
 
 	     out.write("<tr>\n");
-         out.write("<td width=125 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Run EndTime</b></FONT></td>\n");
-         out.write("<td width=175 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>END_TIME</b></FONT></td>\n");
+         out.write("<td width=125 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>Run EndTime</b></FONT></td>\n");
+         out.write("<td width=175 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>END_TIME</b></FONT></td>\n");
 	     out.write("</tr>\n");
 
 	     out.write("<tr>\n");
-         out.write("<td width=125 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Environment</b></FONT></td>\n");
-         out.write("<td width=175 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+ENVIRONMENT+"</b></FONT></td>\n");
+         out.write("<td width=125 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>Environment</b></FONT></td>\n");
+         out.write("<td width=175 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>"+ENVIRONMENT+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
 	     
 	     out.write("<tr>\n");
-         out.write("<td width=125 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Release</b></FONT></td>\n");
-         out.write("<td width=175 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+RELEASE+"</b></FONT></td>\n");
+         out.write("<td width=125 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>Release</b></FONT></td>\n");
+         out.write("<td width=175 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>"+RELEASE+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
 
 	     out.write("</table>\n");
@@ -166,34 +164,34 @@ public class TestReports {
 	     out.write("<table align=right border=1 cellspacing=1 cellpadding=1 >\n");
 
 	     out.write("<tr>\n");
-	     out.write("<th colspan=2 bgcolor=#E0E0E0 ><FONT COLOR=BLACK FACE=Arial SIZE=4.5><u>Execution Statistics</u></FONT></th>\n");
+	     out.write("<th colspan=2 bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=4.5><u>Execution Statistics</u></FONT></th>\n");
 	     out.write("</tr>\n");
 
 	     out.write("<tr>\n");
-         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Test Case Executed</b></FONT></td>\n");
-         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>"+"Test_Case_Executed#"+"</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>Test Case Executed</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>"+"Test_Case_Executed#"+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
 	     		
 	     out.write("<tr>\n");
-         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Test Case Passed</b></FONT></td>\n");
-         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=#04ED37 FACE=Arial SIZE=2.75><b>"+"Test_Case_Passed#"+"</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>Test Case Passed</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>"+"Test_Case_Passed#"+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
 
 	     out.write("<tr>\n");
-         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Pass Percentage</b></FONT></td>\n");
-         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=#04ED37 FACE=Arial SIZE=2.75><b>"+"Pass_Percentage#"+"</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>Pass Percentage</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>"+"Pass_Percentage#"+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
 	     
 	     //#BCE954
 	     
 	     out.write("<tr>\n");
-         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Test Case Failed</b></FONT></td>\n");
-         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=RED FACE=Arial SIZE=2.75><b>"+"Test_Case_Failed#"+"</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>Test Case Failed</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=RED FACE=Arial SIZE=2.75><b>"+"Test_Case_Failed#"+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
 	     
 	     out.write("<tr>\n");
-         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=BLACK FACE=Arial SIZE=2.75><b>Fail Percentage</b></FONT></td>\n");
-         out.write("<td width=150 align=left bgcolor=WHITE><FONT COLOR=RED FACE=Arial SIZE=2.75><b>"+"Fail_Percentage#"+"</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE=Arial SIZE=2.75><b>Fail Percentage</b></FONT></td>\n");
+         out.write("<td width=150 align=left bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=RED FACE=Arial SIZE=2.75><b>"+"Fail_Percentage#"+"</b></FONT></td>\n");
 	     out.write("</tr>\n");
 
 	     out.write("</table>\n");
@@ -230,16 +228,16 @@ public class TestReports {
 	    fstream = new FileWriter(indexResultFilename,true);
 	  	out = new BufferedWriter(fstream);
 	      
-    	out.write("<h4> <FONT COLOR=WHITE FACE= Arial  SIZE=4.5> <u>"+suiteName+" Report :</u></h4>\n");
+    	out.write("<h4> <FONT COLOR=WHITE alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\" FACE= Arial  SIZE=4.5> <u>"+suiteName+" Report :</u></h4>\n");
         out.write("<table  border=1 cellspacing=1 cellpadding=1 width=100%>\n");
     	out.write("<tr>\n");
-        out.write("<td width=5%  align= center  bgcolor=#E0E0E0><FONT COLOR=BLACK FACE= Arial  SIZE=2><b>Test Script#</b></td>\n");
-        out.write("<td width=20% align= center  bgcolor=#E0E0E0><FONT COLOR=BLACK FACE= Arial  SIZE=2><b>Test Case Name</b></td>\n");
-        out.write("<td width=5% align= center  bgcolor=#E0E0E0><FONT COLOR=BLACK FACE= Arial  SIZE=2><b>Status</b></td>\n");
-        out.write("<td width=35% align= center  bgcolor=#E0E0E0><FONT COLOR=BLACK FACE= Arial  SIZE=2><b>Description</b></td>\n");
-        out.write("<td width=15% align= center  bgcolor=#E0E0E0><FONT COLOR=BLACK FACE= Arial  SIZE=2><b>Run Start Time</b></td>\n");
-        out.write("<td width=15% align= center  bgcolor=#E0E0E0><FONT COLOR=BLACK FACE= Arial  SIZE=2><b>Run End Time</b></td>\n");
-        out.write("<td width=5% align= center  bgcolor=#E0E0E0><FONT COLOR=BLACK FACE= Arial  SIZE=2><b>Screen Shot</b></td>\n");
+        out.write("<td width=5%  align= center  bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE= Arial  SIZE=2><b>Test Script#</b></td>\n");
+        out.write("<td width=20% align= center  bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE= Arial  SIZE=2><b>Test Case Name</b></td>\n");
+        out.write("<td width=5% align= center  bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE= Arial  SIZE=2><b>Status</b></td>\n");
+        out.write("<td width=35% align= center  bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE= Arial  SIZE=2><b>Description</b></td>\n");
+        out.write("<td width=15% align= center  bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE= Arial  SIZE=2><b>Run Start Time</b></td>\n");
+        out.write("<td width=15% align= center  bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE= Arial  SIZE=2><b>Run End Time</b></td>\n");
+        out.write("<td width=5% align= center  bgcolor=BLACK alt=\"some_text\" style=\"opacity:0.5;filter:alpha(opacity=40);\"><FONT COLOR=WHITE FACE= Arial  SIZE=2><b>Screen Shot</b></td>\n");
 
         out.write("</tr>\n");
         out.close();

@@ -300,6 +300,15 @@ public class UnitProgressChasingPage {
 			if(ConfirmPOBtn.getAttribute("aria-disabled").contentEquals("false")){
 				ConfirmPOBtn.click();
 				
+				///////////////////////////////////////////  Confirm Date 
+				while(!driver.findElement(By.xpath("//*[@id='dvQuickModal']")).getAttribute("style").contains("none")){}
+				if(driver.findElements(By.xpath("//*[@id='updateConfirmDateDialog']")).size()>0 && driver.findElement(By.xpath("//*[@id='updateConfirmDateDialog']")).isDisplayed()){
+					driver.findElement(By.xpath("//*[@id='ok']")).click();
+						while(!driver.findElement(By.xpath("//*[@id='dvQuickModal']")).getAttribute("style").contains("none")){}
+				 }
+				
+				
+				
 				//	Handle VIN Pop-ups
 				Core.handleVINpopup();
 			
