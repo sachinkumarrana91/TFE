@@ -12,6 +12,7 @@ public class TestReports {
 	public static String currentDir;
 	public static String currentSuiteName;
 	public static int tcid;
+	//  can i do this
 	//public static String currentSuitePath;
 	
 	public static double passNumber;
